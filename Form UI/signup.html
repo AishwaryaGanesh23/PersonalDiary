@@ -5,12 +5,17 @@
         <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="javascript/signup_js.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     </head>
 
     <body>
         <div class="overlay">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                                 
+            </div>
+
             <div class="col-md-15 col-sm-15">
-                <form>
+                <form action="">
               
                     <div class="con">
                     
@@ -83,5 +88,9 @@
         </div>
     </body>
 
-
+    <script>
+		$(function(){
+			$("#myNavbar").load("nav.html");
+		});
+    </script>
 </html>
