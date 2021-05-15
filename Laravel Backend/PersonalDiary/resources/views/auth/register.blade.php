@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pagelayout')
 
 @section('content')
 <div class="container">
@@ -11,7 +11,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="con">
+                        <div class="container">
                     
                         <header class="head-form">
                             <h2>Sign Up</h2>
