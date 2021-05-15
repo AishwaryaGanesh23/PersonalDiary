@@ -22,7 +22,7 @@
 
                             <div class="form-group">
                                 <span class="input-item">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right"><i class="fa fa-user-o"></i> {{ __('Name') }}</label>
+                                    <i class="fa fa-user-o"></i> {{ __('Name') }}
                                 </span>
                                 
                                 <!-- <input class="form-input" id="firstname" type="text" placeholder="First Name" required onblur="chkefirstname()"> -->
@@ -50,7 +50,7 @@
 
                             <div class="form-group">
                                 <span class="input-item">
-                                    <label for="email" class="col-md-4 col-form-label text-md-right"><i class="fa fa-at"></i> {{ __('E-Mail') }}</label>
+                                    <i class="fa fa-at"></i> {{ __('E-Mail') }}
                                 </span>
                                 
                                 <!-- <input class="form-input" id="email" type="email" placeholder="Email Id" required onblur="chkeemail()"> -->
@@ -79,7 +79,7 @@
                             
                             <div class="form-group">
                                 <span class="input-item">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right"><i class="fa fa-key"></i>{{ __('Password') }}</label>
+                                    <i class="fa fa-key"></i>{{ __('Password') }}
                                 </span>
                                 
                                 <!-- <input class="form-input" type="password" placeholder="Password" id="password"  name="password" required onblur="chkepass()">
@@ -109,7 +109,7 @@
                         </div> -->
                         <div class="form-group">
                                 <span class="input-item">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right"><i class="fa fa-key"></i>{{ __('Password') }}</label>
+                                <i class="fa fa-key"></i>{{ __('Re-Enter Password') }}
                                 </span>
                                 
                                 <!-- <input class="form-input" type="password" placeholder="Password" id="password"  name="password" required onblur="chkepass()">
@@ -133,7 +133,7 @@
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn submits sign-up">
                                     {{ __('Sign Up ') }}
-                                    <i class="fa fa-user-plus" aria-hidden="true"></i> 
+                                    
                                 </button>
                             </div>
                             

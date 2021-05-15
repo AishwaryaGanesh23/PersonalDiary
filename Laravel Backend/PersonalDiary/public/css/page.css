@@ -8,15 +8,16 @@
 
 body {
     background-image: linear-gradient(-225deg, #90f0f7 0%, #ff99fa 100%);
-    /* background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%); */
+    /* background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);  */
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: "Abel", sans-serif;
     opacity: 0.95;
+    overflow: hidden;
 }
 
 form {
-    width: 450px;
+    width: 500px;
     min-height: 500px;
     height: auto;
     border: 2px solid black;
@@ -25,7 +26,7 @@ form {
     padding: 2%;
     background-image: linear-gradient(-225deg, #e3fdf5 50%, #ffe6fa 50%);
     position: relative;
-    top: 15vh;
+    top: 5vh;
 }
 
 form .container {
@@ -52,10 +53,11 @@ header h2 {
 }
 
 .input-item {
-    color: #333;
+    color: rgb(0, 0, 0);
     margin-left: 0px;
     padding: 16px 0px 15px 0px;
     border-radius: 5px 0px 0px 5px;
+    font-size: 16px;
 }
 
 input[class~="form-control"] {
@@ -71,6 +73,7 @@ input[class~="form-control"] {
     border-radius: 0px 5px 5px 0px;
     transition: 0.2s linear;
 }
+
 input[id="txt-input"] {
     width: 250px;
 }
@@ -82,10 +85,8 @@ input:focus {
 
 button {
     color: #252537;
-
     width: 380px;
     height: 50px;
-
     padding: 0 20px;
     background: #fff;
     border-radius: 5px;
@@ -96,7 +97,10 @@ button {
 }
 
 .log-in {
-    background: #8fddcd;
+    position: relative;
+    left: -7%;
+    background: #55dfc3;
+    font-size: 18px;
 }
 
 .submits {
@@ -104,7 +108,8 @@ button {
 }
 
 .sign-up {
-    background: #b8f2e6;
+    background: #55dfc3;
+    font-size: 18px;
     margin-top: 10px;
 }
 
@@ -169,7 +174,7 @@ p {
 }
 .content2 {
     position: relative;
-    top: 20vh;
+    top: 10vh;
     margin: auto;
     width: 800px;
     min-height: 200px;
@@ -181,4 +186,10 @@ p {
 .images {
     height: 250px;
     width: 300px;
+}
+
+.btn-link{
+    position: relative;
+    left: -11%;
+    color: black;
 }

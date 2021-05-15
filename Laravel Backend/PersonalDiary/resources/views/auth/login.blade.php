@@ -23,8 +23,9 @@
                                 
                                 <div class="form-group">
                                     <span class="input-item">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right"><i class="fa fa-user-circle"></i>  {{ __('User ID') }}</label>
+                                         <i class="fa fa-user-circle"></i>&nbsp;{{ __('User ID') }}
                                     </span>
+                              
                                     
                                     <!-- <input class="form-input" id="email" type="text" placeholder="User Id" required> -->
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -56,7 +57,7 @@
                             
                             <div class="form-group">
                                 <span class="input-item">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right"?><i class="fa fa-key"></i>  {{ __('Password') }}</label>
+                                    <i class="fa fa-key"></i>  {{ __('Password') }}
                                 </span>
                                 
                                 <!-- <input class="form-input" type="password" placeholder="Password" id="password"  name="password" required> -->

@@ -1,8 +1,8 @@
 @extends('layouts.pagelayout')
 @section('content')
         <div id="mainindexbody">
-        <img class="images" src="./pics/image2.png" style="position: absolute;  left: 78%;">
-			<img class="images" src="./pics/image3.png" style="position: absolute; top: 62vh; left: 2%;">
+        <img class="images" src="{{ URL::to('/pics/image2.png') }}" style="position: absolute;  left: 78%;">
+	<img class="images" src="{{ URL::to('/pics/image3.png') }}" style="position: absolute; top: 62vh; left: 2%;">
 
 
 			<div class="content">
