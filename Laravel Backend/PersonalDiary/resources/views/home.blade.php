@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pagelayout')
 
 @section('content')
 <div class="container">
@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    <a class="nav-link" href="{{ route('posts.index') }}">{{ __('All Posts') }}</a>
+                    <a class="nav-link" href="{{ route('posts.index') }}">{{ __('To Do List') }}</a>
+                    <a class="nav-link" href="{{ route('posts.index') }}">{{ __('Calendar') }}</a>
                 </div>
             </div>
         </div>

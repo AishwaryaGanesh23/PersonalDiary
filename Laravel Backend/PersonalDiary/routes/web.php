@@ -29,3 +29,4 @@ Route::get('/user/{id}', function ($id) {
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 
+Route::resource('posts', PostsController::class);
