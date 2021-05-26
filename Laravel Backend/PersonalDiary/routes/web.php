@@ -30,3 +30,5 @@ Route::get('/', [PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 
 Route::resource('posts', PostsController::class);
+
+Route::get('/postsSortbyTitle', [PostsController::class, 'sortbyTitle']);

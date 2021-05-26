@@ -5,7 +5,9 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/home">Home</a></li>
     <li class="breadcrumb-item"><a href="/posts">All Posts</a></li>
+    @if(Auth::user()->id ==  $post->user_id)
     <li class="breadcrumb-item active" aria-current="page">{{$post->title}}</li>
+    @endif
   </ol>
 </nav>
 
@@ -14,6 +16,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
+                @if(Auth::user()->id ==  $post->user_id)
                     <h2 class="card-title">
                         {{$post->title}}                          
                     </h2>
@@ -22,7 +25,12 @@
                         
                          <p  class="card-text">
                          {{$post->entrycontent}}
-                         </p>   
+                         </p>
+                @else
+                <h2 class="card-title">
+                        Post Not Found                          
+                    </h2>
+                @endif              
                 </div>
             </div>
         </div>
