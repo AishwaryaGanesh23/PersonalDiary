@@ -11,8 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/sidebar.js') }}" defer></script>
-    
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -92,16 +91,6 @@
         </nav>
 
         <main class="py-4">
-            <div class="sidebar" id="mysidebar">
-                <a class="side_accordian" id="posts">Posts</a>
-                    <div class="acc_disp">
-                        <a href="" id="allPosts">All Posts</a>
-                        <a href="" id="newPost">New Post</a> 
-                    </div> 
-                <a href="">To Do List</a>
-
-                <a href="">Calendar</a> 
-            </div>
             @yield('content')
         </main>
     </div>

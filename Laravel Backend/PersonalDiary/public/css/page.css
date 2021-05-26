@@ -13,7 +13,7 @@ body {
     background-repeat: no-repeat;
     font-family: "Abel", sans-serif;
     opacity: 0.95;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 form {
@@ -101,6 +101,7 @@ button {
     left: -7%;
     background: #55dfc3;
     font-size: 18px;
+    color: black;
 }
 
 .submits {
@@ -193,3 +194,50 @@ p {
     left: -11%;
     color: black;
 }
+
+.sidebar {
+    padding: 0;
+    width: 200px;
+    background-color: #200d22;
+    position: fixed;
+    top: 8.4vh;
+    height: 100%;
+    font-size: 18px;
+  }
+  
+.side_accordian {
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .sidebar a {
+    text-align: center;
+    display: block;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+  }
+
+  .sidebar a.active {
+    background-color: #337ab7;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #337ab7;
+    color: white;
+  }
+
+  .acc_disp {
+    padding: none;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    
+  }
+
+  .acc_disp a
+  {
+    font-weight: normal;
+    color: black;
+  }

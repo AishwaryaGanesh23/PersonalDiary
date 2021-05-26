@@ -7354,6 +7354,7 @@ input[type="button"].btn-block {
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+    width: 20%;
 }
 .navbar-nav .nav-link {
     padding-right: 0;
@@ -7928,15 +7929,26 @@ input[type="button"].btn-block {
 .breadcrumb {
     display: flex;
     flex-wrap: wrap;
-    padding: 0.75rem 1rem;
+    /* padding: 0.75rem 1rem; */
+    width: 60%;
     margin-bottom: 1rem;
     list-style: none;
-    background-color: #e9ecef;
+    /* background-color: #e9ecef;  */
     border-radius: 0.25rem;
+    position: relative;
+    left: 15%;
+    top: -3vh;
+    
+}
+
+.breadcrumb-item
+{
+    font-size: 12px;
 }
 
 .breadcrumb-item + .breadcrumb-item {
     padding-left: 0.5rem;
+   
 }
 .breadcrumb-item + .breadcrumb-item::before {
     float: left;
@@ -7945,7 +7957,7 @@ input[type="button"].btn-block {
     content: "/";
 }
 .breadcrumb-item + .breadcrumb-item:hover::before {
-    text-decoration: underline;
+    text-decoration: none;
 }
 .breadcrumb-item + .breadcrumb-item:hover::before {
     text-decoration: none;

@@ -38,7 +38,11 @@
                                         You Have No Posts. Create One now!
                                     </h3>
                                     <!-- add new post button -->
-                                    <!-- <small class="card-text">Updated on {{$post->updated_at}}</small> -->
+                                    <center>
+                                        <a href="">
+                                        
+                                        <button class="submits log-in btn btn-primary "><i class="fa fa-plus"></i> &nbsp;Create Post</button></a> 
+                                    </center>
                                 </div>
                     @endif
                 </div>
