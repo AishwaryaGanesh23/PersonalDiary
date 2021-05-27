@@ -17,7 +17,17 @@
                 <div class="card-body">
                 {!! Form::open(['action' => 'PostsController@store']) !!}
 
+                  <div class="form-group"> 
+                    {{Form::label('title', 'Title')}}
+                    {{Form::text('title', '', ['class' => 'form-control' , 'placeholder' => 'Title'])}}
+                  </div>
 
+                  <div class="form-group"> 
+                    {{Form::label('body', 'Your Data')}}
+                    {{Form::text('body', '', ['class' => 'form-control' , 'placeholder' => 'Type in your data here!!!'])}}
+                  </div>
+
+                  {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
 
                 {!! Form::close() !!}
                 </div>

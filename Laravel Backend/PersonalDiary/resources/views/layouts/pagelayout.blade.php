@@ -16,7 +16,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page.css') }}" rel="stylesheet">
@@ -93,9 +93,9 @@
 
         <main class="py-4">
             <div class="sidebar" id="mysidebar">
-                <a class="side_accordian" id="posts">Posts</a>
+                <a class="side_accordian" id="posts"><i class="fa fa-chevron-down"></i>&nbsp; Posts</a>
                     <div class="acc_disp">
-                        <a href="" id="allPosts">All Posts</a>
+                        <a href="{{ route('posts.index') }}" id="allPosts">All Posts</a>
                         <a href="" id="newPost">New Post</a> 
                     </div> 
                 <a href="">To Do List</a>
