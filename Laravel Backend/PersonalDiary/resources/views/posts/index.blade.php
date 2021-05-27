@@ -12,7 +12,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('All Posts') }}
-                    <a href="" style="float:right"><i class="fa fa-plus"></i></a>
+                    <a href="/posts/create" style="float:right"><i class="fa fa-plus"></i></a>
                 </div>
                 <a href = "/posts">
                     Sort by Date Created
