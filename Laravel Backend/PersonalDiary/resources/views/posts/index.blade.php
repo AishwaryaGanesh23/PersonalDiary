@@ -14,14 +14,14 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('All Posts') }}
-                    <a href="/posts/create" style="float:right"><i class="fa fa-plus"></i></a>              
+                    <a href="/posts/create" style="float:right"><i class="fa fa-plus"></i></a>
+                    <a class="side_accordian" style="float:right; padding-right:10px;"><i class="fa fa-sort"></i>&nbsp;Sort</a>
+                        <div class="acc_disp" style="text-align: right">
+                            <a href = "/posts">Sort by Date Created</a> <br>
+                            <a href = "/postsSortbyTitle">Sort by Title</a> 
+                        </div>             
                 </div>
-                <a href = "/posts">
-                    Sort by Date Created
-                </a>
-                <a href = "/postsSortbyTitle">
-                    Sort by Title
-                </a>
+                
                 <div class="card-body">
                     @if(count($posts)>1)
                         @foreach( $posts as $post)

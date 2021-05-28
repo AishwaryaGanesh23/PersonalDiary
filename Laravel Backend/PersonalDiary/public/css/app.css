@@ -3136,6 +3136,7 @@ h6 {
 p {
     margin-top: 0;
     margin-bottom: 1rem;
+    
 }
 
 abbr[title],
@@ -3208,13 +3209,14 @@ sup {
 }
 
 a {
-    color: #3490dc;
+    font-weight: bold;
+    color: black;
     text-decoration: none;
     background-color: transparent;
 }
 a:hover {
     color: #1d68a7;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:not([href]):not([class]) {
@@ -7317,6 +7319,8 @@ input[type="button"].btn-block {
 
 .navbar {
     position: relative;
+    /* top: 0px; */
+    /* width: 100%; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -7718,6 +7722,7 @@ input[type="button"].btn-block {
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
+    overflow: auto;
 }
 .card > hr {
     margin-right: 0;
@@ -7928,31 +7933,34 @@ input[type="button"].btn-block {
 
 .breadcrumb {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* padding: 0.75rem 1rem; */
     width: 60%;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     list-style: none;
     /* background-color: #e9ecef;  */
-    border-radius: 0.25rem;
+    /* border-radius: 0.25rem; */
     position: relative;
     left: 15%;
-    top: -3vh;
+    top: 5px;
     
 }
 
 .breadcrumb-item
 {
     font-size: 12px;
+    padding: none;
+    margin-left: none;
+    margin-right: none;
 }
 
 .breadcrumb-item + .breadcrumb-item {
-    padding-left: 0.5rem;
+    padding-left: none;
    
 }
 .breadcrumb-item + .breadcrumb-item::before {
     float: left;
-    padding-right: 0.5rem;
+    padding-right: none;
     color: #6c757d;
     content: "/";
 }

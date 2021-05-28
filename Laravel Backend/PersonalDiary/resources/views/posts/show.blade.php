@@ -16,8 +16,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+            <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif; text-align: center;">
+                    {{ __('Your Post') }}
+                </div>
                 <div class="card-body">
-                    <h2 class="card-title">
+                
+                    <h2 class="card-title" style="font-weight: bold;">
                         {{$post->title}}                          
                     </h2>
 
@@ -28,8 +32,8 @@
                     {{$post->entrycontent}}
                     </p>
 
-                    <a href="/posts/{{ $post->id }}/edit" class="btn btn-default">Edit</a>
-                    {{-- <a href="/posts/{{ $post->id }}/delete" class="btn btn-default">Delete</a> --}}
+                    <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="width: 80px; height: 40px;"> Edit </button></a>
+                    <!-- <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="width: 80px; height: 40px;"> Edit </button></a> -->
                     {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy',$post->id], 'method' => 'DELETE', 'class'=>'pull-right']) !!}
                     {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}
                     {!! Form::close() !!}
