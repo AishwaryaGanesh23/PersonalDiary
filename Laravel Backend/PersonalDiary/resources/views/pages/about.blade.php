@@ -1,4 +1,5 @@
 @extends('layouts.pagelayout')
+
 @section('content')
         <div id="mainindexbody">
         <div class="content2">
@@ -10,7 +11,7 @@
 						written photo, recording the things only you saw in as much or as little detail as you like.
 					</p>
 
-				<li>Keep our thoughts organized.</li>
+				<li>Keep your thoughts organized.</li>
 					<p>
 						Diaries help us to organize our thoughts and make them apprehensible. 
 						You can record daily events, thoughts and feelings about certain experiences or opinions.

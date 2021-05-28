@@ -1,5 +1,4 @@
-@extends('layouts.loginlayout')
-
+@extends('layouts.pagelayout')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

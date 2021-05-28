@@ -7,7 +7,7 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/home">Home</a></li>
     <li class="breadcrumb-item"><a href="/posts">All Posts</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Create a Post</li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Post</li>
   </ol>
 </nav>
 <div class="container">
@@ -18,17 +18,17 @@
                 
                 <!-- <div class="card-body"> -->
                 
-                {!! Form::open(['action' => 'App\Http\Controllers\PostsController@store', 'method' => 'POST']) !!}
+                {!! Form::open(['action' => ['App\Http\Controllers\PostsController@update',$post->id], 'method' => 'PUT']) !!}
                   <div class="form-group"> 
                     {{Form::label('title', 'Enter a Title')}}
-                    {{Form::text('title', '', ['class' => 'form-control' , 'placeholder' => 'Entry Title'])}}
+                    {{Form::text('title', $post->title, ['class' => 'form-control'])}}
                   </div>
 
                   <div class="form-group"> 
                     {{Form::label('body', 'Diary Entry')}}
-                    {{Form::textarea('body', '', ['class' => 'form-control' , 'placeholder' => 'Type in your thoughts here'])}}
+                    {{Form::textarea('body', $post->entrycontent, ['class' => 'form-control'])}}
                   </div>
-
+                  
                   {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
 
                 {!! Form::close() !!}

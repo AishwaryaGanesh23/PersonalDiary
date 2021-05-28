@@ -200,44 +200,42 @@ p {
     width: 200px;
     background-color: #200d22;
     position: fixed;
-    top: 8.4vh;
+    top: 8.5vh;
     height: 100%;
     font-size: 18px;
-  }
-  
+}
+
 .side_accordian {
     cursor: pointer;
     transition: 0.4s;
-  }
+}
 
-  .sidebar a {
+.sidebar a {
     text-align: center;
     display: block;
     color: white;
     padding: 5px;
     text-decoration: none;
-  }
+}
 
-  .sidebar a.active {
+.sidebar a.active {
     background-color: #337ab7;
     color: white;
-  }
-  
-  .sidebar a:hover:not(.active) {
+}
+
+.sidebar a:hover:not(.active) {
     background-color: #337ab7;
     color: white;
-  }
+}
 
-  .acc_disp {
+.acc_disp {
     padding: none;
     display: none;
     background-color: white;
     overflow: hidden;
-    
-  }
+}
 
-  .acc_disp a
-  {
+.acc_disp a {
     font-weight: normal;
     color: black;
-  }
+}

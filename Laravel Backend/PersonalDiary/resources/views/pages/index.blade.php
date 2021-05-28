@@ -1,4 +1,4 @@
-@extends('layouts.loginlayout')
+@extends('layouts.pagelayout')
 @section('content')
         <div id="mainindexbody">
         <img class="images" src="{{ URL::to('/pics/image2.png') }}" style="position: absolute;  left: 78%;">

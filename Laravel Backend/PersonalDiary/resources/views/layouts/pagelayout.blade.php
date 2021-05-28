@@ -90,8 +90,10 @@
                 </div>
             </div>
         </nav>
+        <div>
+        </div>
 
-        <main class="py-4">
+        <!-- <main class="py-4">
             <div class="sidebar" id="mysidebar">
                 <a class="side_accordian" id="posts"><i class="fa fa-chevron-down"></i>&nbsp; Posts</a>
                     <div class="acc_disp">
@@ -101,8 +103,22 @@
                 <a href="">To Do List</a>
 
                 <a href="">Calendar</a> 
-            </div>
+            </div> -->
+
+            @hasSection('navigation')
+                @yield('navigation')
+            @endif
+
             @yield('content')
+
+            <div class="container">
+                <div class="col justify-content-center">
+                    {{-- <div class="col-md-8"> --}}
+                        @include('pages.messages')
+                    {{-- </div> --}}
+                </div>
+            </div>
+
         </main>
     </div>
 </body>

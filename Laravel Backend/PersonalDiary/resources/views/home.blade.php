@@ -1,5 +1,8 @@
 @extends('layouts.pagelayout')
 
+@include('layouts.sidebar')
+
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
