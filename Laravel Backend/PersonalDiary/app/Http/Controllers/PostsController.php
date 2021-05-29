@@ -59,7 +59,7 @@ class PostsController extends Controller
         $post->entrycontent =  $request->input('body');
         $post->save();
 
-        return redirect('/posts')->with('success','Entry Saved');
+        return redirect('/posts');
          
     }
 
@@ -136,7 +136,7 @@ class PostsController extends Controller
         }
         
         $post->delete();
-        return redirect('/posts')->with('success','Entry Deleted');
+        return redirect('/posts');
     }
 
     public function sortbyTitle()

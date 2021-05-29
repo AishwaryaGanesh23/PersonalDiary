@@ -16,7 +16,7 @@ body {
     overflow: hidden; 
 }
 
-form {
+.form {
     width: 500px;
     min-height: 500px;
     height: auto;
@@ -27,6 +27,16 @@ form {
     background: linear-gradient(to bottom right,#ffb8e2, #a5ecf1  );
     position: relative;
     top: 60px;
+}
+
+.createform {
+    width: 728px;
+    height: 550px;
+    border: 2px solid black;
+    border-radius: 0px 0px 5px 5px;
+    padding: 2%;
+    background: linear-gradient(to bottom right,#ffb8e2, #a5ecf1  );
+    overflow-y: auto;
 }
 
 form .container {

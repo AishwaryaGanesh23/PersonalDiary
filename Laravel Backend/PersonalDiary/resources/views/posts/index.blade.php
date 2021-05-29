@@ -13,9 +13,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('All Posts') }}
-                    <a href="/posts/create" style="float:right"><i class="fa fa-plus"></i></a>
-                    <a class="side_accordian" style="float:right; padding-right:10px;"><i class="fa fa-sort"></i>&nbsp;Sort</a>
+                <div class="card-header" style="font-size: 20px; font-family: 'Playfair Display', serif;">
+                {{ __('All Posts') }}
+                    <a href="/posts/create" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
+                    <a class="side_accordian" style="float:right; padding-right:10px; font-size: 13px;"><i class="fa fa-sort"></i>&nbsp;Sort</a>
                         <div class="acc_disp" style="text-align: right">
                             <a href = "/posts">Sort by Date Created</a> <br>
                             <a href = "/postsSortbyTitle">Sort by Title</a> 

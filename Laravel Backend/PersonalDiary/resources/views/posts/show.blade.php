@@ -28,13 +28,13 @@
                     <small class="card-subtitle ">Created on {{$post->created_at}}</small>
                     <small class="card-subtitle ">Updated on {{$post->updated_at}}</small>
                     
-                    <p  class="card-text">
+                    <p  class="card-text" style="width: 500px; ">
                     {{$post->entrycontent}}
                     </p>
 
-                    <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="width: 80px; height: 40px;"> Edit </button></a>
+                    <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="float:left; margin-right: 2px"> Edit </button></a>
                     <!-- <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="width: 80px; height: 40px;"> Edit </button></a> -->
-                    {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy',$post->id], 'method' => 'DELETE', 'class'=>'pull-right']) !!}
+                    {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy',$post->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}
                     {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}
                     {!! Form::close() !!}
                 </div>
