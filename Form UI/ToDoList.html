@@ -1,0 +1,82 @@
+<html>
+    <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="overlay">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                                 
+            </div>
+
+            <div class="sidebar" id="mysidebar">
+                                 
+            </div>
+
+            <nav aria-label="breadcrumb" style="position: relative; left:20%;">
+               <ol class="breadcrumb">
+                  <a href="/home" class="breadcrumb-item">Home/</a>
+                  <a href="/posts" class="breadcrumb-item">All Posts/</a>
+                  <a class="breadcrumb-item active" aria-current="page">Create a Post</a>
+               </ol>
+            </nav>
+
+            <div class="col-md-15 col-sm-15">
+               <form>
+               
+                  <div class="con">
+                     
+                     <header class="head-form">
+                        <h2>To-Do-List</h2>
+                     </header>
+                     
+
+                     <div class="field-set" >
+                        
+                           <div class="form-group" >
+                              <label style="padding-left: 20px;">Title</label> <br>
+                              <center>
+                              <input class="form-input" id="title" type="text" required>
+                           </center>
+                           </div>
+
+                        
+                           <div class="form-group">
+                              <label style="padding-left: 20px;">Start Date</label>
+                              <center>
+                              <input class="form-input" type="date" required>
+                              </center> 
+                           </div>
+                        
+
+                        
+                           <div class="form-group">
+                              <label style="padding-left: 20px;">End Date</label>
+                              <center>
+                              <input class="form-input" type="date" required>
+                              </center>
+                           </div>
+                        
+
+                        <center><button class="btn-primary"> Submit </button></center>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+    </body>
+    <script>
+		$(function(){
+			$("#myNavbar").load("nav.html");
+		});
+
+      $(function(){
+			$("#mysidebar").load("sidebar.html");
+		});
+    </script>
+
+</html>

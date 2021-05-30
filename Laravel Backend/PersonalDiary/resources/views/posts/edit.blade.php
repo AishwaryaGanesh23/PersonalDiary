@@ -5,9 +5,10 @@
 @section('content')
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/home">Home</a></li>
-    <li class="breadcrumb-item"><a href="/posts">All Posts</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Edit Post</li>
+    <a href="/home" class="breadcrumb-item">Home</a>
+    <a href="/posts" class="breadcrumb-item">All Posts</a>
+    <a href=""class="breadcrumb-item" aria-current="page">{{$post->title}}</a>
+    <a class="breadcrumb-item active" aria-current="page">Edit Post</a>
   </ol>
 </nav>
 <div class="container">

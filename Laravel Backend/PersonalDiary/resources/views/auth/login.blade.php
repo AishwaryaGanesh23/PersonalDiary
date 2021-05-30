@@ -16,7 +16,7 @@
                      
                             <header class="head-form">
                                 <h2>Log In</h2>
-                            </header>
+                            </header> <br>
                      
 
                             <div class="field-set">
@@ -36,7 +36,7 @@
                                             </span>
                                     @enderror
                                 </div>
-                            
+                                
 
                             <!-- <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -98,7 +98,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                 <!-- <button class="submits log-in"> LOGIN </button> -->
-                                    <button type="submit" class="submits log-in btn btn-primary ">
+                                    <button type="submit" class="submits btn btn-primary log-in">
                                         {{ __('Login') }}
                                     </button> 
 

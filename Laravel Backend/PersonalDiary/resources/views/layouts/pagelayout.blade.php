@@ -13,7 +13,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/sidebar.js') }}" defer></script>
     <script src="{{ asset('js/filesize.js') }}" defer></script>
-
+  
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -23,9 +23,9 @@
     <link href="{{ asset('css/page.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm"> 
+    <div class="container">
                 @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Personal Diary') }}
@@ -74,6 +74,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('My Profile') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -89,12 +94,11 @@
                         
                     </ul>
                 </div>
-            </div>
-        </nav>
-        <div>
-        </div>
+    </nav> 
 
-        
+    <div id="app">
+        <div>
+            </div>
             @hasSection('navigation')
                 @yield('navigation')
             @endif
@@ -108,8 +112,7 @@
                     {{-- </div> --}}
                 </div>
             </div>
-
-        </main>
+        </div>  
     </div>
 </body>
 </html>

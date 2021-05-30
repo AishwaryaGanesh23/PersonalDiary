@@ -5,8 +5,8 @@
 @section('content')
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/home">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">All Posts</li>
+    <a href="/home"  class="breadcrumb-item">Home</a>
+    <a class="breadcrumb-item active" aria-current="page">All Posts</a>
   </ol>
 </nav>
 <div class="container">
@@ -17,7 +17,7 @@
                 {{ __('All Posts') }}
                     <a href="/posts/create" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
                     <a class="side_accordian" style="float:right; padding-right:10px; font-size: 13px;"><i class="fa fa-sort"></i>&nbsp;Sort</a>
-                        <div class="acc_disp" style="text-align: right">
+                        <div class="acc_disp" style="text-align: right; font-size: 13px;">
                             <a href = "/posts">Sort by Date Created</a> <br>
                             <a href = "/postsSortbyTitle">Sort by Title</a> 
                         </div>             

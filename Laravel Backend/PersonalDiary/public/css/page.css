@@ -6,37 +6,24 @@
     box-sizing: border-box;
 }
 
-body {
-    background-image: linear-gradient(-225deg, #90f0f7 0%, #ff99fa 100%);
-    /* background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);  */
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    font-family: "Abel", sans-serif;
-    opacity: 0.95;
-    overflow: hidden; 
-}
-
+    
 .form {
     width: 500px;
-    min-height: 500px;
-    height: auto;
     border: 2px solid black;
     border-radius: 5px;
     margin: auto;
     padding: 2%;
     background: linear-gradient(to bottom right,#ffb8e2, #a5ecf1  );
     position: relative;
-    top: 60px;
+    top: 10px;
 }
 
 .createform {
-    width: 728px;
-    height: 550px;
+    min-width: 200px;
     border: 2px solid black;
     border-radius: 0px 0px 5px 5px;
     padding: 2%;
     background: linear-gradient(to bottom right,#ffb8e2, #a5ecf1  );
-    overflow-y: auto;
 }
 
 form .container {
@@ -93,25 +80,14 @@ input:focus {
     border-radius: 5px;
 }
 
-button {
-    color: #252537;
-    width: 380px;
-    height: 50px;
-    padding: 0 20px;
-    background: #fff;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    letter-spacing: 0.05em;
-}
 
 .log-in {
     position: relative;
     left: -7%;
     background: #55dfc3;
-    font-size: 18px;
+    font-size: 20px;
     color: black;
+    padding-bottom: 40px;
 }
 
 .submits {
@@ -171,7 +147,7 @@ p {
 
 .content {
     position: relative;
-    top: 20vh;
+    top: 100px;
     margin: auto;
     width: 800px;
     min-height: 200px;
@@ -180,7 +156,7 @@ p {
 }
 .content2 {
     position: relative;
-    top: 10vh;
+    top: 5vh;
     margin: auto;
     width: 800px;
     min-height: 200px;
@@ -190,8 +166,8 @@ p {
 }
 
 .images {
-    height: 250px;
-    width: 300px;
+    height: 200px;
+    width: 250px;
 }
 
 .btn-link {
@@ -201,11 +177,12 @@ p {
 }
 
 .sidebar {
-    padding: 0;
-    width: 200px;
+    padding: 1px;
+    min-width: 14%;
     background-color: #200d22;
     position: fixed;
-    top: 64px;
+    top: 7vh;
+    z-index: 999;
     height: 100%;
     font-size: 18px;
 }

@@ -8,7 +8,7 @@ url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+M
 }
 
 body {
-    background-image: linear-gradient(-225deg, #90f0f7 0%, #ff99fa 100%); 
+    background: linear-gradient(to bottom right,#ffb8e2, #a5ecf1  );
     /* background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%); */
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -25,7 +25,8 @@ form {
     border-radius: 5px;
     margin: auto;
     padding: 2%;
-    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+    background-color: #d7dbdf;
+    /* background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%); */
     position: relative;
     top: 15vh;
 }
@@ -182,4 +183,50 @@ ul,ol,li, p{
     height: 250px;
     width: 300px;
 }
+
+.sidebar {
+    padding: 0;
+    width: 200px;
+    background-color: #200d22;
+    position: fixed;
+    top: 64px;
+    height: 100%;
+    font-size: 18px;
+}
+
+.side_accordian {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.sidebar a {
+    text-align: center;
+    display: block;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: #337ab7;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #337ab7;
+    color: white;
+}
+
+.acc_disp {
+    padding: none;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.acc_disp a {
+    font-weight: normal;
+    color: black;
+}
+
 

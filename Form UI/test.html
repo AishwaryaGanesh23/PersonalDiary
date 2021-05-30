@@ -1,0 +1,48 @@
+<html>
+    <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="overlay">
+                <div id="breadcrumb" style="position: relative; left:20%;"></div>
+                <ul id="navigation_links">
+                    <li><a href="signin.html">Page 1</a></li>
+                    <li><a href="register.html">Page 2</a></li>
+                    <li><a href="page3.html">Page 3</a></li>
+                    <li><a href="page4.html">Page 4</a></li>
+                </ul>
+         </div>
+    </body>
+    <script>
+	$(document).ready(function(){
+    bindEventToNavigation();
+    showBreadCrumb(); //Show the breadcrumb when you arrive on the new page
+});
+
+function bindEventToNavigation(){
+    $.each($("#navigation_links > li > a"), function(index, element){
+        $(element).click(function(event){
+            breadcrumbStateSaver($(this).attr('href'), $(this).text());
+            showBreadCrumb();
+        });
+    });
+}
+
+function breadcrumbStateSaver(link, text) {
+    if (typeof (Storage) != "undefined") {
+        if (sessionStorage.breadcrumb) {
+            var breadcrumb = sessionStorage.breadcrumb;
+            sessionStorage.breadcrumb = breadcrumb + " >> <a href='" + link + "'>" + text + "</a>";
+        } else {
+            sessionStorage.breadcrumb = "<a href='" + link + "'>" + text + "</a>";
+        }
+    }
+}	
+    </script>
+
+</html>
