@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2021 at 04:19 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+-- Generation Time: May 31, 2021 at 02:21 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,8 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2021_05_24_142735_create_posts_table', 3);
+(3, '2021_05_24_142735_create_posts_table', 3),
+(6, '2021_05_29_153720_create_events_table', 4);
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,9 @@ INSERT INTO `posts` (`id`, `user_id`, `title`, `entrycontent`, `created_at`, `up
 (2, 2, 'My first day', 'I worked for a while and finally tried out new things', '2021-05-24 10:15:12', '2021-05-24 10:15:12'),
 (3, 1, 'Day 2', 'A new day for new things', '2021-05-26 02:30:30', '2021-05-26 02:30:30'),
 (4, 1, 'Cats day', 'Visited cat cafe, it was really fun', '2021-05-26 02:31:24', '2021-05-26 02:31:24'),
-(5, 1, 'Fourth post', 'Lazy day, read a book', '2021-05-28 06:58:28', '2021-05-28 06:58:28');
+(5, 1, 'Fourth post', 'Lazy day, read a book', '2021-05-28 06:58:28', '2021-05-28 06:58:28'),
+(7, 3, 'Beach Day', 'Dear Diary,\r\nToday we went on beach and it was very refreshing.', '2021-05-28 11:39:36', '2021-05-28 11:39:36'),
+(10, 3, 'Beach Day 2', 'dfnjer ejfberif bcerifuchreiu dcberifch', '2021-05-28 16:14:18', '2021-05-28 16:14:18');
 
 -- --------------------------------------------------------
 
@@ -109,7 +112,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Aishwarya Ganesh', 'aishwarya@gmail.com', '$2y$10$p/5J31BYQ2zku.v2XTHxduNhXx2Uw1h/iRn893Sfq3f9388ujyNVq', '1LYGvK8lLGVlQNWMa17EuV3e0wWIOMONQFEKdRKpABh8bKrdou9Oz7KvUl4c', '2021-04-13 22:26:09', '2021-04-13 22:26:09'),
-(2, 'KuroKatze', 'kuro@ymail.com', '$2y$10$HXBoKYJDjk339XEL0jq/regf.S3s9vyqP/TWnXvq79SRAWOuTRBR2', NULL, '2021-05-11 01:22:02', '2021-05-11 01:22:02');
+(2, 'KuroKatze', 'kuro@ymail.com', '$2y$10$HXBoKYJDjk339XEL0jq/regf.S3s9vyqP/TWnXvq79SRAWOuTRBR2', NULL, '2021-05-11 01:22:02', '2021-05-11 01:22:02'),
+(3, 'Meliva Cruz', 'meliva12@gmail.com', '$2y$10$oJUIWUnYoc7Y6ZHo1I/hFeoAsjScklWOmpgr.F1mdOwjpb8PzYN9O', NULL, '2021-05-28 11:25:52', '2021-05-28 11:25:52');
 
 --
 -- Indexes for dumped tables
@@ -148,19 +152,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
