@@ -35,7 +35,7 @@
 					</div>
 
 					<div class="form-group"> 
-						{{Form::label('date', 'Start Date')}}
+						{{Form::label('date', 'End Date')}}
 						{{Form::date('body', '', ['class' => 'form-control' , 'placeholder' => 'End Date'])}}
 					</div>
 

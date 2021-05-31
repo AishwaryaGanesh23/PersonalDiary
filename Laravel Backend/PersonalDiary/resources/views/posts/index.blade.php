@@ -24,7 +24,7 @@
                 </div>
                 
                 <div class="card-body">
-                    @if(count($posts)>1)
+                    @if(count($posts)>=1)
                         @foreach( $posts as $post)
                             @if(Auth::user()->id ==  $post->user_id)
                                 <div class = "card-body">
@@ -44,7 +44,7 @@
                                     </h3>
                                     <!-- add new post button -->
                                     <center>
-                                        <a href="">
+                                        <a href="/posts/create">
                                         
                                         <button class="submits log-in btn btn-primary "><i class="fa fa-plus"></i> &nbsp;Create Post</button></a> 
                                     </center>

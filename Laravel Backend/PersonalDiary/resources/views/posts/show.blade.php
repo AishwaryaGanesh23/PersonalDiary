@@ -29,8 +29,17 @@
                     <small class="card-subtitle ">Updated on {{$post->updated_at}}</small>
                     
                     <p  class="card-text" style="width: 500px; ">
-                    {{$post->entrycontent}}
+                    <pre>{{$post->entrycontent}}</pre>
                     </p>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            @foreach($postmedia as $picture)
+                                <img style="width: 100%" src ="{{asset('storage/post_media/'.$picture->filename)}}">
+                            @endforeach
+                        </div>
+                    </div>
+
 
                     <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="float:left; margin-right: 2px"> Edit </button></a>
                     <!-- <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="width: 80px; height: 40px;"> Edit </button></a> -->
