@@ -5652,7 +5652,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-    width: 65px; height: 37px; 
+    width: 65px; 
+    height: 35px; 
     color: #fff;
     background-color: #3490dc;
     border-color: #3490dc;
@@ -7954,16 +7955,16 @@ input[type="button"].btn-block {
     display: flex;
     flex-wrap: wrap;
     padding-left: 10px;  
-    width: 87%;
+    width: 50vw;
     /* padding-right: 50px; */
     margin-bottom: 1rem;
     list-style: none;
-    background-color: #e9ecef;  
+    background-color: transparent;  
     /* border-radius: 0.25rem; */
     position: fixed;
     z-index: 999;
-    top: 7vh;
-    left: 14%;
+    top: 9vh;
+    left: 200px;
 }
 
 .breadcrumb-item

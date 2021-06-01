@@ -136,11 +136,11 @@ button:hover {
 
 ul,
 ol,
-li,
-p {
-    width: 750px;
+li{
+    /* width: 750px; */
     position: relative;
-    left: 2%;
+    /* left: 2%; */
+    list-style: none;
     font-weight: bold;
     font-size: 20px;
 }
@@ -170,6 +170,11 @@ p {
     width: 250px;
 }
 
+.image_hover:hover {
+    width: 500px;
+    height: 400px;
+  }
+
 .btn-link {
     position: relative;
     left: -11%;
@@ -178,10 +183,10 @@ p {
 
 .sidebar {
     padding: 1px;
-    min-width: 14%;
+    min-width: 190px;
     background-color: #200d22;
     position: fixed;
-    top: 7vh;
+    top: 8.3vh;
     z-index: 999;
     height: 100%;
     font-size: 18px;
@@ -221,3 +226,84 @@ p {
     font-weight: normal;
     color: black;
 }
+
+.card-text {
+    font-size: 15px;
+}
+
+ @media screen and (max-width: 992px) {
+    .sidebar {
+        top: 6.7vh;
+    }
+
+  } 
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        background-color: #200d22;
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        top: 6.5vh;
+        
+    }
+
+    .side_accordian{
+        position: relative;
+        padding-left: 10px;
+    }
+
+    
+    div.content {margin-left: 0;}
+    
+    .sidebar a 
+    {
+        float: left;
+    }
+    div.content {margin-left: 0;}
+
+    .breadcrumb{
+        top: 105px;
+        left: 0px;
+    }
+
+    .card{
+        position: relative;
+        top: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      /* text-align: center; */
+      float: left;
+    }
+
+    div.content {margin-left: 0;}
+
+    .acc_disp {
+        width: 180px;
+        padding: none;
+        display: none;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .side_accordian{
+        position: relative;
+        padding-left: 50px;
+    }
+
+    .breadcrumb{
+        top: 105px;
+        left: 0px;
+    }
+
+    .card{
+        position: relative;
+        top: 40px;
+    }
+  }
+
+  

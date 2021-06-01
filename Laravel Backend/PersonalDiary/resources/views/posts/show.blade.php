@@ -28,20 +28,20 @@
                     <small class="card-subtitle ">Created on {{$post->created_at}}</small>
                     <small class="card-subtitle ">Updated on {{$post->updated_at}}</small>
                     
-                    <p  class="card-text" style="width: 500px; ">
-                    <pre>{{$post->entrycontent}}</pre>
+                    <p  class="card-text" style="width: 100%; ">
+                    {{$post->entrycontent}}
                     </p>
 
                     <div class="row">
                         <div class="col-md-12">
                             @foreach($postmedia as $picture)
-                                <img style="width: 100%" src ="{{asset('storage/post_media/'.$picture->filename)}}">
+                                <img class="images image_hover" style="Padding-bottom: 20px" src ="{{asset('storage/post_media/'.$picture->filename)}}">
                             @endforeach
                         </div>
                     </div>
 
 
-                    <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="float:left; margin-right: 2px"> Edit </button></a>
+                    <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="float:left; margin-right: 5px; "> Edit </button></a>
                     <!-- <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="width: 80px; height: 40px;"> Edit </button></a> -->
                     {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy',$post->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}
                     {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}

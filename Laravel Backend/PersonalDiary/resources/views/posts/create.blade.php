@@ -40,12 +40,14 @@
 
 					</div>
 
-					{{-- <div class="form-group"> 
+					<!-- <div class="form-group"> 
 						{{Form::label('post_media_title', 'Add an Image')}}
 						<input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="2097152" />
 						<input type="file" onchange="upload_check()" id="file_id" name="post_media" class="form-control" multiple accept="image/*,video/*">
 						<label>(File size should be max 2mb)</label>
-					</div> --}}
+					</div>  -->
+
+					
 
 					{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
 
