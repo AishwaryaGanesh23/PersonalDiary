@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2021 at 05:48 PM
+-- Generation Time: Jun 03, 2021 at 04:20 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -75,12 +75,20 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `title`, `entrycontent`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Post 1', 'Hello world,\r\nthis is my first post here', '2021-05-31 07:14:21', '2021-05-31 07:14:21'),
-(3, 1, 'Post 2', 'Does\r\nthis work with \r\nbreaks?', '2021-05-31 07:32:30', '2021-05-31 07:32:30'),
-(6, 1, 'cat', 'cat', '2021-05-31 08:25:08', '2021-05-31 08:25:08'),
-(8, 1, 'kuro', 'icon', '2021-05-31 09:06:44', '2021-05-31 09:06:44'),
-(17, 1, 'black', 'black', '2021-05-31 09:48:35', '2021-05-31 09:48:35'),
-(19, 1, 'sailor', 'moon', '2021-05-31 09:50:45', '2021-05-31 09:50:45');
+(1, 1, 'Post 1', 'Hello world,\r\nthis is my first post here', '2021-05-31 01:44:21', '2021-05-31 01:44:21'),
+(3, 1, 'Post 2', 'Does\r\nthis work with \r\nbreaks?', '2021-05-31 02:02:30', '2021-05-31 02:02:30'),
+(17, 1, 'black', 'black', '2021-05-31 04:18:35', '2021-05-31 04:18:35'),
+(23, 1, 'multi image', 'lets seeeeeeeeee', '2021-06-02 21:10:16', '2021-06-02 21:10:16'),
+(24, 1, 'video??', 'can i upload small video?', '2021-06-02 21:29:41', '2021-06-02 21:29:41'),
+(26, 1, 'new video bb', 'trying something again', '2021-06-03 05:04:18', '2021-06-03 05:04:18'),
+(27, 1, 'can i do video AND image?', 'omg can i?', '2021-06-03 05:06:59', '2021-06-03 05:06:59'),
+(28, 2, 'Beach Day', 'Dear Diary, Today we went on beach and it was refreshing. We built sand castle, went to the sea and played around . We were all tired like hell. Best day of lockdown.', '2021-05-31 05:10:09', '2021-05-31 05:37:07'),
+(29, 2, 'Beach Day 2', 'It was refreshing', '2021-05-31 05:12:40', '2021-05-31 05:12:40'),
+(30, 2, 'Beach Day 21', 'ddddddddddddddddddddddddddddd', '2021-05-31 08:04:34', '2021-05-31 08:04:34'),
+(31, 2, 'Beach Day', 'ddddddddddddddddddddddddddddddddddddddddddddddddddddd', '2021-05-31 08:04:54', '2021-05-31 08:04:54'),
+(32, 2, 'Beach Day 21', 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', '2021-05-31 08:05:09', '2021-05-31 08:05:09'),
+(34, 1, 'Gif work?', 'lets check', '2021-06-03 07:43:15', '2021-06-03 07:43:15'),
+(41, 1, 'Triple', 'trouble', '2021-06-03 08:18:56', '2021-06-03 08:47:03');
 
 -- --------------------------------------------------------
 
@@ -89,20 +97,33 @@ INSERT INTO `posts` (`id`, `user_id`, `title`, `entrycontent`, `created_at`, `up
 --
 
 CREATE TABLE `post_media` (
+  `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
-  `filename` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
+  `filename` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `filetype` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `post_media`
 --
 
-INSERT INTO `post_media` (`user_id`, `post_id`, `filename`) VALUES
-(1, 6, 'atticusavi_1_6.PNG'),
-(1, 8, '1_8_1-1ratio.png'),
-(1, 17, '1_17_51Ro8uxPeQL.jpg'),
-(1, 19, '1_19_bfcbaa54-64cb-4b22-9c0a-20a7c7287d5a.jpg');
+INSERT INTO `post_media` (`id`, `user_id`, `post_id`, `filename`, `filetype`) VALUES
+(3, 1, 17, '1_17_51Ro8uxPeQL.jpg', 'image'),
+(6, 1, 23, '1_23_photo_2021-05-10_00-28-42.jpg', 'image'),
+(7, 1, 23, '1_23_X7C2F9Q.png', 'image'),
+(8, 1, 24, '1_24_ughfightmusic.mp4', 'video'),
+(9, 1, 25, '1_25_atticusavi.PNG', 'image'),
+(10, 1, 26, '1_26_kitty flat.mp4', 'video'),
+(11, 1, 27, '1_27_8821-1b.jpg', 'image'),
+(12, 1, 27, '1_27_NOW THIS GIF IS ON ANOTHER LEVEL.mp4', 'video'),
+(13, 2, 28, '2_28_PicsArt_12-26-11.03.42 (2).jpg', 'image'),
+(14, 2, 29, '2_29_Screenshot (271).png', 'image'),
+(15, 1, 33, '1_33_bfcbaa54-64cb-4b22-9c0a-20a7c7287d5a.jpg', 'image'),
+(16, 1, 34, '1_34_hellmo.gif', 'image'),
+(23, 1, 41, '1_41_Happy_bday.gif', 'image'),
+(24, 1, 41, '1_41_EfFGvIcU0AAAPXO.jpg', 'image'),
+(25, 1, 41, '1_41_gojo.jpg', 'image');
 
 -- --------------------------------------------------------
 
@@ -125,8 +146,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Aishwarya Ganesh', 'aishwarya@gmail.com', '$2y$10$mS51k.wec1KTap.shPlUOOMQywwPxWvByPa/jNY9Yt7Nyz8EgaRWC', NULL, '2021-05-31 07:08:40', '2021-05-31 07:08:40'),
-(2, 'Meliva Cruz', 'meliva12@gmail.com', '$2y$10$KIcvT2JgnxxEEOI3/ZkiDOtTPXptAvmImrZSMcozWTaC5ni2x/IH.', NULL, '2021-05-31 07:09:55', '2021-05-31 07:09:55');
+(1, 'Aishwarya Ganesh', 'aishwarya@gmail.com', '$2y$10$mS51k.wec1KTap.shPlUOOMQywwPxWvByPa/jNY9Yt7Nyz8EgaRWC', NULL, '2021-05-31 01:38:40', '2021-05-31 01:38:40'),
+(2, 'Meliva Cruz', 'meliva12@gmail.com', '$2y$10$KIcvT2JgnxxEEOI3/ZkiDOtTPXptAvmImrZSMcozWTaC5ni2x/IH.', NULL, '2021-05-31 01:39:55', '2021-05-31 01:39:55');
 
 --
 -- Indexes for dumped tables
@@ -154,7 +175,7 @@ ALTER TABLE `posts`
 -- Indexes for table `post_media`
 --
 ALTER TABLE `post_media`
-  ADD KEY `post_media_user_id_post_id_index` (`user_id`,`post_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -177,7 +198,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `post_media`
+--
+ALTER TABLE `post_media`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`

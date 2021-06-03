@@ -6,14 +6,13 @@
     box-sizing: border-box;
 }
 
-    
 .form {
     width: 500px;
     border: 2px solid black;
     border-radius: 5px;
     margin: auto;
     padding: 2%;
-    background: linear-gradient(to bottom right,#ffb8e2, #a5ecf1  );
+    background: linear-gradient(to bottom right, #ffb8e2, #a5ecf1);
     position: relative;
     top: 10px;
 }
@@ -23,7 +22,7 @@
     border: 2px solid black;
     border-radius: 0px 0px 5px 5px;
     padding: 2%;
-    background: linear-gradient(to bottom right,#ffb8e2, #a5ecf1  );
+    background: linear-gradient(to bottom right, #ffb8e2, #a5ecf1);
 }
 
 form .container {
@@ -80,7 +79,6 @@ input:focus {
     border-radius: 5px;
 }
 
-
 .log-in {
     position: relative;
     left: -7%;
@@ -103,7 +101,6 @@ input:focus {
 .other {
     margin-top: 10px;
 }
-
 
 button:hover {
     opacity: 0.8;
@@ -136,7 +133,7 @@ button:hover {
 
 ul,
 ol,
-li{
+li {
     /* width: 750px; */
     position: relative;
     /* left: 2%; */
@@ -166,14 +163,12 @@ li{
 }
 
 .images {
-    height: 200px;
     width: 250px;
 }
 
 .image_hover:hover {
-    width: 500px;
-    height: 400px;
-  }
+    width: 80%;
+}
 
 .btn-link {
     position: relative;
@@ -231,12 +226,11 @@ li{
     font-size: 15px;
 }
 
- @media screen and (max-width: 992px) {
+@media screen and (max-width: 992px) {
     .sidebar {
         top: 6.7vh;
     }
-
-  } 
+}
 
 @media screen and (max-width: 768px) {
     .sidebar {
@@ -245,41 +239,44 @@ li{
         height: 50px;
         position: fixed;
         top: 6.5vh;
-        
     }
 
-    .side_accordian{
+    .side_accordian {
         position: relative;
         padding-left: 10px;
     }
 
-    
-    div.content {margin-left: 0;}
-    
-    .sidebar a 
-    {
+    div.content {
+        margin-left: 0;
+    }
+
+    .sidebar a {
         float: left;
     }
-    div.content {margin-left: 0;}
+    div.content {
+        margin-left: 0;
+    }
 
-    .breadcrumb{
+    .breadcrumb {
         top: 105px;
         left: 0px;
     }
 
-    .card{
+    .card {
         position: relative;
         top: 40px;
     }
-  }
-  
-  @media screen and (max-width: 400px) {
+}
+
+@media screen and (max-width: 400px) {
     .sidebar a {
-      /* text-align: center; */
-      float: left;
+        /* text-align: center; */
+        float: left;
     }
 
-    div.content {margin-left: 0;}
+    div.content {
+        margin-left: 0;
+    }
 
     .acc_disp {
         width: 180px;
@@ -290,20 +287,18 @@ li{
         overflow: hidden;
     }
 
-    .side_accordian{
+    .side_accordian {
         position: relative;
         padding-left: 50px;
     }
 
-    .breadcrumb{
+    .breadcrumb {
         top: 105px;
         left: 0px;
     }
 
-    .card{
+    .card {
         position: relative;
         top: 40px;
     }
-  }
-
-  
+}

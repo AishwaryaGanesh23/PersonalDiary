@@ -22,13 +22,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/user/{id}', function ($id) {
-    return 'User '. $id;
-});
-
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 
 Route::resource('posts', PostsController::class);
-
 Route::get('/postsSortbyTitle', [PostsController::class, 'sortbyTitle']);
+// Route::get('/deletepostmedia', [PostsController::class, 'deletePostMedia']);

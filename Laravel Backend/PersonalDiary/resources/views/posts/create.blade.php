@@ -35,7 +35,7 @@
 					<div class="form-group"> 
 						{{Form::label('post_media_title', 'Add Images/Video')}}
 						{{ Form::hidden('MAX_FILE_SIZE', '2097152', ['id' => 'max_id']) }}
-						{{Form::file('post_media',['class' => 'form-control', 'id'=>'file_id', 'multiple', 'accept'=>'image/*,video/*',  'onchange'=>'upload_check()'])}}
+						{{Form::file('post_media[]',['class' => 'form-control', 'id'=>'file_id', 'multiple' => 'multiple', 'accept'=>'image/*,video/*',  'onchange'=>'upload_check()'])}}
 						{{Form::label('post_media_warn', '(File size should be max 2mb)')}}
 
 					</div>

@@ -17,25 +17,27 @@
         <div class="col-md-8">
             <div class="card">
             <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif; text-align: center;">
-                    {{ __('Your Post') }}
+                    {{-- {{ __('Your Post') }} --}}
+                    {{$post->title}}  
                 </div>
                 <div class="card-body">
-                
-                    <h2 class="card-title" style="font-weight: bold;">
-                        {{$post->title}}                          
-                    </h2>
 
                     <small class="card-subtitle ">Created on {{$post->created_at}}</small>
                     <small class="card-subtitle ">Updated on {{$post->updated_at}}</small>
                     
-                    <p  class="card-text" style="width: 100%; ">
-                    {{$post->entrycontent}}
-                    </p>
+                    <pre  class="card-text" style="width: 100%;white-space: pre-wrap; ">{{$post->entrycontent}}</pre>
 
                     <div class="row">
                         <div class="col-md-12">
-                            @foreach($postmedia as $picture)
-                                <img class="images image_hover" style="Padding-bottom: 20px" src ="{{asset('storage/post_media/'.$picture->filename)}}">
+                            @foreach($postmedia as $media)
+                                @if($media->filetype == 'image')
+                                    <img class="images image_hover" style="Padding-bottom: 20px" src ="{{asset('post_media/'.$media->filename)}}">
+                                @elseif($media->filetype == 'video')
+                                    <video width="100%" controls>
+                                        <source src="{{URL::asset('post_media/'.$media->filename)}}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                @endif
                             @endforeach
                         </div>
                     </div>

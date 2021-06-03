@@ -14,12 +14,11 @@ class CreatePostMediaTable extends Migration
     public function up()
     {
         Schema::create('post_media', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('user_id');
             $table->integer('post_id');
             $table->string('filename');
-
-            
-            $table->index(['user_id', 'post_id']);
+            $table->string('filetype');
         });
     }
 
