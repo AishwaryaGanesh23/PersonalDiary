@@ -48,8 +48,17 @@ html {
  
  .date-picker.selected {
    font-weight: bold;
-   outline: 1px dashed #00BCD4;
+   outline: 1px solid #00BCD4;
+   color: #00BCD4;
    background-color: azure;
+ }
+
+ .date-picker .disabled
+ {
+  font-weight: bold;
+  outline: 1px solid pink;
+  color: pink;
+  background-color: azure;
  }
  
  .date-picker.selected span {
@@ -62,9 +71,9 @@ html {
  }
  
  /* friday */
- .date-picker:nth-child(6) {
+ /* .date-picker:nth-child(6) {
  color: green;
- }
+ } */
  
  #monthAndYear {
    text-align: center;

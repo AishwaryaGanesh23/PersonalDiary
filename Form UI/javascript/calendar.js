@@ -13,7 +13,7 @@ function generate_year_range(start, end) {
       var selectMonth = document.getElementById("month");
       
       
-      var createYear = generate_year_range(1970, 2050);
+      var createYear = generate_year_range(currentYear, 2050);
       /** or
       * createYear = generate_year_range( 1970, currentYear );
       */
@@ -26,6 +26,7 @@ function generate_year_range(start, end) {
       var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
       
+      // Generate days of the week
       var dayHeader = "<tr>";
       for (day in days) {
         dayHeader += "<th data-days='" + days[day] + "'>" + days[day] + "</th>";
@@ -93,10 +94,12 @@ function generate_year_range(start, end) {
                     cell.setAttribute("data-month_name", months[month]);
                     cell.className = "date-picker";
                     cell.innerHTML = "<span>" + date + "</span>";
-      
+                    
                     if ( date === today.getDate() && year === today.getFullYear() && month === today.getMonth() ) {
                         cell.className = "date-picker selected";
                     }
+                    
+                    date_click({month: months[month], day:day});
                     row.appendChild(cell);
                     date++;
                 }
@@ -113,8 +116,12 @@ function generate_year_range(start, end) {
         return 32 - new Date(iYear, iMonth, 32).getDate();
       }
 
-function create_task(date) {
-        var date1= getElementById("add_task").click({date: date});
-        
-}
+      function date_click(event) {
+        $("date-picker").removeClass("date-picker selected");
+        $(this).addClass("date-picker selected");
+        // show_events(event.data.events, event.data.month, event.data.day);
+    };
+
+
+
       

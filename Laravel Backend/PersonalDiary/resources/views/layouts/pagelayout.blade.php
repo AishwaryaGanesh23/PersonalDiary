@@ -70,6 +70,8 @@
                                 <!-- </li> -->
                             @endif
                         @else
+                            <img style="border-radius: 50%; width: 30px; height: 30px; position: relative; top: 6px;" src="{{ URL::to('/pics/avtar.jpg') }}">
+                                
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

@@ -1,0 +1,59 @@
+<html>
+    <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="overlay">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                                 
+            </div>
+
+            <div class="col-md-15 col-sm-15">
+               <form>
+               
+                  <div class="con">
+                     
+                     <header class="head-form">
+                        <h2>Profile</h2>
+                     </header>
+                     
+
+                     <div class="field-set">
+
+                        <center>
+                                <div class="form-group">
+                                   <label>Profile Picture</label>
+                                   <input type="file" accept="image/*" >
+                                   <!-- <img style="border: 2px solid black; border-radius: 50%; width: 150px; height: 150px;" src="./pics/image1.png"> -->
+                                </div>
+                                
+                        </center>
+
+                        <center>
+                           <div class="form-group">
+                              <input class="form-input" id="name" type="text" placeholder="Name" required>
+                           </div>
+                           
+                        </center>
+
+                        <center><button class="submits btn-primary"> Submit </button></center>
+
+                        
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+    </body>
+    <script>
+		$(function(){
+			$("#myNavbar").load("nav.html");
+		});
+    </script>
+
+</html>

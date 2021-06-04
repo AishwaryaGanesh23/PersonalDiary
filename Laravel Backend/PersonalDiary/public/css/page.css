@@ -164,6 +164,7 @@ li {
 
 .images {
     width: 250px;
+    height: 250px;
 }
 
 .image_hover:hover {
@@ -187,11 +188,6 @@ li {
     font-size: 18px;
 }
 
-.side_accordian {
-    cursor: pointer;
-    transition: 0.4s;
-}
-
 .sidebar a {
     text-align: center;
     display: block;
@@ -199,6 +195,22 @@ li {
     padding: 5px;
     text-decoration: none;
 }
+
+.side_accordian {
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .acc_disp {
+    padding: none;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+
+  .acc_disp a{
+    font-weight: normal;
+  }
 
 .sidebar a.active {
     background-color: #337ab7;
@@ -210,24 +222,16 @@ li {
     color: white;
 }
 
-.acc_disp {
-    padding: none;
-    display: none;
-    background-color: white;
-    overflow: hidden;
-}
-
-.acc_disp a {
-    font-weight: normal;
-    color: black;
-}
-
 .card-text {
     font-size: 15px;
 }
 
 @media screen and (max-width: 992px) {
     .sidebar {
+        top: 6.7vh;
+    }
+
+    .breadcrumb{
         top: 6.7vh;
     }
 }
@@ -239,26 +243,31 @@ li {
         height: 50px;
         position: fixed;
         top: 6.5vh;
+        padding-right: 10px;
+        text-align: center;
     }
 
-    .side_accordian {
-        position: relative;
-        padding-left: 10px;
+    .sidebar a {
+        display: inline-block;
     }
+
+    .card{
+        position: relative;
+        left: 2%;
+
+    }
+
 
     div.content {
         margin-left: 0;
     }
 
-    .sidebar a {
-        float: left;
-    }
     div.content {
         margin-left: 0;
     }
 
     .breadcrumb {
-        top: 105px;
+        top: 13vh;
         left: 0px;
     }
 
@@ -270,35 +279,22 @@ li {
 
 @media screen and (max-width: 400px) {
     .sidebar a {
-        /* text-align: center; */
-        float: left;
+        text-align: center;
     }
 
     div.content {
         margin-left: 0;
     }
 
-    .acc_disp {
-        width: 180px;
-        padding: none;
-        display: none;
-        background-color: white;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .side_accordian {
-        position: relative;
-        padding-left: 50px;
-    }
-
     .breadcrumb {
-        top: 105px;
+        top: 12vh;
         left: 0px;
     }
 
     .card {
         position: relative;
         top: 40px;
+        left: 2%;
+    
     }
 }
