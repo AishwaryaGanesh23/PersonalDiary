@@ -83,7 +83,6 @@ class PostsController extends Controller
                 $postmedia->filename = $filenamestore;
                 $postmedia->filetype = $filetype;
                 $postmedia->save();
-
             } 
         }
         return redirect('/posts');
@@ -173,7 +172,8 @@ class PostsController extends Controller
               $postmedia->save();
             }
         }
-        return redirect('/posts')->with('success','Entry Updated');
+        return redirect('posts/'.$post->id)->with('success','Entry Updated');
+        // return redirect('/posts')
     }
 
     /**
@@ -202,26 +202,7 @@ class PostsController extends Controller
         $post->delete();
         return redirect('/posts');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function deletePostMedia($id)
-    {
-        $postmedia = post_media::where('id', $id)
-                    ->get();
-        foreach($postmedia as $media)
-        {
-            File::delete('post_media/'.$media->filename);
-        }
-        $postmedia = post_media::where('id', $id)
-                    ->delete();
-        return redirect('/posts');
-    }
+    
 
     public function sortbyTitle()
     {

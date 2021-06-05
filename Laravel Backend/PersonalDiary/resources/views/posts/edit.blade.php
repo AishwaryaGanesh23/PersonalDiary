@@ -31,23 +31,6 @@
                     {{Form::label('body', 'Diary Entry')}}
                     {{Form::textarea('body', $post->entrycontent, ['class' => 'form-control'])}}
                   </div>
-
-                  <div class="form-group"> 
-                        @foreach($postmedia as $media)
-                            @if($media->filetype == 'image')
-                                <img class="images" style="Padding-bottom: 20px" src ="{{asset('post_media/'.$media->filename)}}">
-                            @elseif($media->filetype == 'video')
-                                <video width="100%" controls>
-                                    <source src="{{URL::asset('post_media/'.$media->filename)}}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            @endif
-                            {{-- add delete button --}}
-                            {{-- {!! Form::open(['action' => ['App\Http\Controllers\PostsController@deletePostMedia',$media->id],'style' => 'float: right']) !!}
-                            {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}
-                            {!! Form::close() !!} --}}
-                        @endforeach
-                </div>
                   {{-- ask if they want to add media, if yes then show this --}}
                   <div class="form-group"> 
                     {{Form::label('post_media_title', 'Add Images/Video')}}
@@ -60,6 +43,29 @@
 
                 {!! Form::close() !!}
                 <!-- </div> -->
+
+                {{-- showing media that is already there --}}
+                <div class="form-group"> 
+                        
+                  @foreach($postmedia as $media)
+                      @if($media->filetype == 'image')
+                          <img class="images" style="Padding-bottom: 20px" src ="{{asset('post_media/'.$media->filename)}}">
+                      @elseif($media->filetype == 'video')
+                          <video width="100%" controls>
+                              <source src="{{URL::asset('post_media/'.$media->filename)}}" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                      @endif
+                      {{-- add delete button --}}
+                      {{-- <a href="{{ action('App\Http\Controllers\PostMediaController@destroy' , $media->id)}}"><button class="btn btn-danger" style="float:left; margin-right: 5px; "> Delete </button></a> --}}
+                      {!! Form::open(['action' => ['App\Http\Controllers\PostMediaController@destroy',$media->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}
+                      {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}
+                      {!! Form::close() !!}
+                      
+                  @endforeach
+                
+          </div>
+
             </div>
         </div>
     </div>

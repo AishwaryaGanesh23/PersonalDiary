@@ -17,17 +17,30 @@
             <div class="card">
                 <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif; text-align: center;">
                     {{ __('Profile') }}
-                    <!-- {{$post->title}}   -->
+                    
                 </div>
                 <div class="card-body">
-                    <img class="images " style="border: 2px solid black; border-radius: 50%; width: 150px; height: 150px;" src ="">
+                    {{-- if no pic --}}
+                    @if(Auth::user()->profile_pic === null)
+                    <img class="images " style="border: 2px solid black; border-radius: 50%; width: 150px; height: 150px;" src ="{{asset('pics/avtar.jpg')}}">
+                    @else{{-- else if pic --}}
+                    <img class="images " style="border: 2px solid black; border-radius: 50%; width: 150px; height: 150px;" src ="{{asset('profile_pic/'.Auth::user()->profile_pic)}}">
+                    
+                    {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@destroy',Auth::user()->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}
+                    {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}
+                    {!! Form::close() !!}
+                    
+                    @endif
                     <label>{{ Auth::user()->name }}</label>
 
-                    
-                    <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="float:left; margin-right: 5px; "> Edit </button></a>
-                    <!-- <a href="/posts/{{ $post->id }}/edit"><button class="btn btn-primary" style="width: 80px; height: 40px;"> Edit </button></a> -->
-                    {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy',$post->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}
-                    {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}
+                    {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@update',Auth::user()->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}
+                    <div class="form-group"> 
+                        {{Form::label('profile_pic_title', 'Change Profile Picture')}}
+                        {{ Form::hidden('MAX_FILE_SIZE', '2097152', ['id' => 'max_id']) }}
+                        {{Form::file('profile_pic',['class' => 'form-control', 'id'=>'file_id', 'accept'=>'image/*',  'onchange'=>'upload_check()'])}}
+                        {{Form::label('profile_pic_warn', '(File size should be max 2mb)')}}
+                    </div>
+                    {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
                     {!! Form::close() !!}
                 </div>
             </div>

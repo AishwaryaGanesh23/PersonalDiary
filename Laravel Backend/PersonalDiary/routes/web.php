@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostMediaController;
+use App\Http\Controllers\CalenderEventController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TasksController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +32,8 @@ Route::get('/about', [PagesController::class, 'about']);
 Route::resource('posts', PostsController::class);
 Route::get('/postsSortbyTitle', [PostsController::class, 'sortbyTitle']);
 // Route::get('/deletepostmedia', [PostsController::class, 'deletePostMedia']);
+
+Route::resource('postmedia', PostMediaController::class);
+Route::resource('calendarEvents', CalenderEventController::class);
+Route::resource('profile', ProfileController::class);
+Route::resource('tasks', TasksController::class);
