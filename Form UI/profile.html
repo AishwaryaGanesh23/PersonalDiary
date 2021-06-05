@@ -13,10 +13,8 @@
                                  
             </div>
 
-            <div class="col-md-15 col-sm-15">
-               <form>
-               
-                  <div class="con">
+            <div class="col-md-15 col-sm-15"  >
+               <div class="con">
                      
                      <header class="head-form">
                         <h2>Profile</h2>
@@ -29,26 +27,45 @@
                                 <div class="form-group">
                                    
                                    <img style="border: 2px solid black; border-radius: 50%; width: 150px; height: 150px;" src="./pics/image1.png">
-                                </div>
+                                   <button class="change_profile" ><a class="change_profile" onclick="openForm()" >Change Profile Picture</a> </button>
+
+                                 </div>
                                 
                         </center>
 
                         <center>
                            <div class="form-group">
-                              <label>{{ Auth::user()->name }}</label>
+                              <label>Meliva Cruz</label>
                               <!-- <input class="form-input" id="email" type="text" placeholder="Name" required> -->
+                              
                            </div>
+
+                           
                            
                         </center>
 
                         <!-- <center><button class="submits btn-primary"> Edit </button></center> -->
 
-                        
                      </div>
                   </div>
-               </form>
             </div>
          </div>
+         <div class="form-popup" id="myForm" >
+                  
+                    <button type="submit" class="btn btn-primary">Upload</button> <br> <br>
+                    <button type="submit" class="btn btn-danger">Delete</button> <br> <br>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                  
+                  <script>
+                     function openForm() {
+                       document.getElementById("myForm").style.display = "block";
+                     }
+                     
+                     function closeForm() {
+                       document.getElementById("myForm").style.display = "none";
+                     }
+                     </script>
+            </div>
     </body>
     <script>
 		$(function(){

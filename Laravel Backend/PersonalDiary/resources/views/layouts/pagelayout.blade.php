@@ -14,6 +14,7 @@
     <script src="{{ asset('js/sidebar.js') }}" defer></script>
     <script src="{{ asset('js/filesize.js') }}" defer></script>
     <script src="{{ asset('js/calendar.js') }}" defer></script>
+    <script src="{{ asset('js/popup.js') }}" defer></script>
   
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,8 +25,9 @@
     <link href="{{ asset('css/page.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
 </head>
-<body>
-    
+
+<body id="body">
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm"> 
     <div class="container">
                 @guest

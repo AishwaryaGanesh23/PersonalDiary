@@ -1,6 +1,17 @@
 @extends('layouts.pagelayout')
 
 @section('content')
+	@if(Auth::user()->id !== null)
+		@include('layouts.sidebar')
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+			<a href="/home" class="breadcrumb-item">Home</a>
+			<a class="breadcrumb-item active">About</a>
+			
+			</ol>
+		</nav>
+	@endif
+
         <div id="mainindexbody">
         <div class="content2">
 			<h1 style="font-family: Georgia, Serif; text-align: center;">PERSONAL DIARY</h1>
