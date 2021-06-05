@@ -19,7 +19,7 @@
 					</div>
 					
 					<!-- <div class="card-body"> -->
-					
+					<center>
 					{!! Form::open(['action' => 'App\Http\Controllers\PostsController@store', 'method' => 'POST', 'class' => 'createform']) !!}
 					<!-- <header class="head-form" >
 						<h2>Create Your Post</h2>
@@ -42,7 +42,7 @@
 					{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
 
 					{!! Form::close() !!}
-					
+					</center>
 				</div> 
 			</div>
 		</div>

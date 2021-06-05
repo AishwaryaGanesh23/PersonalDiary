@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
 </head>
 
-<body id="body">
+<body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm"> 
     <div class="container">

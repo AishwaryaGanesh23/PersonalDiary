@@ -1,7 +1,9 @@
 @extends('layouts.pagelayout')
 
 @section('content')
-	@if(Auth::user()->id !== null)
+	@guest
+		
+	@else
 		@include('layouts.sidebar')
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
@@ -10,7 +12,7 @@
 			
 			</ol>
 		</nav>
-	@endif
+	@endguest
 
         <div id="mainindexbody">
         <div class="content2">
