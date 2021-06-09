@@ -7955,7 +7955,8 @@ input[type="button"].btn-block {
     display: flex;
     flex-wrap: wrap;
     padding-left: 10px;  
-    width: 87.5%;
+    width: 100%;
+    min-height: 50px;
     /* padding-right: 50px; */
     margin-bottom: 1rem;
     list-style: none;
@@ -7963,8 +7964,9 @@ input[type="button"].btn-block {
     /* border-radius: 0.25rem; */
     position: fixed;
     z-index: 999;
-    top: 8.3vh;
+    top: 5.5vh;
     left: 190px;
+    padding-top: 25px;
 }
 
 .breadcrumb-item

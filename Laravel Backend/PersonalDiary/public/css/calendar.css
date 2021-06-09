@@ -1,15 +1,4 @@
-html {
-   font-family: sans-serif;
-   font-size: 15px;
-   line-height: 1.4;
-   color: #444;
- }
- 
- body {
-   margin: 0;
-   font-size: 1em;
- }
- 
+
  .wrapper {
    margin: 15px auto;
    max-width: 1100px;
@@ -18,7 +7,7 @@ html {
  .container-calendar {
    background: #ffffff;
    padding: 15px;
-   max-width: 475px;
+   width: 40vw;
    margin: 0 auto;
    overflow: auto;
  }
@@ -62,9 +51,9 @@ html {
  }
  
  /* friday */
- .date-picker:nth-child(6) {
+ /* .date-picker:nth-child(6) {
  color: green;
- }
+ } */
  
  #monthAndYear {
    text-align: center;

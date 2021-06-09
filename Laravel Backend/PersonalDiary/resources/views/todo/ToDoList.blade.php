@@ -34,11 +34,6 @@
 						{{Form::date('body', '', ['class' => 'form-control' , 'placeholder' => 'Start Date'])}}
 					</div>
 
-					<div class="form-group"> 
-						{{Form::label('date', 'End Date')}}
-						{{Form::date('body', '', ['class' => 'form-control' , 'placeholder' => 'End Date'])}}
-					</div>
-
 					{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
 
 					{!! Form::close() !!}

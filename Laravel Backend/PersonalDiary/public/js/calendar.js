@@ -13,7 +13,7 @@ function generate_year_range(start, end) {
       var selectMonth = document.getElementById("month");
       
       
-      var createYear = generate_year_range(1970, 2050);
+      var createYear = generate_year_range(currentYear, 2050);
       /** or
       * createYear = generate_year_range( 1970, currentYear );
       */
@@ -99,6 +99,8 @@ function generate_year_range(start, end) {
                     }
                     row.appendChild(cell);
                     date++;
+
+                    
                 }
       
       
@@ -113,8 +115,5 @@ function generate_year_range(start, end) {
         return 32 - new Date(iYear, iMonth, 32).getDate();
       }
 
-function create_task(date) {
-        var date1= getElementById("add_task").click({date: date});
-        
-}
+
       

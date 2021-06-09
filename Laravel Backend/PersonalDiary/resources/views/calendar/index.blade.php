@@ -6,8 +6,8 @@
 
 <nav aria-label="breadcrumb">
 <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/home">Home</a></li>
-        <li class="breadcrumb-item"><a href="/posts">Calendar</a></li>
+        <a href="/home" class="breadcrumb-item">Home</a>
+        <a href="/posts" class="breadcrumb-item active" aria-current="page">Calendar</a>
 </ol>
 </nav>
 <div class="container">
@@ -52,7 +52,9 @@
                                                         </div>
 
                                                         <div class="footer-container-calendar"> 
-                                                                <button id="add_task"><a href="ToDoList.html">Add Task</a></button>
+                                                                <button id="add_task" class="btn btn-primary" style="width: 150px">
+                                                                        <a href="ToDoList.html">New Event</a>
+                                                                </button>
                                                         </div>
                                                 </div>
                                         </div>
