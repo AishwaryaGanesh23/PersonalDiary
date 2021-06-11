@@ -2,7 +2,7 @@
 
 @include('layouts.sidebar')
 
-@section('content')
+@section('breadcrumb')
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <a href="/home" class="breadcrumb-item">Home</a>
@@ -10,6 +10,10 @@
    
   </ol>
 </nav>
+@endsection
+
+@section('content')
+
 
 <div class="container">
     <div class="row justify-content-center">
@@ -31,7 +35,9 @@
                     <button class="change_profile" onclick="openForm()">Change Profile Picture</button> 
 
                     <div class="form-popup" id="myForm" >
+                    
                         <h3 style="font-weight: bold; padding-top:10px"> Change Profile Picture </h3>
+                        
                         <hr>
                         
                         <button type="submit" onclick="upload()">Upload</button>
@@ -48,9 +54,8 @@
                     <p class="profile">{{ Auth::user()->name }}</p>
                     <div class="form-popup" id="myForm1">
                     {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@update',Auth::user()->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}
-                        
-                        <div class="form-group" id="myForm"> 
-                        
+                    <button type="button" onclick="closeForm1()" style="float:right; font-size: 13px; width:10%;"><i class="fa fa-close"></i></button> 
+                        <div class="form-group" id="myForm">
                             {{Form::label('profile_pic_title', 'Change Profile Picture')}}
                             {{ Form::hidden('MAX_FILE_SIZE', '8388608', ['id' => 'max_id']) }}
                             {{Form::file('profile_pic',['class' => 'form-control', 'id'=>'file_id', 'accept'=>'image/*',  'onchange'=>'upload_check()'])}}
@@ -63,8 +68,10 @@
 
                     <div class="form-popup" id="myForm2">
                     {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@update',Auth::user()->id], 'method' => 'PUT', 'class' => 'deleteform','enctype' => 'multipart/form-data']) !!}
+                    <button type="button" onclick="closeForm2()" style="float:right; font-size: 13px; width:10%;"><i class="fa fa-close"></i></button>
+                         
+                        <div class="form-group" id="myForm">
                         
-                        <div class="form-group" id="myForm"> 
                             {{Form::label('profile_pic_title', 'Delete Profile Picture')}}
                         </div>
                         {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@destroy',Auth::user()->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}

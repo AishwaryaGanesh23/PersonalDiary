@@ -2,7 +2,7 @@
 
 @include('layouts.sidebar')
 
-@section('content')
+@section('breadcrumb')
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <a href="/home" class="breadcrumb-item">Home</a>
@@ -11,18 +11,25 @@
     <a class="breadcrumb-item active" aria-current="page">Edit Post</a>
   </ol>
 </nav>
+@endsection
+
+@section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
            <div class="card">
                 <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
 					        {{ __('Edit Your Post') }}
+
+                  <a href="/posts/{{$post->id}}" style="float:right; font-size: 13px; "><i class="fa fa-close"></i></a>
+              
 				        </div>
                 
                 <!-- <div class="card-body"> -->
                 
-              {!! Form::open(['action' => ['App\Http\Controllers\PostsController@update',$post->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}
-                  <div class="form-group"> 
+              {!! Form::open(['action' => ['App\Http\Controllers\PostsController@update',$post->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data', 'style' => 'border-bottom: transparent']) !!}
+              <div class="form-group"> 
                     {{Form::label('title', 'Enter a Title')}}
                     {{Form::text('title', $post->title, ['class' => 'form-control'])}}
                   </div>
@@ -45,6 +52,7 @@
                 <!-- </div> -->
 
                 {{-- showing media that is already there --}}
+                <div class="createform" style="border-top: transparent; border-radius-top: none">
                 <div class="form-group"> 
                         
                   @foreach($postmedia as $media)
@@ -58,12 +66,12 @@
                       @endif
                       {{-- add delete button --}}
                       {{-- <a href="{{ action('App\Http\Controllers\PostMediaController@destroy' , $media->id)}}"><button class="btn btn-danger" style="float:left; margin-right: 5px; "> Delete </button></a> --}}
-                      {!! Form::open(['action' => ['App\Http\Controllers\PostMediaController@destroy',$media->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}
+                      {!! Form::open(['action' => ['App\Http\Controllers\PostMediaController@destroy',$media->id], 'method' => 'DELETE']) !!}
                       {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}
                       {!! Form::close() !!}
                       
                   @endforeach
-                
+                  </div>
           </div>
 
             </div>

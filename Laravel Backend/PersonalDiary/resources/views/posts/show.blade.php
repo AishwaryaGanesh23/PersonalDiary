@@ -2,15 +2,18 @@
 
 @include('layouts.sidebar')
 
-@section('content')
+@section('breadcrumb')
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
+<ol class="breadcrumb">
     <a href="/home" class="breadcrumb-item">Home</a>
     <a href="/posts" class="breadcrumb-item">All Posts</a>
-   <a class="breadcrumb-item active" aria-current="page">{{$post->title}}</a>
-   
-  </ol>
+    <a class="breadcrumb-item active" aria-current="page">{{$post->title}}</a>
+</ol>
 </nav>
+@endsection
+
+@section('content')
+
 
 <div class="container">
     <div class="row justify-content-center">

@@ -9,3 +9,7 @@ function upload_check()
        upload.value = "";
     }
 }
+
+setTimeout(function(){
+    $('.alert').hide();
+  },1000);

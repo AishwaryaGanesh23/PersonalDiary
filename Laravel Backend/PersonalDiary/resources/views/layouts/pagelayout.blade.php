@@ -13,8 +13,12 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/sidebar.js') }}" defer></script>
     <script src="{{ asset('js/filesize.js') }}" defer></script>
-    <script src="{{ asset('js/calendar.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/calendar.js') }}" defer></script> -->
     <script src="{{ asset('js/popup.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.min.js') }} defer"></script>
+    <script src="{{ asset('js/popper.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
   
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -108,6 +112,10 @@
             </div>
             @hasSection('navigation')
                 @yield('navigation')
+            @endif
+
+            @hasSection('breadcrumb')
+                @yield('breadcrumb')
             @endif
 
             @yield('content')

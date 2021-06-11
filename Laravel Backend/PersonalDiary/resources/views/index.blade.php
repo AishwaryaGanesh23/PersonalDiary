@@ -1,8 +1,5 @@
 @extends('layouts.pagelayout')
 
-@include('layouts.sidebar')
-
-
 @section('content')
 
 

@@ -5,13 +5,15 @@
 		
 	@else
 		@include('layouts.sidebar')
-		<nav aria-label="breadcrumb">
-			<ol class="breadcrumb">
-			<a href="/home" class="breadcrumb-item">Home</a>
-			<a class="breadcrumb-item active">About</a>
-			
-			</ol>
-		</nav>
+		@section(breadcrumb)
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+				<a href="/home" class="breadcrumb-item">Home</a>
+				<a class="breadcrumb-item active">About</a>
+				
+				</ol>
+			</nav>
+		@endsection
 	@endguest
 
         <div id="mainindexbody">
