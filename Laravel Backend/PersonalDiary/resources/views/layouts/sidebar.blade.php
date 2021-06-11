@@ -4,6 +4,6 @@
     
     <a  href="{{ route('tasks.index') }}"><i class="fa fa-edit"></i>&nbsp;To Do List</a>
 
-    <a href="{{ route('calendarEvents.index') }}" ><i class="fa fa-calendar"></i>&nbsp;Calendar</a> 
+    <a href="{{ route('calendar.index') }}" ><i class="fa fa-calendar"></i>&nbsp;Calendar</a> 
 </div>
 @endsection

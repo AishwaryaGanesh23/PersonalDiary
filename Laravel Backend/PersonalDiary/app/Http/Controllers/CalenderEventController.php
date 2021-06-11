@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class CalenderEventController extends Controller
 {
+
+
+    
+
     /**
      * Display a listing of the resource.
      *
@@ -13,9 +17,10 @@ class CalenderEventController extends Controller
      */
     public function index()
     {
-        //
         return view('calendar.index');
     }
+
+    
 
     /**
      * Show the form for creating a new resource.

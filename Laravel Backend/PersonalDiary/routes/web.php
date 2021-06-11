@@ -7,6 +7,7 @@ use App\Http\Controllers\PostMediaController;
 use App\Http\Controllers\CalenderEventController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TasksController;
+use App\Http\Controllers\gCalendarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,10 @@ Route::get('/postsSortbyTitle', [PostsController::class, 'sortbyTitle']);
 // Route::get('/deletepostmedia', [PostsController::class, 'deletePostMedia']);
 
 Route::resource('postmedia', PostMediaController::class);
-Route::resource('calendarEvents', CalenderEventController::class);
+// Route::resource('calendarEvents', CalenderEventController::class);
 Route::resource('profile', ProfileController::class);
 Route::resource('tasks', TasksController::class);
+
+Route::resource('calendar', gCalendarController::class);
+Route::get('oauth', [gCalendarController::class, 'oauth'])->name('oauthCallback');
+
