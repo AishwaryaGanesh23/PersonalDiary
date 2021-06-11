@@ -208,24 +208,23 @@ li {
     text-decoration: none;
     position: relative;
     top: 45px;
-    
 }
 
 .side_accordian {
     cursor: pointer;
     transition: 0.4s;
-  }
+}
 
-  .acc_disp {
+.acc_disp {
     padding: none;
     display: none;
     background-color: white;
     overflow: hidden;
-  }
+}
 
-  .acc_disp a{
+.acc_disp a {
     font-weight: normal;
-  }
+}
 
 .sidebar a.active {
     background-color: #337ab7;
@@ -241,29 +240,34 @@ li {
     font-size: 15px;
 }
 
-.breadcrumb a{
+.breadcrumb a {
     color: blue;
 }
 
-.dp{
-    border: 2px; 
-    border-radius: 50%; 
-    width: 150px; 
+.dp {
+    border: 2px;
+    border-radius: 50%;
+    width: 150px;
     height: 150px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.profile{
+.profile {
     text-align: center;
-    font-size: 18px; 
+    font-size: 18px;
     font-weight: bold;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
 }
 
-.change_profile{
-    position: relative; top: -30px; left: 27vw; color: blue; background-color: transparent; border: transparent;
+.change_profile {
+    position: relative;
+    top: -30px;
+    left: 27vw;
+    color: blue;
+    background-color: transparent;
+    border: transparent;
 }
 
 .form-popup {
@@ -276,20 +280,23 @@ li {
     background-color: white;
     border-radius: 5px;
     text-align: center;
-  }
-
-  .blur{
-    position:absolute;
-    top:0;left:0;right:0;bottom:0;
-    background:rgba(0,0,0,0.3);
-    display:none;
 }
 
-  .form-popup button{
-      width: 100%;
-      background-color: transparent;
-      border: transparent;
-  }
+.blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.form-popup button {
+    width: 100%;
+    background-color: transparent;
+    border: transparent;
+}
 
 @media screen and (max-width: 992px) {
     .sidebar {
@@ -302,7 +309,7 @@ li {
         top: 20px;
     }
 
-    .breadcrumb{
+    .breadcrumb {
         top: 4vh;
     }
 }
@@ -326,12 +333,10 @@ li {
         top: 3px;
     }
 
-    .card{
+    .card {
         position: relative;
         left: 2%;
-
     }
-
 
     div.content {
         margin-left: 0;
@@ -359,7 +364,7 @@ li {
         top: 3px;
     }
 
-    .sidebar{
+    .sidebar {
         position: fixed;
         z-index: 9990;
     }
@@ -377,6 +382,5 @@ li {
         position: relative;
         top: 40px;
         left: 2%;
-    
     }
 }

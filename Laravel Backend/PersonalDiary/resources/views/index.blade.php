@@ -20,7 +20,7 @@
                     @endif
                     <a class="nav-link" href="{{ route('posts.index') }}">{{ __('All Posts') }}</a>
                     <a class="nav-link" href="{{ route('tasks.index') }}">{{ __('To Do List') }}</a>
-                    <a class="nav-link" href="{{ route('calendarEvents.index') }}">{{ __('Calendar') }}</a>
+                    <a class="nav-link" href="{{ route('calendar.index') }}">{{ __('Calendar') }}</a>
                 </div>
             </div>
         </div>

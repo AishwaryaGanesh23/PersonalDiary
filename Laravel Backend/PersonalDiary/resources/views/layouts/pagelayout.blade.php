@@ -73,9 +73,9 @@
                             @endif
                         @else
                             @if(Auth::user()->profile_pic === null)        
-                            <img style="border-radius: 50%; width: 30px; height: 30px; position: relative; top: 6px;" src="{{ URL::to('/pics/avtar.jpg') }}">
+                                <img style="border-radius: 50%; width: 30px; height: 30px; position: relative; top: 6px;" src="{{ URL::to('/pics/avtar.jpg') }}">
                             @else{{-- else if pic --}}
-                            <img style="border-radius: 50%; width: 30px; height: 30px; position: relative; top: 6px;" src="{{asset('profile_pic/'.Auth::user()->profile_pic)}}">
+                                <img style="border-radius: 50%; width: 30px; height: 30px; position: relative; top: 6px;" src="{{asset('profile_pic/'.Auth::user()->profile_pic)}}">
                             @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
