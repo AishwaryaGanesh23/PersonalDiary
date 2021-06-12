@@ -14,7 +14,7 @@ class TasksController extends Controller
     public function index()
     {
         //
-        return view('todo.ToDoList');
+        return view('todo.show');
     }
 
     /**

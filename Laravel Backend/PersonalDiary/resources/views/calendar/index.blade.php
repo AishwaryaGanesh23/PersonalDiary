@@ -72,40 +72,64 @@
 				        </div>
 				    </div>
 
-				    <div class="events-container"></div>
+				    <div class="events-container">
+                        
+                    </div>
 
 				    <div class="dialog" id="dialog">
 				        
-                        <!-- {!! Form::open(['action' => 'App\Http\Controllers\PostsController@store', 'method' => 'POST', 'id' => 'form', 'class' => 'createform', 'style' => 'font-size: 15px'] )!!} -->
-				            <form class="form" id="form">
+                         {!! Form::open(['action' => 'App\Http\Controllers\gCalendarController@store', 'method' => 'POST', 'id' => 'form', 'class' => 'createform', 'style' => 'font-size: 15px'] )!!} 
+				            {{-- <form class="form" id="form"> --}}
 				                <div class="form-container" align="center">
                                     <h2 class="dialog-header"> Add New Event </h2>
 
                                     <label class="form-label" id="valueFromMyButton" for="name" required>Event Name</label>
-                                    <input class="input" type="text" id="name">
+                                    <input class="input" type="text" id="name" name='name'>
 
                                     <label class="form-label" id="valueFromMyButton" for="starttime" required>Start Time</label>
-                                    <input class="input" type="time" id="start" >
+                                    <input class="input" type="datetime-local" id="start"  name='start_time'>
 
                                     <label class="form-label" id="valueFromMyButton" for="endtime" required>End Time</label>
-                                    <input class="input" type="time" id="end" > 
+                                    <input class="input" type="datetime-local" id="end"  name='end_time'> 
 
                                     <input type="button" value="Cancel" class="button " id="cancel-button">
                                     <button class="button button-white" id="ok-button" type="submit">OK</button>
                                     <!-- <input type="button" value="OK" class="button button-white" id="ok-button"> -->
 				                </div>
-				            </form>
-                        <!-- {!! Form::close() !!} -->
+				            {{-- </form> --}}
+                        {!! Form::close() !!}
 				    </div>
 				  <!-- </div> -->
 				<!-- </div> -->
 			    </div>
+            </div>
+            <div class="card">
+                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
+                    {{ __('Todays Events ') }}
+                </div>
+                <div class="card-body">
+                    @foreach( $events as $event)
+                        @if(substr($event['start']['dateTime'],0,10) == date('Y-m-d'))
+                            <div class = "card-body">
+                                <h3 class="card-title">
+                                    <a href = "/event/{{$event->id}}">
+                                        {{$event->summary}}
+                                    </a>
+                                </h3>
+                            </div>
+                        @endif
+                    @endforeach
+                    </div>
+            </div>
 
-                <hr>
-                
+            <div class="card">
+                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
+                    {{ __('All Events') }}
+                </div>
                 <div class="card-body">
                                 {{-- {{$date}} --}}
                                     @if(count($events)>0)
+                                   
                                         @foreach( $events as $event)
                                             {{-- @if(Auth::user()->id ==  $post->user_id) --}}
                                             <div class = "card-body">
@@ -114,7 +138,8 @@
                                                         {{$event->summary}}
                                                     </a>
                                                 </h3>
-                                            	<small class="card-text">Updated on {{$event->updated}}</small>
+
+                                            	<small class="card-text">Starts on {{$event['start']['dateTime']}}</small>
                                             </div>
                                             {{-- @endif   --}}
                                         @endforeach

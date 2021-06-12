@@ -41,4 +41,5 @@ Route::resource('tasks', TasksController::class);
 
 Route::resource('calendar', gCalendarController::class);
 Route::get('oauth', [gCalendarController::class, 'oauth'])->name('oauthCallback');
+Route::get('eventsdata', [gCalendarController::class, 'events_raw_data']);
 

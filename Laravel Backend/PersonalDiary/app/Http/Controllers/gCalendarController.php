@@ -38,7 +38,7 @@ class gCalendarController extends Controller
 
             $calendarId = 'primary';
             $optParams = array(
-                'maxResults' => 10,
+                // 'maxResults' => 10,
                 'orderBy' => 'updated',  
                 // 'sortOrder'=>'descending',              
               );
@@ -46,16 +46,41 @@ class gCalendarController extends Controller
             // return $results->getItems();
             // return view('calendar.index');
             $events = $results->getItems();
-
-            // $datetoday = DateTime::createFromFormat('Y-m-d\TH:i:sP',date("Y-m-d"));
             return view('calendar.index')->with('events',$events);
 
         } else {
             return redirect()->route('oauthCallback');
         }
-
-
     }
+
+
+    public function events_raw_data()
+    {
+        session_start();
+        if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+            try{
+                $this->client->setAccessToken($_SESSION['access_token']);
+                $service = new Google_Service_Calendar($this->client);
+
+                $calendarId = 'primary';
+                $optParams = array(
+                    // 'maxResults' => 10,
+                    'orderBy' => 'updated',  
+                    // 'sortOrder'=>'descending',              
+                );
+                $results = $service->events->listEvents($calendarId,$optParams);
+                return $results->getItems();
+            }
+            catch (Exception $e)
+            {
+                return redirect()->route('oauthCallback');
+            }
+        } else {
+            return redirect()->route('oauthCallback');
+        }
+    }
+
+    
 
     public function oauth()
     {
@@ -68,9 +93,11 @@ class gCalendarController extends Controller
             $filtered_url = filter_var($auth_url, FILTER_SANITIZE_URL);
             return redirect($filtered_url);
         } else {
+            
             $this->client->authenticate($_GET['code']);
             $_SESSION['access_token'] = $this->client->getAccessToken();
             return redirect()->route('calendar.index');
+
         }
     }
 
@@ -95,9 +122,8 @@ class gCalendarController extends Controller
     {
         //
         session_start();
-        
-        $startDateTime=$request->start_date;
-        $endDateTime = $request->end_date;
+        $startDateTime = $request->input('start_time').':00.000+05:30';
+        $endDateTime = $request->input('end_time').':00.000+05:30';
 
         if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
             $this->client->setAccessToken($_SESSION['access_token']);
@@ -105,16 +131,25 @@ class gCalendarController extends Controller
 
             $calendarId = 'primary';
             $event = new Google_Service_Calendar_Event([
-                'summary' => $request->title,
-                'start' => ['dateTime' => $startDateTime],
-                'end' => ['dateTime' => $endDateTime],
+                'summary' => $request->input('name'),
+                'start' => [
+                    'dateTime' => $startDateTime,
+                    // 'timeZone' => 'Asia/Kolkata',
+                ],
+                'end' => [
+                    'dateTime' => $endDateTime,
+                    // 'timeZone' => 'Asia/Kolkata',
+                ],
+
                 'reminders' => ['useDefault' => true],
             ]);
             $results = $service->events->insert($calendarId, $event);
             if (!$results) {
-                return response()->json(['status' => 'error', 'message' => 'Something went wrong']);
+                // return response()->json(['status' => 'error', 'message' => 'Something went wrong']);
+                return redirect()->route('calendar.index')->with('error','Event creation failed');
             }
-            return response()->json(['status' => 'success', 'message' => 'Event Created']);
+            // return response()->json(['status' => 'success', 'message' => 'Event Created']);
+            return redirect()->route('calendar.index')->with('Success','Event created ');
         } else {
             return redirect()->route('oauthCallback');
         }
