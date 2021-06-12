@@ -6,7 +6,7 @@
 	<nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="/home">Home</a></li>
-		<li class="breadcrumb-item"><a href="/posts">To Do List</a></li>
+		<li class="breadcrumb-item"><a href="/tasks">To Do List</a></li>
 		<li class="breadcrumb-item active" aria-current="page">New Task</li>
 	</ol>
 	</nav>

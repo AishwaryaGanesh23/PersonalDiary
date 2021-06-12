@@ -13,7 +13,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/sidebar.js') }}" defer></script>
     <script src="{{ asset('js/filesize.js') }}" defer></script>
-    <!-- <script src="{{ asset('js/calendar.js') }}" defer></script> -->
+    {{-- <!-- <script src="{{ asset('js/calendar.js') }}" defer></script> --> --}}
     <script src="{{ asset('js/popup.js') }}" defer></script>
     <script src="{{ asset('js/jquery.min.js') }} defer"></script>
     <script src="{{ asset('js/popper.js') }}" defer></script>
@@ -31,7 +31,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm"> 
     <div class="container">
                 @guest
@@ -110,6 +109,7 @@
     <div id="app">
         <div>
             </div>
+            
             @hasSection('navigation')
                 @yield('navigation')
             @endif

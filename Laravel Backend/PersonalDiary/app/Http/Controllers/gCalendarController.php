@@ -23,6 +23,7 @@ class gCalendarController extends Controller
         $guzzleClient = new \GuzzleHttp\Client(array('curl' => array(CURLOPT_SSL_VERIFYPEER => false)));
         $client->setHttpClient($guzzleClient);
         $this->client = $client;
+        date_default_timezone_set('Asia/Kolkata');
     }
     /**
      * Display a listing of the resource.
@@ -122,8 +123,8 @@ class gCalendarController extends Controller
     {
         //
         session_start();
-        $startDateTime = $request->input('start_time').':00.000+05:30';
-        $endDateTime = $request->input('end_time').':00.000+05:30';
+        $startDateTime = date('Y-m-d').'T'.$request->input('start_time').':00.000+05:30';
+        $endDateTime = date('Y-m-d').'T'.$request->input('end_time').':00.000+05:30';
 
         if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
             $this->client->setAccessToken($_SESSION['access_token']);

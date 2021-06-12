@@ -82,15 +82,15 @@
 				            {{-- <form class="form" id="form"> --}}
 				                <div class="form-container" align="center">
                                     <h2 class="dialog-header"> Add New Event </h2>
+                                    {{ date("Y-m-d T") }}
+                                    <label class="form-label" id="valueFromMyButton" for="name" >Event Name</label>
+                                    <input class="input" type="text" id="name" name='name' required>
 
-                                    <label class="form-label" id="valueFromMyButton" for="name" required>Event Name</label>
-                                    <input class="input" type="text" id="name" name='name'>
+                                    <label class="form-label" id="valueFromMyButton" for="starttime" >Start Time</label>
+                                    <input class="input" type="time" id="start"  name='start_time' required>
 
-                                    <label class="form-label" id="valueFromMyButton" for="starttime" required>Start Time</label>
-                                    <input class="input" type="datetime-local" id="start"  name='start_time'>
-
-                                    <label class="form-label" id="valueFromMyButton" for="endtime" required>End Time</label>
-                                    <input class="input" type="datetime-local" id="end"  name='end_time'> 
+                                    <label class="form-label" id="valueFromMyButton" for="endtime" >End Time</label>
+                                    <input class="input" type="time" id="end"  name='end_time' required> 
 
                                     <input type="button" value="Cancel" class="button " id="cancel-button">
                                     <button class="button button-white" id="ok-button" type="submit">OK</button>
@@ -108,8 +108,21 @@
                     {{ __('Todays Events ') }}
                 </div>
                 <div class="card-body">
+                    @php
+                        $flag =0;
+                    @endphp
+
                     @foreach( $events as $event)
-                        @if(substr($event['start']['dateTime'],0,10) == date('Y-m-d'))
+                        @if($event['start']['dateTime']!= null)
+                            @php
+                                $eventdate= substr($event['start']['dateTime'],0,10)
+                            @endphp
+                        @else
+                            @php
+                                $eventdate= $event['start']['date']
+                            @endphp
+                        @endif
+                        @if($eventdate == date('Y-m-d'))
                             <div class = "card-body">
                                 <h3 class="card-title">
                                     <a href = "/event/{{$event->id}}">
@@ -117,9 +130,20 @@
                                     </a>
                                 </h3>
                             </div>
+                            @php
+                                $flag = 1;
+                            @endphp
                         @endif
                     @endforeach
-                    </div>
+                    @if($flag==0)
+                        <div class = "card-body">
+                            <h3 class="card-title">
+                                <h3 class="card-title">You Have No Events Today.</h3>
+                                {{ date("Y-m-d H:i T") }}
+                            </h3>
+                        </div>                    
+                    @endif
+                </div>
             </div>
 
             <div class="card">
@@ -145,7 +169,7 @@
                                         @endforeach
                                     @else
                                         <div class = "card-body">
-                                            <h3 class="card-title">You Have No Events. Create One now!</h3>
+                                            <h3 class="card-title">You Have No Events.</h3>
                                             <!-- add new post button -->
                                             <center>
                                                 <a href="/posts/create">

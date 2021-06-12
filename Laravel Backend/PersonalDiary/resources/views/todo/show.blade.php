@@ -20,7 +20,7 @@
                                 <div class="card-header" style="font-size: 25px; font-family: 'Playfair Display', serif;">
                                         {{ __('Your Tasks') }}
 
-                                        <a href="{{ route('tasks.index') }}" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
+                                        <a href="{{ route('tasks.create') }}" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
                                         <a class="side_accordian" style="float:right; padding-right:10px; font-size: 13px;"><i class="fa fa-filter"></i>&nbsp;Filter</a>
                                         <div class="acc_disp" style="text-align: right; font-size: 13px;">
                                                 Start Date: <input type="date" id="startdate" placeholder="Start Date">
