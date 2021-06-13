@@ -3,13 +3,9 @@
 	@include('layouts.sidebar')
 
 	@section('breadcrumb')
-	<nav aria-label="breadcrumb">
-	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="/home">Home</a></li>
-		<li class="breadcrumb-item"><a href="/tasks">To Do List</a></li>
-		<li class="breadcrumb-item active" aria-current="page">New Task</li>
-	</ol>
-	</nav>
+		<a href="/home" class="breadcrumb-item">Home</a>
+		<a href="/tasks" class="breadcrumb-item">To Do List</a>
+		<a class="breadcrumb-item active" aria-current="page">New Task</a>
 	@endsection
 
 	@section('content')
@@ -45,8 +41,17 @@
 					</div>
 
 					<div class="form-group"> 
-						{{Form::label('date', 'Start Date')}}
-						{{Form::date('body', '', ['class' => 'form-control' , 'placeholder' => 'Start Date'])}}
+						{{Form::label('date', 'Due Date')}}
+						<!-- {{Form::datetime('date', '', ['class' => 'form-control' , 'placeholder' => 'Date'])}} -->
+						{!! Form::datetimeLocal('date', '', ['class' => 'form-control' , 'placeholder' => 'Date']) !!}
+					</div>
+
+					<div class="form-group">
+						{!! Form::checkbox('status', 'incomplete')!!}
+						{{Form::label('status', 'Status')}}
+						
+						<!-- {{Form::datetime('date', '', ['class' => 'form-control' , 'placeholder' => 'Date'])}} -->
+						
 					</div>
 
 					{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  

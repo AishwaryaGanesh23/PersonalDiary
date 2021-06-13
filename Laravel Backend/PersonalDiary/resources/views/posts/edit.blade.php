@@ -3,14 +3,10 @@
 @include('layouts.sidebar')
 
 @section('breadcrumb')
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
     <a href="/home" class="breadcrumb-item">Home</a>
     <a href="/posts" class="breadcrumb-item">All Posts</a>
     <a href="/posts/{{$post->id}}" class="breadcrumb-item" aria-current="page">{{$post->title}}</a>
     <a class="breadcrumb-item active" aria-current="page">Edit Post</a>
-  </ol>
-</nav>
 @endsection
 
 @section('content')

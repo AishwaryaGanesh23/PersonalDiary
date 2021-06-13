@@ -171,12 +171,11 @@ button:focus {
     position: relative;
     margin: 0 auto;
     height: 100%;
-    width: 50%;
+    width: 100%;
     background: #fff;
     font: 13px Helvetica, Arial, san-serif;
     display: inline-block;
     padding: 20px;
-    float: left;
 }
 @media (max-width: 991.98px) {
     .calendar-container {
@@ -260,7 +259,7 @@ button:focus {
     transition: 0.2s ease all;
     color: white;
     border: none;
-    background: #7e0cf5;
+    background: rgb(8, 88, 207);
 }
 
 .button.button-white {
@@ -375,7 +374,7 @@ button:focus {
     padding: 10px;
     line-height: 26px;
     text-align: center;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     border: 2px solid transparent;
     -webkit-transition: all 250ms;
     -o-transition: all 250ms;
@@ -398,7 +397,7 @@ button:focus {
     left: 0;
     width: 10px;
     height: 10px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     content: "";
     background: #28a745;
 }

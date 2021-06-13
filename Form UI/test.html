@@ -1,48 +1,53 @@
-<html>
-    <head>
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-    <body>
-        <div class="overlay">
-                <div id="breadcrumb" style="position: relative; left:20%;"></div>
-                <ul id="navigation_links">
-                    <li><a href="signin.html">Page 1</a></li>
-                    <li><a href="register.html">Page 2</a></li>
-                    <li><a href="page3.html">Page 3</a></li>
-                    <li><a href="page4.html">Page 4</a></li>
-                </ul>
-         </div>
-    </body>
-    <script>
-	$(document).ready(function(){
-    bindEventToNavigation();
-    showBreadCrumb(); //Show the breadcrumb when you arrive on the new page
-});
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
-function bindEventToNavigation(){
-    $.each($("#navigation_links > li > a"), function(index, element){
-        $(element).click(function(event){
-            breadcrumbStateSaver($(this).attr('href'), $(this).text());
-            showBreadCrumb();
-        });
-    });
-}
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Event</h4>
+        </div>
+        <div class="modal-body">
+            <form class="form" id="form">
+                <div class="form-container" align="center">
+                  <label class="form-label" id="valueFromMyButton" for="name">Event Name</label> <br>
+                  <input class="input" type="text" id="name"> <br>
+                  <label class="form-label" id="valueFromMyButton" for="starttime">Star Time</label> <br>
+                  <input class="input" type="time" id="count" > <br>
+                          <label class="form-label" id="valueFromMyButton" for="endtime">End Time</label> <br>
+                  <input class="input" type="time" id="count" > <br>
+                  <input type="button" value="Cancel" class="button " id="cancel-button">
+                  <input type="button" value="OK" class="button button-white" id="ok-button">
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
 
-function breadcrumbStateSaver(link, text) {
-    if (typeof (Storage) != "undefined") {
-        if (sessionStorage.breadcrumb) {
-            var breadcrumb = sessionStorage.breadcrumb;
-            sessionStorage.breadcrumb = breadcrumb + " >> <a href='" + link + "'>" + text + "</a>";
-        } else {
-            sessionStorage.breadcrumb = "<a href='" + link + "'>" + text + "</a>";
-        }
-    }
-}	
-    </script>
-
+</body>
 </html>

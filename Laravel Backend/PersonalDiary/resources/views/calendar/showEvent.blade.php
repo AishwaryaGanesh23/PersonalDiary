@@ -3,13 +3,9 @@
 @include('layouts.sidebar')
 
 @section('breadcrumb')
-<nav aria-label="breadcrumb">
-<ol class="breadcrumb">
     <a href="/home" class="breadcrumb-item">Home</a>
     <a href="/calendar" class="breadcrumb-item">All Events</a>
     <a class="breadcrumb-item active" aria-current="page">{{$event->summary}}</a>
-</ol>
-</nav>
 @endsection
 
 @section('content')

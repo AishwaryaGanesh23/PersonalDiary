@@ -3,12 +3,8 @@
 @include('layouts.sidebar')
 
 @section('breadcrumb')
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
     <a href="/home"  class="breadcrumb-item">Home</a>
     <a class="breadcrumb-item active" aria-current="page">All Posts</a>
-  </ol>
-</nav>
 @endsection
 
 @section('content')
@@ -20,7 +16,7 @@
                 <div class="card-header" style="font-size: 25px; font-family: 'Playfair Display', serif;">
                 {{ __('All Posts') }}
                     <a href="/posts/create" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
-                    <a class="side_accordian" style="float:right; padding-right:10px; font-size: 13px;"><i class="fa fa-sort"></i>&nbsp;Sort</a>
+                    <a class="side_accordian" style="float:right; padding-right:10px; font-size: 13px;"><i class="fa fa-chevron-circle-down"></i>&nbsp;Sort</a>
                         <div class="acc_disp" style="text-align: right; font-size: 13px;">
                             <a href = "/posts">Sort by Date Created</a> <br>
                             <a href = "/postsSortbyTitle">Sort by Title</a> 

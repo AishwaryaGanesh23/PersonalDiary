@@ -3,12 +3,8 @@
 @include('layouts.sidebar')
 
 @section('breadcrumb')
-<nav aria-label="breadcrumb">
-<ol class="breadcrumb">
     <a href="/home" class="breadcrumb-item">Home</a>
     <a href="/posts" class="breadcrumb-item active" aria-current="page">Calendar</a>
-</ol>
-</nav>
 @endsection
 
 @section('content')
@@ -17,13 +13,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
+                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; ">
                     {{ __('Calendar') }}
+                    <a class="side_accordian" style="float:right; padding-right:10px; font-size: 15px;"><i class="fa fa-chevron-circle-down"></i>&nbsp;View</a>
+                        <div class="acc_disp" style="text-align: right; font-size: 13px;">
+                            <a href = "/posts">Today's Events</a> <br>
+                            <a href = "/postsSortbyTitle">All Events</a> 
+                        </div>
                 </div>
                                 
                 <!-- <div class="row" style="background: red;"> -->
 				<!-- <div class="col-md-12" style="background: red;"> -->
-				<div class="content w-100">
+				<!-- <div class="content w-100"> -->
 				    <div class="calendar-container">
 				        <div class="calendar"> 
                             <div class="year-header"> 
@@ -72,9 +73,9 @@
 				        </div>
 				    </div>
 
-				    <div class="events-container">
+				    <!-- <div class="events-container">
                         
-                    </div>
+                    </div> -->
 
 				    <div class="dialog" id="dialog">
 				        
@@ -82,15 +83,15 @@
 				            {{-- <form class="form" id="form"> --}}
 				                <div class="form-container" align="center">
                                     <h2 class="dialog-header"> Add New Event </h2>
-                                    {{ date("Y-m-d T") }}
+                                    {{ date("Y-m-d T") }} <br> <br>
                                     <label class="form-label" id="valueFromMyButton" for="name" >Event Name</label>
                                     <input class="input" type="text" id="name" name='name' required>
 
                                     <label class="form-label" id="valueFromMyButton" for="starttime" >Start Time</label>
-                                    <input class="input" type="time" id="start"  name='start_time' required>
+                                    <input class="input" type="time" id="start"  name='start_time'>
 
                                     <label class="form-label" id="valueFromMyButton" for="endtime" >End Time</label>
-                                    <input class="input" type="time" id="end"  name='end_time' required> 
+                                    <input class="input" type="time" id="end"  name='end_time'> 
 
                                     <input type="button" value="Cancel" class="button " id="cancel-button">
                                     <button class="button button-white" id="ok-button" type="submit">OK</button>
@@ -101,86 +102,7 @@
 				    </div>
 				  <!-- </div> -->
 				<!-- </div> -->
-			    </div>
-            </div>
-            <div class="card">
-                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
-                    {{ __('Todays Events ') }}
-                </div>
-                <div class="card-body">
-                    @php
-                        $flag =0;
-                    @endphp
-                    @if(count($events)>0)
-                        @foreach( $events as $event)
-                            @if($event['start']['dateTime']!= null)
-                                @php
-                                    $eventdate= substr($event['start']['dateTime'],0,10)
-                                @endphp
-                            @else
-                                @php
-                                    $eventdate= $event['start']['date']
-                                @endphp
-                            @endif
-                            @if($eventdate == date('Y-m-d'))
-                                <div class = "card-body">
-                                    <h3 class="card-title">
-                                        <a href = "/calendar/{{$event->id}}">
-                                            {{$event->summary}}
-                                        </a>
-                                    </h3>
-                                    <small class="card-text">Time {{substr($event['start']['dateTime'],11,5).' - '.substr($event['end']['dateTime'],11,5)}}</small>
-
-                                </div>
-                                @php
-                                    $flag = 1;
-                                @endphp
-                            @endif
-                        @endforeach
-                    @endif    
-                    @if($flag==0)
-                        <div class = "card-body">
-                            <h3 class="card-title">
-                                <h3 class="card-title">You Have No Events Today.</h3>
-                                {{ date("Y-m-d H:i T") }}
-                            </h3>
-                        </div>                    
-                    @endif
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
-                    {{ __('All Events') }}
-                </div>
-                <div class="card-body">
-                                {{-- {{$date}} --}}
-                                    @if(count($events)>0)
-                                        @foreach( $events as $event)
-                                            {{-- @if(Auth::user()->id ==  $post->user_id) --}}
-                                            <div class = "card-body">
-                                                <h3 class="card-title">
-                                                    <a href = "/calendar/{{$event->id}}">
-                                                        {{$event->summary}}
-                                                    </a>
-                                                </h3>
-                                                <small class="card-text">Date {{substr($event['start']['dateTime'],0,10)}}</small>
-                                            	<small class="card-text">Time {{substr($event['start']['dateTime'],11,5).' - '.substr($event['end']['dateTime'],11,5)}}</small>
-                                            </div>
-                                            {{-- @endif   --}}
-                                        @endforeach
-                                    @else
-                                        <div class = "card-body">
-                                            <h3 class="card-title">You Have No Events.</h3>
-                                            <!-- add new post button -->
-                                            <center>
-                                                <a href="/posts/create">
-                                                            
-                                                <button class="submits log-in btn btn-primary "><i class="fa fa-plus"></i> &nbsp;Create Event</button></a> 
-                                            </center>
-                                        </div>
-                                    @endif
-                            </div>
+			    <!-- </div> -->
             </div>
         </div>
     </div>

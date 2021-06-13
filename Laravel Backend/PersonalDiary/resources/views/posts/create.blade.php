@@ -4,13 +4,9 @@
 
 	
 @section('breadcrumb')
-<nav aria-label="breadcrumb sticky-top">
-<ol class="breadcrumb">
 	<a href="/home" class="breadcrumb-item">Home</a>
 	<a href="/posts" class="breadcrumb-item">All Posts</a>
 	<a class="breadcrumb-item active" aria-current="page">Create a Post</a>
-</ol>
-</nav>
 @endsection
 
 	
