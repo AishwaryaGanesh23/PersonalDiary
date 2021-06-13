@@ -40,13 +40,15 @@ class gCalendarController extends Controller
             $calendarId = 'primary';
             $optParams = array(
                 // 'maxResults' => 10,
-                'orderBy' => 'updated',  
+                'singleEvents' => true,
+                'orderBy' => 'startTime',  
                 // 'sortOrder'=>'descending',              
               );
             $results = $service->events->listEvents($calendarId,$optParams);
             // return $results->getItems();
             // return view('calendar.index');
             $events = $results->getItems();
+            // $eventsnewtofirst=  array_reverse($events);
             return view('calendar.index')->with('events',$events);
 
         } else {
@@ -66,7 +68,8 @@ class gCalendarController extends Controller
                 $calendarId = 'primary';
                 $optParams = array(
                     // 'maxResults' => 10,
-                    'orderBy' => 'updated',  
+                    'singleEvents' => true,
+                    'orderBy' => 'startTime',    
                     // 'sortOrder'=>'descending',              
                 );
                 $results = $service->events->listEvents($calendarId,$optParams);
@@ -110,7 +113,6 @@ class gCalendarController extends Controller
     public function create()
     {
         //
-        return view('calendar.newEvent');
     }
 
     /**
@@ -142,7 +144,7 @@ class gCalendarController extends Controller
                     // 'timeZone' => 'Asia/Kolkata',
                 ],
 
-                'reminders' => ['useDefault' => true],
+                'reminders' => ['useDefault' => false],
             ]);
             $results = $service->events->insert($calendarId, $event);
             if (!$results) {
@@ -166,6 +168,23 @@ class gCalendarController extends Controller
     public function show($id)
     {
         //
+
+        session_start();
+        if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+            $this->client->setAccessToken($_SESSION['access_token']);
+
+            $service = new Google_Service_Calendar($this->client);
+            $event = $service->events->get('primary', $id);
+
+            if (!$event) {
+                return response()->json(['status' => 'error', 'message' => 'Something went wrong']);
+            }
+            // return response()->json(['status' => 'success', 'data' => $event]);
+            return view('calendar.showEvent')->with('event',$event);
+
+        } else {
+            return redirect()->route('oauthCallback');
+        }
     }
 
     /**
@@ -177,6 +196,8 @@ class gCalendarController extends Controller
     public function edit($id)
     {
         //
+       
+        
     }
 
     /**
@@ -189,6 +210,7 @@ class gCalendarController extends Controller
     public function update(Request $request, $id)
     {
         //
+        
     }
 
     /**
@@ -200,5 +222,15 @@ class gCalendarController extends Controller
     public function destroy($id)
     {
         //
+        session_start();
+        if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+            $this->client->setAccessToken($_SESSION['access_token']);
+            $service = new Google_Service_Calendar($this->client);
+
+            $service->events->delete('primary', $id);
+            return redirect()->route('calendar.index');
+        } else {
+            return redirect()->route('oauthCallback');
+        }
     }
 }
