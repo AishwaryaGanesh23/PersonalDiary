@@ -32,11 +32,10 @@ Route::get('/about', [PagesController::class, 'about']);
 
 Route::resource('posts', PostsController::class);
 Route::get('/postsSortbyTitle', [PostsController::class, 'sortbyTitle']);
-// Route::get('/deletepostmedia', [PostsController::class, 'deletePostMedia']);
 
 Route::resource('postmedia', PostMediaController::class);
-// Route::resource('calendarEvents', CalenderEventController::class);
 Route::resource('profile', ProfileController::class);
+
 Route::resource('tasks', TasksController::class);
 
 Route::resource('calendar', gCalendarController::class);

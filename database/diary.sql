@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2021 at 04:20 PM
+-- Generation Time: Jun 14, 2021 at 01:40 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -41,7 +41,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2021_05_24_142735_create_posts_table', 1),
-(4, '2021_05_31_120407_create_post_media_table', 1);
+(4, '2021_05_31_120407_create_post_media_table', 1),
+(7, '2021_06_05_131828_add_picture_column_to_user', 2),
+(8, '2021_06_13_185910_create_tasks_table', 3);
 
 -- --------------------------------------------------------
 
@@ -87,8 +89,10 @@ INSERT INTO `posts` (`id`, `user_id`, `title`, `entrycontent`, `created_at`, `up
 (30, 2, 'Beach Day 21', 'ddddddddddddddddddddddddddddd', '2021-05-31 08:04:34', '2021-05-31 08:04:34'),
 (31, 2, 'Beach Day', 'ddddddddddddddddddddddddddddddddddddddddddddddddddddd', '2021-05-31 08:04:54', '2021-05-31 08:04:54'),
 (32, 2, 'Beach Day 21', 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', '2021-05-31 08:05:09', '2021-05-31 08:05:09'),
-(34, 1, 'Gif work?', 'lets check', '2021-06-03 07:43:15', '2021-06-03 07:43:15'),
-(41, 1, 'Triple', 'trouble', '2021-06-03 08:18:56', '2021-06-03 08:47:03');
+(42, 1, 'triple triple', 'yolo', '2021-06-05 05:31:17', '2021-06-05 05:31:17'),
+(43, 1, 'Gif work?', '3 gifs', '2021-06-05 05:55:15', '2021-06-05 05:55:15'),
+(44, 2, '8mb video', 'Dear Diary,\r\nThis is to check if I can upload an 8mb video.', '2021-06-03 20:52:09', '2021-06-03 20:52:09'),
+(45, 2, 'Picture and Image upload together', 'This is to see if I can upload  images and video file together', '2021-06-03 21:16:49', '2021-06-03 21:16:49');
 
 -- --------------------------------------------------------
 
@@ -120,10 +124,44 @@ INSERT INTO `post_media` (`id`, `user_id`, `post_id`, `filename`, `filetype`) VA
 (13, 2, 28, '2_28_PicsArt_12-26-11.03.42 (2).jpg', 'image'),
 (14, 2, 29, '2_29_Screenshot (271).png', 'image'),
 (15, 1, 33, '1_33_bfcbaa54-64cb-4b22-9c0a-20a7c7287d5a.jpg', 'image'),
-(16, 1, 34, '1_34_hellmo.gif', 'image'),
-(23, 1, 41, '1_41_Happy_bday.gif', 'image'),
-(24, 1, 41, '1_41_EfFGvIcU0AAAPXO.jpg', 'image'),
-(25, 1, 41, '1_41_gojo.jpg', 'image');
+(26, 1, 42, '1_42_D9do6EoUIAAd20F.jpg', 'image'),
+(27, 1, 42, '1_42_doug768.jpg', 'image'),
+(32, 1, 43, '1_43_Happy_bday.gif', 'image'),
+(34, 1, 43, '1_43_hellmo.gif', 'image'),
+(35, 1, 43, '1_43_fhEXfXoKmxfvG.gif', 'image'),
+(36, 1, 42, '1_42_gojo.jpg', 'image'),
+(37, 2, 44, '2_42_VID-20210516-WA0005.mp4', 'video'),
+(38, 2, 28, '2_28_WIN_20210511_18_21_59_Pro.jpg', 'image'),
+(39, 2, 45, '2_43_PicsArt_12-26-11.03.42 (2).jpg', 'image'),
+(40, 2, 45, '2_43_PicsArt_12-26-11.03.42.jpg', 'image'),
+(41, 2, 45, '2_43_VID-20210516-WA0005.mp4', 'video');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tasks`
+--
+
+CREATE TABLE `tasks` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `due_date` date NOT NULL,
+  `due_time` time DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tasks`
+--
+
+INSERT INTO `tasks` (`id`, `user_id`, `title`, `description`, `status`, `due_date`, `due_time`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Finish Project', 'Web tech Project\r\nfinish tasks : crud + display\r\ndisplay accordion for overdue, due today, upcoming, completed', 'Incomplete', '2021-06-16', '09:00:00', '2021-06-13 15:43:06', '2021-06-13 15:43:06'),
+(3, 1, 'Collect Epic', NULL, 'Incomplete', '2021-06-10', NULL, '2021-06-13 17:12:03', '2021-06-13 17:12:03'),
+(4, 1, 'Sleep', 'As soon as project is done', 'Incomplete', '2021-06-14', '04:55:00', '2021-06-13 17:17:17', '2021-06-13 17:29:16');
 
 -- --------------------------------------------------------
 
@@ -138,16 +176,17 @@ CREATE TABLE `users` (
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `profile_pic` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Aishwarya Ganesh', 'aishwarya@gmail.com', '$2y$10$mS51k.wec1KTap.shPlUOOMQywwPxWvByPa/jNY9Yt7Nyz8EgaRWC', NULL, '2021-05-31 01:38:40', '2021-05-31 01:38:40'),
-(2, 'Meliva Cruz', 'meliva12@gmail.com', '$2y$10$KIcvT2JgnxxEEOI3/ZkiDOtTPXptAvmImrZSMcozWTaC5ni2x/IH.', NULL, '2021-05-31 01:39:55', '2021-05-31 01:39:55');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `profile_pic`) VALUES
+(1, 'Aishwarya Ganesh', 'aishwaryag235@gmail.com', '$2y$10$mS51k.wec1KTap.shPlUOOMQywwPxWvByPa/jNY9Yt7Nyz8EgaRWC', 'Fn5iYZloLp37iA7mKW199DkZ2qlJKEIX1c7za9xCaIay5yXAu8nFGBfycE5W', '2021-05-31 01:38:40', '2021-06-10 03:29:23', '1_hellmo.gif'),
+(2, 'Meliva Cruz', 'mca.1903@unigoa.ac.in', '$2y$10$KIcvT2JgnxxEEOI3/ZkiDOtTPXptAvmImrZSMcozWTaC5ni2x/IH.', NULL, '2021-05-31 01:39:55', '2021-05-31 01:39:55', NULL);
 
 --
 -- Indexes for dumped tables
@@ -178,6 +217,12 @@ ALTER TABLE `post_media`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tasks`
+--
+ALTER TABLE `tasks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -192,19 +237,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `post_media`
 --
 ALTER TABLE `post_media`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `tasks`
+--
+ALTER TABLE `tasks`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

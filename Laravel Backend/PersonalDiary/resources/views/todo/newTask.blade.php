@@ -16,41 +16,36 @@
 				<div class="card">
 					<div class="card-header" style="font-size: 25px; font-family: 'Playfair Display', serif;">
 						{{ __('New Tasks') }}
-
-						<a href="{{ route('tasks.index') }}" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
-						<a class="side_accordian" style="float:right; padding-right:10px; font-size: 13px;"><i class="fa fa-filter"></i>&nbsp;Filter</a>
-						<div class="acc_disp" style="text-align: right; font-size: 13px;">
-							Start Date: <input type="date" id="startdate" placeholder="Start Date">
-							End Date: <input type="date" id="enddate" placeholder="End Date" >
-						</div> 
 					</div>
 					
 					<!-- <div class="card-body"> -->
-					{!! Form::open(['action' => 'App\Http\Controllers\PostsController@store', 'method' => 'POST', 'class' => 'createform', 'style' => 'font-size: 15px'] )!!}
+					{!! Form::open(['action' => 'App\Http\Controllers\TasksController@store', 'method' => 'POST', 'class' => 'createform', 'style' => 'font-size: 15px'] )!!}
 					<!-- <header class="head-form" >
 						<h2>Create Your Post</h2>
 					</header> -->
 					<div class="form-group"> 
-						{{Form::label('title', 'Enter a Title')}}
-						{{Form::text('title', '', ['class' => 'form-control' , 'placeholder' => 'Task Title'])}}
+						{{Form::label('title', 'Task Name: ')}}
+						{{Form::text('title', '', ['class' => 'form-control' , 'placeholder' => 'Task Title','required' => 'required'])}}
 					</div>
 
 					<div class="form-group"> 
-						{{Form::label('title', 'Describe Task')}}
-						{{Form::textarea('body', '', ['class' => 'form-control' , 'placeholder' => 'Task Description'])}}
+						{{Form::label('desc', 'Task Description')}}
+						{{Form::textarea('desc', '', ['class' => 'form-control' , 'placeholder' => 'Task Description'])}}
 					</div>
 
 					<div class="form-group"> 
-						{{Form::label('date', 'Due Date')}}
-						<!-- {{Form::datetime('date', '', ['class' => 'form-control' , 'placeholder' => 'Date'])}} -->
-						{!! Form::datetimeLocal('date', '', ['class' => 'form-control' , 'placeholder' => 'Date']) !!}
+						{{Form::label('duedate', 'Due Date')}}
+						{!! Form::date('duedate', '', ['class' => 'form-control' , 'placeholder' => 'Date','required' => 'required']) !!}
+					</div>
+
+					<div class="form-group"> 
+						{{Form::label('time', 'Due Time')}}
+						{!! Form::time('duetime', '', ['class' => 'form-control' , 'placeholder' => 'Date']) !!}
 					</div>
 
 					<div class="form-group">
-						{!! Form::checkbox('status', 'incomplete')!!}
-						{{Form::label('status', 'Status')}}
-						
-						<!-- {{Form::datetime('date', '', ['class' => 'form-control' , 'placeholder' => 'Date'])}} -->
+						{!! Form::checkbox('status', 'complete')!!}
+						{{Form::label('status', 'Completed')}}
 						
 					</div>
 
