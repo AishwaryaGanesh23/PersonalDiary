@@ -27,26 +27,29 @@
                         <img class="dp" src ="{{asset('profile_pic/'.Auth::user()->profile_pic)}}">
                     @endif
 
-                    <button class="change_profile" onclick="openForm()">Change Profile Picture</button> 
+                    <button class="change_profile" onclick="openForm()">Update Profile</button> 
 
                     <div class="form-popup" id="myForm" >
                     
-                        <h3 style="font-weight: bold; padding-top:10px"> Change Profile Picture </h3>
+                        <h3 style="font-weight: bold; padding-top:10px"> Update Profile </h3>
                         
                         <hr>
                         
-                        <button type="submit" onclick="upload()">Upload</button>
+                        <button type="submit" onclick="upload()">Upload Picture</button>
                         <hr>
                         @if(Auth::user()->profile_pic !== null)
-                        <button type="submit" onclick="deletePic()">Delete</button> 
+                        <button type="submit" onclick="deletePic()">Delete Picture</button> 
                         <hr>
                         @endif
+                        <button type="button" onclick="password()" style="padding-bottom:10px">Change Password</button>
+                        <hr>
                         <button type="button" onclick="closeForm()" style="padding-bottom:10px">Close</button>
                         
                     </div>
                     <br>
                     
                     <p class="profile">{{ Auth::user()->name }}</p>
+
                     <div class="form-popup" id="myForm1">
                     {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@update',Auth::user()->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}
                     <button type="button" onclick="closeForm1()" style="float:right; font-size: 13px; width:10%;"><i class="fa fa-close"></i></button> 
@@ -56,6 +59,25 @@
                             {{Form::file('profile_pic',['class' => 'form-control', 'id'=>'file_id', 'accept'=>'image/*',  'onchange'=>'upload_check()'])}}
                             {{Form::label('profile_pic_warn', '(File size should be max 8mb)')}} 
                         
+                        </div>
+                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
+                        {!! Form::close() !!} 
+                    </div>
+
+                    <div class="form-popup" id="myForm3">
+                    {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@update',Auth::user()->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}
+                    <button type="button" onclick="closeForm1()" style="float:right; font-size: 13px; width:10%;"><i class="fa fa-close"></i></button> 
+                        <div class="form-group" id="myForm3">
+                            {{Form::label('change_password', 'Change Password')}}
+
+                            {{Form::label('body', 'Current Password')}}
+						    {{Form::text('oldpass', '', ['class' => 'form-control' , 'placeholder' => 'Enter your current password'])}}
+
+                            {{Form::label('body2', 'New Password')}}
+						    {{Form::text('newpass', '', ['class' => 'form-control' , 'placeholder' => 'Enter your new password'])}}
+
+                            {{Form::label('body2', 'Confirm New Password')}}
+						    {{Form::text('newpass1', '', ['class' => 'form-control' , 'placeholder' => 'Confirm your new password'])}}
                         </div>
                         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
                         {!! Form::close() !!} 

@@ -5,7 +5,8 @@
 		
 	@else
 		@include('layouts.sidebar')
-		@section(breadcrumb)
+		
+		@section('breadcrumb')
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 				<a href="/home" class="breadcrumb-item">Home</a>

@@ -30,7 +30,7 @@
                         <div class="col-md-12">
                             @foreach($postmedia as $media)
                                 @if($media->filetype == 'image')
-                                    <img class="images " style="Padding-bottom: 20px" src ="{{asset('post_media/'.$media->filename)}}">
+                                    <img class="images" style="Padding-bottom: 20px" src ="{{asset('post_media/'.$media->filename)}}">
                                 @elseif($media->filetype == 'video')
                                     <video width="100%" height="300px" controls>
                                         <source  src="{{URL::asset('post_media/'.$media->filename)}}" type="video/mp4" >

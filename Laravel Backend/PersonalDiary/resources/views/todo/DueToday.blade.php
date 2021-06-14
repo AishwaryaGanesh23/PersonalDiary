@@ -10,7 +10,7 @@
         @endphp
             <div class = "card-body">
                 <h3 class="card-title">
-                        <a href = "/tasks/{{$task->id}}">
+                        <a href = "/tasks/{{$task->id}}" style="color: blue">
                         {{$task->title}}
                         </a>
                 </h3>

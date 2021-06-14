@@ -17,7 +17,7 @@
             <div class="card">
             <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif; text-align: center;">
                     {{-- {{ __('Your Post') }} --}}
-                    {{$task->title}}  
+                    {{$task->title}} 
                 </div>
                 <div class="card-body">
 

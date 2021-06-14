@@ -18,6 +18,11 @@ document.getElementById("myForm2").style.display = "none";
 document.getElementsByClassName('blur')[0].style.display="none";
 }
 
+function closeForm3() {
+document.getElementById("myForm3").style.display = "none";
+document.getElementsByClassName('blur')[0].style.display="none";
+}
+
 function upload() {
 document.getElementById("myForm").style.display = "none";
 document.getElementById("myForm1").style.display = "block";
@@ -27,5 +32,11 @@ document.getElementsByClassName('blur')[0].style.display="block";
 function deletePic() {
 document.getElementById("myForm").style.display = "none";
 document.getElementById("myForm2").style.display = "block";
+document.getElementsByClassName('blur')[0].style.display="block";
+}
+
+function password() {
+document.getElementById("myForm").style.display = "none";
+document.getElementById("myForm3").style.display = "block";
 document.getElementsByClassName('blur')[0].style.display="block";
 }

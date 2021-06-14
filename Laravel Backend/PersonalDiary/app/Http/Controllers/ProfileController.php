@@ -104,7 +104,8 @@ class ProfileController extends Controller
             $user->profile_pic = $filenamestore;
             $user->save();
         }
-        return view('profile.showprofile');
+        return redirect()->route('profile.index');
+        // return view('profile.showprofile');
     }
 
     /**
@@ -121,6 +122,7 @@ class ProfileController extends Controller
         File::delete('profile_pic/'.$user->profile_pic);
         $user->profile_pic = null;
         $user->save();
-        return view('profile.showprofile');
+        return redirect()->route('profile.index');
+        // return view('profile.showprofile');
     }
 }

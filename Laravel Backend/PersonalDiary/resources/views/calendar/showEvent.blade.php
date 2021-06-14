@@ -24,8 +24,11 @@
                     <ol>
                         @if($event['start']['dateTime']!= null)
                             <li>Date: {{ substr($event['start']['dateTime'],0,10) }}</li>
-                            <li>Starts at: {{substr($event['start']['dateTime'],11,5)}}</li>
-                            <li>Ends at: {{substr($event['end']['dateTime'],11,5)}}</li>   
+                            <li>Starts at: {{substr($event['start']['dateTime'],11,5)}} 
+                            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Ends at: {{substr($event['end']['dateTime'],11,5)}}
+                            </li>   
+                            
                         @else
                             <li>Date: {{ $event['start']['date'] }}</li>
                         @endif

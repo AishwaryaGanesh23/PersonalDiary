@@ -19,6 +19,7 @@
     <script src="{{ asset('js/popper.js') }}" defer></script>
     <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
+    <script src="{{ asset('js/tabs.js') }}" defer></script>
   
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -28,6 +29,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/page.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/tabs.css') }}">
 </head>
 
 <body>

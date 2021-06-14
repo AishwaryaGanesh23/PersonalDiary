@@ -165,8 +165,8 @@ li {
 .content2 {
     position: relative;
     top: 5vh;
-    margin: auto;
-    width: 800px;
+    left: 25vw;
+    width: 60%;
     min-height: 200px;
     border: 2px solid black;
     color: rgb(34, 18, 33);
@@ -175,13 +175,17 @@ li {
     text-align: justify;
 }
 
-.images {
-    width: 300px;
-    height: 250px;
+.images1 {
+    width: 20%;
 }
 
-.image_hover:hover {
-    width: 80%;
+.images {
+    width: 60%;
+}
+
+.index_image {
+    width: 90%;
+    margin-left: 40px;
 }
 
 .btn-link {
@@ -277,7 +281,7 @@ li {
     position: fixed;
     left: 750px;
     bottom: 100;
-    top: 225px;
+    top: 22vh;
     background-color: white;
     border-radius: 5px;
     text-align: center;
@@ -299,7 +303,60 @@ li {
     border: transparent;
 }
 
-@media screen and (max-width: 992px) {
+#div1 p{
+    margin-left: 113px; margin-top: 5px;
+}
+
+#div2 p{
+    margin-left: 115px;
+}
+
+#div3 p{
+    margin-left: 127px;
+}
+
+@media screen and (max-width: 1024px) {
+    
+    #myModal
+    {
+        width: 60%;
+        left: 20%;
+    }
+
+    .card{
+        top: 70px;
+    }
+
+    #div1{
+        position: relative;
+        top: 3.5vh;
+    }
+
+    #div1 p{
+        padding-top: 4px;
+        margin-left: 95px;
+    }
+
+    #div2 p{
+        margin-left: 105px;
+    }
+
+    #div3 p{
+        margin-left: 117px;
+    }
+
+    .change_profile{
+        top: -30px;
+        left: 35vw;
+    }
+
+    .form-popup{
+        top: 10vh;
+        left: 45vw;
+    }
+}
+
+@media screen and (max-width: 1200px) {
     .sidebar {
         top: 4vh;
     }
@@ -313,15 +370,42 @@ li {
     .breadcrumb {
         top: 4vh;
     }
+
+    #myModal
+    {
+        width: 100%;
+        left: 0;
+    }
+
+    .form-popup{
+        top: 19vh;
+        left: 45vw;
+    }
+
+    .change_profile{
+        top: -25px;
+        left: 35vw;
+    }
+
+    .content2{
+        left: 30vw;
+    }
+
+    #div1{
+        position: relative;
+        top: 3.5vh;
+    }
+
+    .card{
+        min-height: 400px;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .sidebar {
-        background-color: #200d22;
         width: 100%;
         height: 50px;
-        position: fixed;
-        top: 6.5vh;
+        top: 4vh;
         padding-right: 10px;
         text-align: center;
         z-index: 9990;
@@ -337,37 +421,67 @@ li {
     .card {
         position: relative;
         left: 2%;
+        top: 75px;
+        width: 100%;
+    }
+
+    .createform{
+        width: 100%;
+    }
+
+    .change_profile{
+        top: -1px;
+        left: 33vw;
+    }
+
+    .form-popup{
+        top: 23vh;
+        left: 32vw;
     }
 
     div.content {
         margin-left: 0;
     }
 
-    div.content {
-        margin-left: 0;
-    }
-
+    
     .breadcrumb {
-        top: 10vh;
+        top: 6vh;
         left: 0px;
     }
 
-    .card {
+    #myModal
+    {
+        left: 0;
+    }
+
+    #div1{
         position: relative;
-        top: 40px;
+        top: 4vh;
+    }
+
+    #div1 p{
+        margin-left: 70px;
+    }
+
+    #div2 p{
+        margin-left: 85px;
+    }
+
+    #div3 p{
+        margin-left: 90px;
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px){
     .sidebar a {
         padding-top: 10px;
         text-align: center;
-        top: 3px;
     }
 
     .sidebar {
         position: fixed;
         z-index: 9990;
+        top: 4vh;
     }
 
     div.content {
@@ -375,7 +489,7 @@ li {
     }
 
     .breadcrumb {
-        top: 10vh;
+        top: 6.3vh;
         left: 0px;
     }
 
@@ -383,5 +497,20 @@ li {
         position: relative;
         top: 40px;
         left: 2%;
+        width: 100%;
+    }
+
+    .createform{
+        width: 100%;
+    }
+
+    .change_profile{
+        top: -10px;
+        left: 30vw;
+    }
+
+    .form-popup{
+        top: 20vh;
+        left: 25vw;
     }
 }

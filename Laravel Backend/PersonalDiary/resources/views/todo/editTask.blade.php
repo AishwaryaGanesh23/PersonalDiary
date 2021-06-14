@@ -17,6 +17,7 @@
             <div class="card">
                 <div class="card-header" style="font-size: 25px; font-family: 'Playfair Display', serif;">
                     {{ __('Edit Task') }}
+                    <a href="/tasks/{{$task->id}}" style="float:right; font-size: 13px;"><i class="fa fa-close"></i></a>
                 </div>
                 
                 {!! Form::open(['action' => ['App\Http\Controllers\TasksController@update',$task->id], 'method' => 'PUT', 'class' => 'createform', 'style' => 'font-size: 15px'] )!!}

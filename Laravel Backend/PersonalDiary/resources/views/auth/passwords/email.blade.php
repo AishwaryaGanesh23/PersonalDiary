@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pagelayout')
 
 @section('content')
 <div class="container">
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('password.email') }}">
+                    <form class="createform" method="POST" action="{{ route('password.email') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -34,7 +34,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Send') }}
                                 </button>
                             </div>
                         </div>

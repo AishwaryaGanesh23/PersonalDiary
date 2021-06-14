@@ -79,8 +79,8 @@ function days_in_month(month, year) {
 function date_click(event) {
     $(".events-container").show(250);
     $("#dialog").hide(250);
-    $(".active-date").removeClass("active-date");
-    $(this).addClass("active-date");
+    $(".active-date2").removeClass("active-date2");
+    $(this).addClass("active-date2");
     show_events(event.data.events, event.data.month, event.data.day);
 };
 
@@ -121,47 +121,12 @@ function new_event(event) {
     // if a date isn't selected then do nothing
     if($(".active-date").length===0)
         return;
-    // remove red error input on click
-    $("input").click(function(){
-        $(this).removeClass("error-input");
-    })
-    // empty inputs and hide events
-    $("#dialog input[type=text]").val('');
-    $("#dialog input[type=number]").val('');
-    $(".events-container").hide(250);
-    $("#dialog").show(250);
-    // Event handler for cancel button
-    $("#cancel-button").click(function() {
-        $("#name").removeClass("error-input");
-        $("#count").removeClass("error-input");
-        $("#dialog").hide(250);
-        $(".events-container").show(250);
-    });
-    // Event handler for ok button
-    // $("#ok-button").unbind().click({date: event.data.date}, function() {
-    //     var date = event.data.date;
-    //     var name = $("#name").val().trim();
-    //     var start_date = parseInt($("#start").val().trim());
-    //     var end_date = parseInt($("#end").val().trim());
-    //     var day = parseInt($(".active-date").html());
-        
-    // });
+    
+    $(".fade").show(250);
+    $("#container").show();
 }
 
-// Adds a json event to event_data
-// function new_event_json(name, count, date, day) {
-//     var event = {
-//         "occasion": name,
-//         "startTime": starttime,
-//         "endTime": endtime,
-//         "year": date.getFullYear(),
-//         "month": date.getMonth()+1,
-//         "day": day
-//     };
-//     event_data["events"].push(event);
-// }
 
-// Display all events of the selected date in card views
 function show_events(events, month, day) {
     // Clear the dates container
     $(".events-container").empty();
@@ -228,3 +193,5 @@ const months = [
 ];
 
 })(jQuery);
+
+
