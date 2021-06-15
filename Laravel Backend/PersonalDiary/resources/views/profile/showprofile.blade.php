@@ -65,19 +65,19 @@
                     </div>
 
                     <div class="form-popup" id="myForm3">
-                    {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@update',Auth::user()->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}
-                    <button type="button" onclick="closeForm1()" style="float:right; font-size: 13px; width:10%;"><i class="fa fa-close"></i></button> 
+                    {!! Form::open(['action' => 'App\Http\Controllers\ProfileController@changePassword', 'method' => 'POST', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}
+                    <button type="button" onclick="closeForm3()" style="float:right; font-size: 13px; width:10%;"><i class="fa fa-close"></i></button> 
                         <div class="form-group" id="myForm3">
                             {{Form::label('change_password', 'Change Password')}}
 
-                            {{Form::label('body', 'Current Password')}}
-						    {{Form::text('oldpass', '', ['class' => 'form-control' , 'placeholder' => 'Enter your current password'])}}
+                            {{Form::label('current_password', 'Current Password')}}
+						    {{Form::password('current_password', ['class' => 'form-control' , 'placeholder' => 'Enter your current password'])}}
 
-                            {{Form::label('body2', 'New Password')}}
-						    {{Form::text('newpass', '', ['class' => 'form-control' , 'placeholder' => 'Enter your new password'])}}
+                            {{Form::label('password', 'New Password')}}
+						    {{Form::password('password',  ['class' => 'form-control' , 'placeholder' => 'Enter your new password'])}}
 
-                            {{Form::label('body2', 'Confirm New Password')}}
-						    {{Form::text('newpass1', '', ['class' => 'form-control' , 'placeholder' => 'Confirm your new password'])}}
+                            {{Form::label('password_confirmation', 'Confirm New Password')}}
+						    {{Form::password('password_confirmation',  ['class' => 'form-control' , 'placeholder' => 'Confirm your new password'])}}
                         </div>
                         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
                         {!! Form::close() !!} 

@@ -8,9 +8,12 @@
                         {{$event->summary}}
                     </a>
                 </h3>
-
-                <small class="card-text">Date {{substr($event['start']['dateTime'],0,10)}}</small>
-                <small class="card-text">Time {{substr($event['start']['dateTime'],11,5).' - '.substr($event['end']['dateTime'],11,5)}}</small>
+                @if($event['start']['dateTime']!= null)
+                    <small class="card-text">Start {{substr($event['start']['dateTime'],0,10).' : '.substr($event['start']['dateTime'],11,5).' - '}}</small>
+                    <small class="card-text">End {{substr($event['end']['dateTime'],0,10).' : '.substr($event['end']['dateTime'],11,5)}}</small>
+                @else
+                    <small class="card-text">Date: {{ $event['start']['date'] }}</small>
+                @endif
             </div>
         {{-- @endif   --}}
     @endforeach    

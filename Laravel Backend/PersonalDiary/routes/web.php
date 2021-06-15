@@ -32,11 +32,13 @@ Route::get('/about', [PagesController::class, 'about']);
 
 Route::resource('posts', PostsController::class);
 Route::get('/postsSortbyTitle', [PostsController::class, 'sortbyTitle']);
-
 Route::resource('postmedia', PostMediaController::class);
+
 Route::resource('profile', ProfileController::class);
+Route::post('change-password', [ProfileController::class, 'changePassword']);
 
 Route::resource('tasks', TasksController::class);
+Route::post('completeTask/{task}', [TasksController::class, 'completeTask']);
 
 Route::resource('calendar', gCalendarController::class);
 Route::get('oauth', [gCalendarController::class, 'oauth'])->name('oauthCallback');

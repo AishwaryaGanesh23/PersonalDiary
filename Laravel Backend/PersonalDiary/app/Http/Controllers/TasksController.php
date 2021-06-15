@@ -72,25 +72,25 @@ class TasksController extends Controller
         return redirect('/tasks');
     }
 
-    // public function completeTask($id){
+    public function completeTask($id){
         
-    //     $task = Task::find($id);
-    //    if($task->user_id !== Auth::user()->id)
-    //     {
-    //         return redirect('/tasks')->with('error','Unauthorized');
-    //     }
+        $task = Task::find($id);
+       if($task->user_id !== Auth::user()->id)
+        {
+            return redirect('/tasks')->with('error','Unauthorized');
+        }
 
-    //     if($task->status=='Incomplete')
-    //     {
-    //         $status = 'Complete';
-    //     }
-    //     else{
-    //         $status = 'Incomplete';
-    //     }
-    //     $task->status = $status;
-    //     $task->save();
-    //     return redirect('/tasks');
-    // }
+        if($task->status=='Incomplete')
+        {
+            $status = 'Complete';
+        }
+        else{
+            $status = 'Incomplete';
+        }
+        $task->status = $status;
+        $task->save();
+        return redirect('/tasks');
+    }
 
     /**
      * Display the specified resource.

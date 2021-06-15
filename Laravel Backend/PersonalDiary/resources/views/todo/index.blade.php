@@ -6,6 +6,7 @@
 @include('todo.Upcoming')
 @include('todo.Completed')
 @include('todo.AllTasks')
+@include('todo.Incomplete')
 
 @section('breadcrumb')
         <a href="/home" class="breadcrumb-item">Home</a>
@@ -24,10 +25,11 @@
                                     <a href="{{ route('tasks.create') }}" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
                                 </div>
                                     <div class="tab">
-                                        <button class="tablinks" onclick="openList(event, 'Overdue')" >Overdue</button>
-                                        <button class="tablinks" onclick="openList(event, 'DueToday')" id="defaultOpen">Due Today</button>
-                                        <button class="tablinks" onclick="openList(event, 'Upcoming')"> Upcoming</button>
-                                        <button class="tablinks" onclick="openList(event, 'Completed')"> Completed</button>
+                                        <button class="tablinks" onclick="openList(event, 'Overdue')" style="color: red">Overdue</button>
+                                        <button class="tablinks" onclick="openList(event, 'DueToday')" id="defaultOpen" style="color: Blue">Due Today</button>
+                                        <button class="tablinks" onclick="openList(event, 'Upcoming')" > Upcoming</button>
+                                        <button class="tablinks" onclick="openList(event, 'Incomplete')"style="color: orange"> Incomplete</button>
+                                        <button class="tablinks" onclick="openList(event, 'Completed')" style="color: green"> Completed</button>
                                         <button class="tablinks" onclick="openList(event, 'All')">All Tasks</button>
                                     </div>
                                     <!-- Tab content -->
@@ -41,6 +43,9 @@
 
                                     <div id="Upcoming" class="tabcontent">
                                         @yield('Upcoming')
+                                    </div>
+                                    <div id="Incomplete" class="tabcontent">
+                                        @yield('Incomplete')
                                     </div>
 
                                     <div id="Completed" class="tabcontent">

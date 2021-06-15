@@ -23,8 +23,11 @@
                         {{$event->summary}}
                     </a>
                 </h3>
+                @if($event['start']['dateTime']!= null)
                 <small class="card-text">Time {{substr($event['start']['dateTime'],11,5).' - '.substr($event['end']['dateTime'],11,5)}}</small>
-
+                @else
+                <small class="card-text">Full Day</small>
+            @endif
             </div>
             @php
                 $flag = 1;

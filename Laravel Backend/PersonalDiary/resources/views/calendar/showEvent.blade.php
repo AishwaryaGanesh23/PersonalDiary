@@ -16,17 +16,20 @@
         <div class="col-md-8">
             <div class="card">
             <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif; text-align: center;">
-                    {{-- {{ __('Your Post') }} --}}
-                    {{$event->summary}}  
+                    <a href="{{ $event->htmlLink }}">{{ $event->summary}} </a>
+                    
                 </div>
                 <div class="card-body">
                     
                     <ol>
                         @if($event['start']['dateTime']!= null)
-                            <li>Date: {{ substr($event['start']['dateTime'],0,10) }}</li>
-                            <li>Starts at: {{substr($event['start']['dateTime'],11,5)}} 
+                            <li>Start Date: {{ substr($event['start']['dateTime'],0,10) }}
                             &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            Ends at: {{substr($event['end']['dateTime'],11,5)}}
+                            Time: {{substr($event['start']['dateTime'],11,5)}} 
+                            </li>
+                            <li>End Date: {{ substr($event['end']['dateTime'],0,10) }}
+                            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Time at: {{substr($event['end']['dateTime'],11,5)}}
                             </li>   
                             
                         @else
@@ -59,6 +62,23 @@
                             <li>Email: {{ $event['organizer']['email']}}</li>
                         @endif
                     </ol>
+                    @if($event['attendees']!=null)
+                    <ol>Attendees
+                        
+                        @foreach ($event['attendees'] as  $attendee)
+                        @if($attendee['displayName']!=null)
+                            <li>Display Name: {{ $attendee['displayName'] }}</li>
+                        @endif
+                        @if($attendee['email']!=null)
+                            <li>Email: {{ $attendee['email']}}</li>
+                        @endif
+                        @if($attendee['responseStatus']!=null)
+                            <li>Response Status: {{ $attendee['responseStatus']}}</li>
+                        @endif
+                        <br>
+                        @endforeach
+                    </ol>
+                    @endif
 
                     {{-- <a href="/calendar/{{$event->id}}/edit"><button class="btn btn-primary" style="float:left; margin-right: 5px; "> Edit </button></a> --}}
                     {!! Form::open(['action' => ['App\Http\Controllers\gCalendarController@destroy',$event->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}

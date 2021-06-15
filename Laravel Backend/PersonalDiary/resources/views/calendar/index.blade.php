@@ -91,22 +91,22 @@
 
                                             <div>
                                                 <label for="startdate" id="lab_startdate">Start Date</label>
-                                                <input class="form-control" type="date" id="startdate" name='startdate' required>
+                                                <input class="form-control" type="date" id="startdate" name='startdate' value ="{{ date('Y-m-d') }}" required>
                                             </div>
 
                                             <div class="form-group" id="div3">
                                                 <label id="lab_enddate" for="enddate" >End Date</label>
-                                                <input class="form-control" type="date" id="enddate" name='enddate' required>
+                                                <input class="form-control" type="date" id="enddate" name='enddate' min="{{ date('Y-m-d') }}">
                                             </div>
 
                                             <div class="form-group" style="display: block;" id="div1">
-                                                <label id="valueFromMyButton" for="starttime" >Start Time</label>
-                                                <input class="form-control" type="time" id="start"  name='start_time'>
+                                                <label id="lab_start_time" for="starttime" >Start Time</label>
+                                                <input class="form-control" type="time" id="starttime"  name='start_time' value = "{{ date('h:00') }}">
                                             </div>
 
                                             <div class="form-group" style="display: block;" id="div2">
-                                                <label id="valueFromMyButton" for="endtime" >End Time</label>
-                                                <input class="form-control" type="time" id="end"  name='end_time'> 
+                                                <label id="lab_end_time" for="endtime" >End Time</label>
+                                                <input class="form-control" type="time" id="endtime"  name='end_time' min="{{ date('h:00') }}"> 
                                             </div>
 
                                             <div class="form-group">

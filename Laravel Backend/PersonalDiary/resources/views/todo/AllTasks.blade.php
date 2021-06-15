@@ -17,11 +17,17 @@
                         <h3 class="card-title" >
                         <a href = "/tasks/{{$task->id}}">
                     @endif
-                            <!-- <a href = "/tasks/{{$task->id}}"> -->
+                            
                             {{$task->title}}
                             </a>
                     </h3>
-
+                    {!! Form::open(['action' => ['App\Http\Controllers\TasksController@completeTask',$task->id], 'method' => 'POST', 'style' => 'font-size: 15px; float: right'] )!!}
+                    @if($task->status == 'Incomplete')
+                        {{Form::submit('Complete', ['class' => 'btn btn-success', 'style' => 'width: 80px; text-align: center' ])}}
+                    @else
+                    {{Form::submit('Inomplete', ['class' => 'btn btn-warning','style' => 'width: 100px; text-align: center'])}}
+                    @endif
+                    {!! Form::close() !!}
 
                     
                     <small class="card-text">Due by {{$task->due_date}} {{$task->due_time}}</small>

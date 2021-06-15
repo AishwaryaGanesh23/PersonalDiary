@@ -34,3 +34,29 @@ function ShowHideDiv(checkfullday) {
         date.innerHTML = checkfullday.checked ? "Event date" : "Start Date";
         
     }
+
+//task start end date restriction
+var startdate = document.getElementById('startdate');
+var enddate = document.getElementById('enddate');
+
+startdate.addEventListener('change', function() {
+  if (startdate.value)
+    enddate.min = startdate.value;
+}, false);
+enddate.addEventLiseter('change', function() {
+    if (enddate.value)
+    startdate.max = enddate.value;
+}, false);
+
+var starttime = document.getElementById('starttime');
+var endtime = document.getElementById('endtime');
+
+starttime.addEventListener('change', function() {
+  if (starttime.value)
+  endtime.min = starttime.value;
+}, false);
+
+endtime.addEventLiseter('change', function() {
+    if (endtime.value)
+    starttime.max = endtime.value;
+}, false);

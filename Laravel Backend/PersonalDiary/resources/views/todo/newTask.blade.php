@@ -35,12 +35,12 @@
 
 					<div class="form-group"> 
 						{{Form::label('duedate', 'Due Date')}}
-						{!! Form::date('duedate', '', ['class' => 'form-control' , 'placeholder' => 'Date','required' => 'required']) !!}
+						{!! Form::date('duedate', \Carbon\Carbon::today(), ['class' => 'form-control' , 'placeholder' => 'Date','required' => 'required']) !!}
 					</div>
 
 					<div class="form-group"> 
 						{{Form::label('time', 'Due Time')}}
-						{!! Form::time('duetime', '', ['class' => 'form-control' , 'placeholder' => 'Date']) !!}
+						{!! Form::time('duetime', \Carbon\Carbon::now(), ['class' => 'form-control' , 'placeholder' => 'Date']) !!}
 					</div>
 
 					<div class="form-group">

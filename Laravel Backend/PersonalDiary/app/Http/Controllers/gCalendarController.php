@@ -6,6 +6,7 @@ use Google_Client;
 use Google_Service_Calendar;
 use Google_Service_Calendar_Event;
 use Google_Service_Calendar_EventDateTime;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class gCalendarController extends Controller
@@ -20,10 +21,9 @@ class gCalendarController extends Controller
         $client->setAuthConfig('client_secret.json');
         $client->addScope(Google_Service_Calendar::CALENDAR);
 
-        $guzzleClient = new \GuzzleHttp\Client(array('curl' => array(CURLOPT_SSL_VERIFYPEER => false)));
+        $guzzleClient = new Client(['curl' =>[CURLOPT_SSL_VERIFYPEER => false]] );
         $client->setHttpClient($guzzleClient);
         $this->client = $client;
-        date_default_timezone_set('Asia/Kolkata');
     }
     /**
      * Display a listing of the resource.
@@ -34,26 +34,25 @@ class gCalendarController extends Controller
     {
         session_start();
         if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
-            $this->client->setAccessToken($_SESSION['access_token']);
-            $service = new Google_Service_Calendar($this->client);
-
-            $calendarId = 'primary';
-            $optParams = array(
-                // 'maxResults' => 10,
-                'singleEvents' => true,
-                'orderBy' => 'startTime',  
-                // 'sortOrder'=>'descending',              
-              );
-            $results = $service->events->listEvents($calendarId,$optParams);
-            // return $results->getItems();
-            // return view('calendar.index');
-            $events = $results->getItems();
-            // $eventsnewtofirst=  array_reverse($events);
-            return view('calendar.index')->with('events',$events);
-
+                $this->client->setAccessToken($_SESSION['access_token']);
+                $service = new Google_Service_Calendar($this->client);
+                $calendarId = 'primary';
+                $optParams = array(
+                    // 'maxResults' => 10,
+                    'singleEvents' => true,
+                    'orderBy' => 'startTime',  
+                    // 'sortOrder'=>'descending',              
+                );
+                $results = $service->events->listEvents($calendarId,$optParams);
+                // return $results->getItems();
+                // return view('calendar.index');
+                $events = $results->getItems();
+                $eventsnewtofirst=  array_reverse($events);
+                return view('calendar.index')->with('events',$eventsnewtofirst);
+            
         } else {
             return redirect()->route('oauthCallback');
-        }
+        }        
     }
 
 
@@ -73,9 +72,9 @@ class gCalendarController extends Controller
                     // 'sortOrder'=>'descending',              
                 );
                 $results = $service->events->listEvents($calendarId,$optParams);
-                return $results->getItems();
+                return  array_reverse($results->getItems());
             }
-            catch (Exception $e)
+            catch (GoogleServiceException $e)
             {
                 return redirect()->route('oauthCallback');
             }
@@ -126,28 +125,41 @@ class gCalendarController extends Controller
     public function store(Request $request)
     {
         //
-        session_start();
-        $startDateTime = date('Y-m-d').'T'.$request->input('start_time').':00.000+05:30';
-        $endDateTime = date('Y-m-d').'T'.$request->input('end_time').':00.000+05:30';
-
+        session_start();       
         if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
             $this->client->setAccessToken($_SESSION['access_token']);
             $service = new Google_Service_Calendar($this->client);
 
             $calendarId = 'primary';
-            $event = new Google_Service_Calendar_Event([
-                'summary' => $request->input('name'),
-                'start' => [
-                    'dateTime' => $startDateTime,
-                    // 'timeZone' => 'Asia/Kolkata',
-                ],
-                'end' => [
-                    'dateTime' => $endDateTime,
-                    // 'timeZone' => 'Asia/Kolkata',
-                ],
 
-                'reminders' => ['useDefault' => false],
-            ]);
+            if( $request->fullday==null){
+                $startDateTime = $request->input('startdate').'T'.$request->input('start_time').':00.000+05:30';
+                $endDateTime = $request->input('enddate').'T'.$request->input('end_time').':00.000+05:30';
+                $event = new Google_Service_Calendar_Event([
+                    'summary' => $request->input('name'),
+                    'start' => [
+                        'dateTime' => $startDateTime,
+                    ],
+                    'end' => [
+                        'dateTime' => $endDateTime,
+                    ],
+    
+                    'reminders' => ['useDefault' => false],
+                ]);
+            }
+            else{
+                $startDate = $request->input('startdate');
+                $event = new Google_Service_Calendar_Event([
+                    'summary' => $request->input('name'),
+                    'start' => [
+                        'date' => $startDate,
+                    ],
+                    'end' => [
+                        'date' => $startDate,
+                    ],    
+                    'reminders' => ['useDefault' => false],
+                ]);
+            }
             $results = $service->events->insert($calendarId, $event);
             if (!$results) {
                 // return response()->json(['status' => 'error', 'message' => 'Something went wrong']);
