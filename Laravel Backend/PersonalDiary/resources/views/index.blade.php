@@ -5,9 +5,9 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card" style="left: -1%; top: 50px; width: 115%;">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+        <div class="col-md-10">
+            <div class="card" style="left: -1%;">
+                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; " >{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,13 +15,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <!-- <a href="{{ route('posts.index') }}"><img class="index_image" src ="{{asset('pics/posts2.png')}}"></a>
-                    <a href="{{ route('tasks.index') }}"><img class="index_image" src ="{{asset('pics/todo2.png')}}"></a>
-                    <a href="{{ route('calendar.index') }}"><img class="index_image" src ="{{asset('pics/calendar1.png')}}"></a>
-                    <br>
-                    <a  href="{{ route('posts.index') }}" style="margin-left: 100px">{{ __('All Posts') }}</a>
-                    <a  href="{{ route('tasks.index') }}" style="margin-left: 210px">{{ __('To Do List') }}</a>
-                    <a  href="{{ route('calendar.index') }}" style="margin-left: 200px">{{ __('Calendar') }}</a> -->
 
                     <div id="div1" style="width: 30%; height: 250px;">
                         <a href="{{ route('posts.index') }}">

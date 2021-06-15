@@ -4,7 +4,7 @@
 
 @section('breadcrumb')
     <a href="/home" class="breadcrumb-item">Home</a>
-    <a href="/posts" class="breadcrumb-item">All Posts</a>
+    <a href="/posts" class="breadcrumb-item">Posts</a>
     <a href="/posts/{{$post->id}}" class="breadcrumb-item" aria-current="page">{{$post->title}}</a>
     <a class="breadcrumb-item active" aria-current="page">Edit Post</a>
 @endsection
@@ -13,7 +13,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
            <div class="card">
                 <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
 					        {{ __('Edit Your Post') }}
@@ -79,7 +79,7 @@
 						        {{-- add delete button --}}
 						        {{-- <a href="{{ action('App\Http\Controllers\PostMediaController@destroy' , $media->id)}}"><button class="btn btn-danger" style="float:left; margin-right: 5px; "> Delete </button></a> --}}
 						        {!! Form::open(['action' => ['App\Http\Controllers\PostMediaController@destroy',$media->id], 'method' => 'DELETE']) !!}
-							          {{Form::submit('Delete',['class'=>'btn btn-danger', 'style' => 'margin-left: 25%;'])  }}
+							          {{Form::submit('Delete',['class'=>'btn btn-danger', 'style' => 'margin-left: 15%;'])  }}
 						        {!! Form::close() !!}
                     <br>
 						      @endforeach

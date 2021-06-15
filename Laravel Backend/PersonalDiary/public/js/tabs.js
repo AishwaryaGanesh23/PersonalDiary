@@ -22,9 +22,9 @@ function openList(evt, ListName) {
           document.getElementById("defaultOpen").click();
 
 function ShowHideDiv(checkfullday) {
-        var start = document.getElementById("div1");
-        var end = document.getElementById("div2");
-        var enddate = document.getElementById("div3");
+        var start = document.getElementById("divstime");
+        var end = document.getElementById("divetime");
+        var enddate = document.getElementById("divedate");
 
         start.style.display = checkfullday.checked ? "none" : "block";
         end.style.display = checkfullday.checked ? "none" : "block";

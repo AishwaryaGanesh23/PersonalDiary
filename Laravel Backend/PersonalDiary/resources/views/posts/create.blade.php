@@ -5,7 +5,7 @@
 	
 @section('breadcrumb')
 	<a href="/home" class="breadcrumb-item">Home</a>
-	<a href="/posts" class="breadcrumb-item">All Posts</a>
+	<a href="/posts" class="breadcrumb-item">Posts</a>
 	<a class="breadcrumb-item active" aria-current="page">Create a Post</a>
 @endsection
 
@@ -14,7 +14,7 @@
 	
 	<div class="container">
 		<div class="row justify-content-center" >
-			<div class="col-md-8">
+			<div class="col-md-10">
 				<div class="card">
 					<div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
 						{{ __('Create a Post') }}

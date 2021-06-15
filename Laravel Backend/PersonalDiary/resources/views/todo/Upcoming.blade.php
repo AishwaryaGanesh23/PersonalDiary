@@ -5,7 +5,7 @@
 @endphp
 @if(count($tasks)>0)
     @foreach( $tasks as $task)
-        @if($task->due_date > date('Y-m-d') && $task->status=='Incomplete')
+        @if(Auth::user()->id ==  $task->user_id && $task->due_date > date('Y-m-d') && $task->status=='Incomplete')
             @php
                 $flag =1;
             @endphp
@@ -27,7 +27,7 @@
 @endif    
 @if($flag==0)
     <div class = "card-body">
-        <h3 class="card-title">You don't have any upcoming tasks.</h3>
+        <h3 class="card-title">You don't have any Upcoming tasks.</h3>
     </div>
 @endif
 @endsection

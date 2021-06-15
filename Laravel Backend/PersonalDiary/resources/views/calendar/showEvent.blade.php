@@ -4,7 +4,7 @@
 
 @section('breadcrumb')
     <a href="/home" class="breadcrumb-item">Home</a>
-    <a href="/calendar" class="breadcrumb-item">All Events</a>
+    <a href="/calendar" class="breadcrumb-item">Calendar</a>
     <a class="breadcrumb-item active" aria-current="page">{{$event->summary}}</a>
 @endsection
 
@@ -13,7 +13,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
             <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif; text-align: center;">
                     <a href="{{ $event->htmlLink }}">{{ $event->summary}} </a>

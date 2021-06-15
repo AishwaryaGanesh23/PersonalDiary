@@ -15,7 +15,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; ">
                     {{ __('Calendar') }}
@@ -91,23 +91,25 @@
                                                 <label id="valueFromMyButton" for="name" >Event Name</label>
                                                 <input class="form-control" type="text" id="name" name='name' required>
                                             </div>
+                                            
 
-                                            <div>
+                                            <div class="form-group">
                                                 <label for="startdate" id="lab_startdate">Start Date</label>
                                                 <input class="form-control" type="date" id="startdate" name='startdate' value ="{{ date('Y-m-d') }}" required>
                                             </div>
 
-                                            <div class="form-group" id="div3">
+                                            <div class="form-group" id="divedate">
                                                 <label id="lab_enddate" for="enddate" >End Date</label>
                                                 <input class="form-control" type="date" id="enddate" name='enddate' min="{{ date('Y-m-d') }}">
                                             </div>
 
-                                            <div class="form-group" style="display: block;" id="div1">
+                                            <div class="form-group" style="display: block;" id="divstime">
                                                 <label id="lab_start_time" for="starttime" >Start Time</label>
                                                 <input class="form-control" type="time" id="starttime"  name='start_time' value = "{{ date('h:00') }}">
                                             </div>
+                                            
 
-                                            <div class="form-group" style="display: block;" id="div2">
+                                            <div class="form-group" style="display: block;" id="divetime">
                                                 <label id="lab_end_time" for="endtime" >End Time</label>
                                                 <input class="form-control" type="time" id="endtime"  name='end_time' min="{{ date('h:00') }}"> 
                                             </div>
@@ -117,9 +119,10 @@
                                                 <label id="valueFromMyButton" for="fullday" >Full Day Event</label>
                                             </div>
 
-                                            <button class="button" id="cancel-button"><a href="{{ route('calendar.index') }}" style="color:black">Cancel</a></button>
-                                            <button class="button button-white" id="ok-button" type="submit">OK</button>
-                                            
+                                            <div class="form-group">
+                                                <button class="button" id="cancel-button"><a href="{{ route('calendar.index') }}" style="color:black">Cancel</a></button>
+                                                <button class="button button-white" id="ok-button" type="submit">OK</button>
+                                            </div>
                                         
                                     {!! Form::close() !!}
                                     

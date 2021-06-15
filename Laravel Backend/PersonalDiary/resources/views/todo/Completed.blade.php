@@ -4,7 +4,7 @@
 @endphp
 @if(count($tasks)>0)
     @foreach( $tasks as $task)
-        @if($task->status =='Complete')
+        @if(Auth::user()->id ==  $task->user_id && $task->status =='Complete')
         @php
             $flag =1;
         @endphp

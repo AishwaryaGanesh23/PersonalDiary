@@ -27,7 +27,7 @@
                         <img class="dp" src ="{{asset('profile_pic/'.Auth::user()->profile_pic)}}">
                     @endif
 
-                    <button class="change_profile" onclick="openForm()">Update Profile</button> 
+                    
 
                     <div class="form-popup" id="myForm" >
                     
@@ -49,6 +49,10 @@
                     <br>
                     
                     <p class="profile">{{ Auth::user()->name }}</p>
+                    <center>
+                        <button class="btn btn-info" onclick="openForm()">Update Profile</button> 
+                        <a class="btn btn-info" href="/oauth" role="button">OAuth</a>
+                    </center>
 
                     <div class="form-popup" id="myForm1">
                     {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@update',Auth::user()->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}

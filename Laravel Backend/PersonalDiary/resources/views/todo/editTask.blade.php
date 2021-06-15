@@ -4,7 +4,7 @@
 
 @section('breadcrumb')
     <a href="/home" class="breadcrumb-item">Home</a>
-    <a href="/tasks" class="breadcrumb-item">To Do List</a>
+    <a href="/tasks" class="breadcrumb-item">Tasks</a>
     <a href="/tasks/{{$task->id}}" class="breadcrumb-item" aria-current="page">{{$task->title}}</a>
     <a class="breadcrumb-item active" aria-current="page">Edit Task</a>
 @endsection
@@ -13,7 +13,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header" style="font-size: 25px; font-family: 'Playfair Display', serif;">
                     {{ __('Edit Task') }}

@@ -4,7 +4,7 @@
 @endphp
 @if(count($tasks)>0)
     @foreach( $tasks as $task)
-        @if($task->status =='Incomplete')
+        @if(Auth::user()->id ==  $task->user_id && $task->status =='Incomplete')
         @php
             $flag =1;
         @endphp
@@ -33,7 +33,7 @@
 @endif    
 @if($flag==0)
     <div class = "card-body">
-        <h3 class="card-title">You Dont Have any Tasks Due Today.</h3>
+        <h3 class="card-title">You Dont Have any Incomplete Tasks.</h3>
             
     </div>
 @endif

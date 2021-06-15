@@ -10,14 +10,14 @@
 
 @section('breadcrumb')
         <a href="/home" class="breadcrumb-item">Home</a>
-        <a class="breadcrumb-item active" aria-current="page">To Do List</a>
+        <a class="breadcrumb-item active" aria-current="page">Tasks</a>
 @endsection
 
 @section('content')
 
 <div class="container">
         <div class="row justify-content-center">
-                <div class="col-md-6">
+                <div class="col-md-10">
                         
                         <div class="card">
                                 <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; ">

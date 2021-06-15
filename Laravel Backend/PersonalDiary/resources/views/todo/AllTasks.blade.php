@@ -1,22 +1,28 @@
 @section('All')
+@php
+    $flag =0;
+@endphp
 <div class="card-body">
     @if(count($tasks)>=1)
         @foreach( $tasks as $task)
             @if(Auth::user()->id ==  $task->user_id)
+            @php
+                $flag =1;
+            @endphp
                 <div class = "card-body">
-                    @if($task->status=="Complete" )
+                @if($task->status=="Complete" )
                     <h3 class="card-title" style="text-decoration: line-through;">
                     <a href = "/tasks/{{$task->id}}" style="color: green">
-                    @elseif($task->due_date < date('Y-m-d'))
+                @elseif($task->due_date < date('Y-m-d'))
                         <h3 class="card-title">
                         <a href = "/tasks/{{$task->id}}" style="color: red">
-                    @elseif($task->due_date == date('Y-m-d'))
+                @elseif($task->due_date == date('Y-m-d'))
                         <h3 class="card-title">
                         <a href = "/tasks/{{$task->id}}" style="color: blue">
                         @else
                         <h3 class="card-title" >
                         <a href = "/tasks/{{$task->id}}">
-                    @endif
+                @endif
                             
                             {{$task->title}}
                             </a>
@@ -35,11 +41,13 @@
                 </div>
             @endif  
         @endforeach
-    @else
-    <div class = "card-body">
-            <h3 class="card-title">
-                    You Havent Created any Tasks.
-            </h3>
     @endif
+@if($flag ==0)
+    <div class = "card-body">
+        <h3 class="card-title">
+                You Havent Created any Tasks.
+        </h3>
+    </div>
+@endif 
 </div>
 @endsection

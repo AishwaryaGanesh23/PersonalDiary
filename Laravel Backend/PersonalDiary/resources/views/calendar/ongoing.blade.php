@@ -1,6 +1,6 @@
 @section('OnGoing')
 @php
-    $flag = 1;
+    $flag = 0;
 @endphp
 @if(count($events)>0)
     @foreach( $events as $event)

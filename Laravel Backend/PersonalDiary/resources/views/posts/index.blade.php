@@ -4,14 +4,16 @@
 
 @section('breadcrumb')
     <a href="/home"  class="breadcrumb-item">Home</a>
-    <a class="breadcrumb-item active" aria-current="page">All Posts</a>
+    <a class="breadcrumb-item active" aria-current="page">Posts</a>
 @endsection
 
 @section('content')
-
+@php
+    $flag =0;
+@endphp
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header" style="font-size: 25px; font-family: 'Playfair Display', serif;">
                 {{ __('All Posts') }}
@@ -28,6 +30,9 @@
                     @if(count($posts)>=1)
                         @foreach( $posts as $post)
                             @if(Auth::user()->id ==  $post->user_id)
+                            @php
+                                $flag =1;
+                            @endphp
                                 <div class = "card-body">
                                     <h3 class="card-title">
                                         <a href = "/posts/{{$post->id}}">
@@ -40,18 +45,13 @@
                                 </div>
                             @endif  
                         @endforeach
-                    @else
+                    @endif
+                    @if($flag==0)
                     <div class = "card-body">
-                                    <h3 class="card-title">
-                                        You Have No Posts. Create One now!
-                                    </h3>
-                                    <!-- add new post button -->
-                                    <center>
-                                        <a href="/posts/create">
-                                        
-                                        <button class="submits log-in btn btn-primary "><i class="fa fa-plus"></i> &nbsp;Create Post</button></a> 
-                                    </center>
-                                </div>
+                        <h3 class="card-title">
+                            You Have No Posts. Create One now! Press <i class="fa fa-plus"></i> on the top right corner of the card.
+                        </h3>
+                    </div>
                     @endif
                 </div>
             </div>

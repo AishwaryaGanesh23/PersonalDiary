@@ -45,7 +45,6 @@
     <div class = "card-body">
         <h3 class="card-title">
             <h3 class="card-title">You Have No Events Today.</h3>
-            {{ date("Y-m-d H:i T") }}
         </h3>
     </div>                    
 @endif
