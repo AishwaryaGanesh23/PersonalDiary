@@ -18,7 +18,8 @@
                     <a href="/posts/create" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
                     <a class="side_accordian" style="float:right; padding-right:10px; font-size: 13px;"><i class="fa fa-chevron-circle-down"></i>&nbsp;Sort</a>
                         <div class="acc_disp" style="text-align: right; font-size: 13px;">
-                            <a href = "/posts">Sort by Date Created</a> <br>
+                            <a href = "/posts">Sort by Date Created Latest First</a> <br>
+                            <a href = "/postssortbyCreated">Sort by Date Created Oldest First</a> <br>
                             <a href = "/postsSortbyTitle">Sort by Title</a> 
                         </div>             
                 </div>
@@ -33,7 +34,9 @@
                                             {{$post->title}}
                                         </a>
                                     </h3>
+                                    <small class="card-text">Created on {{$post->created_at}}</small> <br> 
                                     <small class="card-text">Updated on {{$post->updated_at}}</small>
+                                    <hr>
                                 </div>
                             @endif  
                         @endforeach

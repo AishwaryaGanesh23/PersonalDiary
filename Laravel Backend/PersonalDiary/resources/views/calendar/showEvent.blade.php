@@ -63,12 +63,15 @@
             
                         @else
                             <tr>
-                                <td>Date: {{ $event['start']['date'] }}</li></td>   
-                                <td>Full Day Event</li></td>                            
+                                <td>Date: {{ $event['start']['date'] }}</td>   
+                                <td>Full Day Event</td>                            
                             </tr>
                         @endif
 
                         @if($event['attendees']!=null)
+                            <tr>
+                               <td>Attendees List:</td>                            
+                            </tr>
                             @foreach ($event['attendees'] as  $attendee)
                                 <tr>
                                 @if($attendee['displayName']!=null)
@@ -88,7 +91,7 @@
 
                         @if($event->hangoutLink!=null)
                             <tr>
-                                <td>Hangout link: <a href="{{ $event->hangoutLink }}">{{ $event->hangoutLink }}/td>                             
+                                <td>Hangout link: <a href="{{ $event->hangoutLink }}">{{ $event->hangoutLink }}</td>                             
                             </tr>
                         @endif
 

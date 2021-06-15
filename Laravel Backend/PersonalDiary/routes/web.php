@@ -32,6 +32,7 @@ Route::get('/about', [PagesController::class, 'about']);
 
 Route::resource('posts', PostsController::class);
 Route::get('/postsSortbyTitle', [PostsController::class, 'sortbyTitle']);
+Route::get('/postssortbyCreated', [PostsController::class, 'sortbyCreated']);
 Route::resource('postmedia', PostMediaController::class);
 
 Route::resource('profile', ProfileController::class);

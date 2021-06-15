@@ -3,6 +3,9 @@
 @include('layouts.sidebar')
 @include('calendar.TodaysEvents')
 @include('calendar.AllEvents')
+@include('calendar.upcoming')
+@include('calendar.completed')
+@include('calendar.ongoing')
 
 @section('breadcrumb')
     <a href="/home" class="breadcrumb-item">Home</a>
@@ -146,18 +149,30 @@
                     {{ __('Events') }}
                 </div>
                     <div class="tab">
-                        <button class="tablinks" onclick="openList(event, 'Today')" id="defaultOpen">Today's Event</button>
+                        <button class="tablinks" onclick="openList(event, 'Completed')">Completed</button>
+                        <button class="tablinks" onclick="openList(event, 'Today')" id="defaultOpen">Today</button>
+                        <button class="tablinks" onclick="openList(event, 'OnGoing')">On Going</button>
+                        <button class="tablinks" onclick="openList(event, 'Upcoming')">Upcoming</button>
                         <button class="tablinks" onclick="openList(event, 'All')">All Events</button>
                     </div>
                     <!-- Tab content -->
+                    <div id="Completed" class="tabcontent">
+                        @yield('Completed')
+                    </div>
                     <div id="Today" class="tabcontent">
                         @yield('TodaysEvents')
                     </div>
-                    
+                    <div id="OnGoing" class="tabcontent">
+                        @yield('OnGoing')
+                    </div>
+                    <div id="Upcoming" class="tabcontent">
+                        @yield('Upcoming')
+                    </div>
                     <div id="All" class="tabcontent">
                         @yield('AllEvents')
                     </div>
 
+                    
                 </div>
             </div>  
         </div>
