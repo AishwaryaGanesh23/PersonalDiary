@@ -368,7 +368,7 @@ li {
     }
 
     .breadcrumb {
-        top: 4vh;
+        top: 3vh;
     }
 
     #myModal
@@ -398,6 +398,7 @@ li {
 
     .card{
         min-height: 400px;
+        top: 85px;
     }
 }
 

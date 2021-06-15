@@ -15,12 +15,12 @@
                         {{$task->title}}
                         </a>
                 </h3>
-                {!! Form::open(['action' => ['App\Http\Controllers\TasksController@completeTask',$task->id], 'method' => 'POST', 'style' => 'font-size: 15px; float: right'] )!!}
+                {!! Form::open(['action' => ['App\Http\Controllers\TasksController@completeTask',$task->id], 'method' => 'POST', 'style' => 'font-size: 15px; float: right; position: relative; top: -5vh;'] )!!}
                 {{Form::submit('Complete', ['class' => 'btn btn-success', 'style' => 'width: 80px; text-align: center' ])}}
                 {!! Form::close() !!}
                 
                 <small class="card-text">Due by {{$task->due_date}} {{$task->due_time}}</small>
-                                                                
+                <hr>                                                  
             </div>
         @endif  
     @endforeach    

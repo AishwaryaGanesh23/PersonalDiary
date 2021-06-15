@@ -54,7 +54,7 @@
                     {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@update',Auth::user()->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}
                     <button type="button" onclick="closeForm1()" style="float:right; font-size: 13px; width:10%;"><i class="fa fa-close"></i></button> 
                         <div class="form-group" id="myForm">
-                            {{Form::label('profile_pic_title', 'Change Profile Picture')}}
+                            {{Form::label('profile_pic_title', 'Change Profile Picture', ['style' => 'font-weight: bold; font-size: 20px'])}}
                             {{ Form::hidden('MAX_FILE_SIZE', '8388608', ['id' => 'max_id']) }}
                             {{Form::file('profile_pic',['class' => 'form-control', 'id'=>'file_id', 'accept'=>'image/*',  'onchange'=>'upload_check()'])}}
                             {{Form::label('profile_pic_warn', '(File size should be max 8mb)')}} 
@@ -68,8 +68,8 @@
                     {!! Form::open(['action' => 'App\Http\Controllers\ProfileController@changePassword', 'method' => 'POST', 'class' => 'createform','enctype' => 'multipart/form-data']) !!}
                     <button type="button" onclick="closeForm3()" style="float:right; font-size: 13px; width:10%;"><i class="fa fa-close"></i></button> 
                         <div class="form-group" id="myForm3">
-                            {{Form::label('change_password', 'Change Password')}}
-
+                            {{Form::label('change_password', 'Change Password', ['style' => 'font-weight: bold; font-size: 20px;'])}}
+                            <br>
                             {{Form::label('current_password', 'Current Password')}}
 						    {{Form::password('current_password', ['class' => 'form-control' , 'placeholder' => 'Enter your current password'])}}
 
@@ -89,7 +89,7 @@
                          
                         <div class="form-group" id="myForm">
                         
-                            {{Form::label('profile_pic_title', 'Delete Profile Picture')}}
+                            {{Form::label('profile_pic_title', 'Delete Profile Picture', ['style' => 'font-weight: bold; font-size: 20px'])}}
                         </div>
                         {!! Form::open(['action' => ['App\Http\Controllers\ProfileController@destroy',Auth::user()->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}
                         {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}
