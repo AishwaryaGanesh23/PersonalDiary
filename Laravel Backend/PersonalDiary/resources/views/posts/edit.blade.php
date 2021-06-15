@@ -19,13 +19,17 @@
 					        {{ __('Edit Your Post') }}
 
                   <a href="/posts/{{$post->id}}" style="float:right; font-size: 13px; "><i class="fa fa-close"></i></a>
-              
+
+                  @if(count($postmedia)>0)
+                    <a onclick="openForm()" style="float:right; font-size: 13px; margin-right: 10px; cursor: pointer"><i class="fa fa-edit"></i> Edit Media</a>
+                  @endif
 				        </div>
                 
                 <!-- <div class="card-body"> -->
-                
-              {!! Form::open(['action' => ['App\Http\Controllers\PostsController@update',$post->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data', 'style' => 'border-bottom: transparent']) !!}
-              <div class="form-group"> 
+                <div class="blur" id="blur"></div> 
+
+                {!! Form::open(['action' => ['App\Http\Controllers\PostsController@update',$post->id], 'method' => 'PUT', 'class' => 'createform','enctype' => 'multipart/form-data', 'style' => 'border-bottom: transparent']) !!}
+                  <div class="form-group"> 
                     {{Form::label('title', 'Enter a Title')}}
                     {{Form::text('title', $post->title, ['class' => 'form-control'])}}
                   </div>
@@ -35,7 +39,13 @@
                     {{Form::textarea('body', $post->entrycontent, ['class' => 'form-control'])}}
                   </div>
                   {{-- ask if they want to add media, if yes then show this --}}
-                  <div class="form-group"> 
+                  <div class="form-group">
+                    <input  type="checkbox" id="checkmedia"  onclick="ShowHideMedia(this)">
+                    <label id="valueFromMyButton" >Add more Pictures/Videos to your post</label>
+                  </div>
+
+					
+                  <div class="form-group" id="media" style="display: none"> 
                     {{Form::label('post_media_title', 'Add Images/Video')}}
                     {{ Form::hidden('MAX_FILE_SIZE', '2097152', ['id' => 'max_id']) }}
                     {{Form::file('post_media[]',['class' => 'form-control', 'id'=>'file_id', 'multiple' => 'multiple', 'accept'=>'image/*,video/*',  'onchange'=>'upload_check()'])}}
@@ -48,27 +58,32 @@
                 <!-- </div> -->
 
                 {{-- showing media that is already there --}}
-                <div class="createform" style="border-top: transparent; border-radius-top: none">
-                <div class="form-group"> 
-                        
-                  @foreach($postmedia as $media)
-                      @if($media->filetype == 'image')
-                          <img class="images" style="Padding-bottom: 20px" src ="{{asset('post_media/'.$media->filename)}}">
-                      @elseif($media->filetype == 'video')
-                          <video width="100%" controls>
-                              <source src="{{URL::asset('post_media/'.$media->filename)}}" type="video/mp4">
-                          Your browser does not support the video tag.
-                      </video>
-                      @endif
-                      {{-- add delete button --}}
-                      {{-- <a href="{{ action('App\Http\Controllers\PostMediaController@destroy' , $media->id)}}"><button class="btn btn-danger" style="float:left; margin-right: 5px; "> Delete </button></a> --}}
-                      {!! Form::open(['action' => ['App\Http\Controllers\PostMediaController@destroy',$media->id], 'method' => 'DELETE']) !!}
-                      {{Form::submit('Delete',['class'=>'btn btn-danger'])  }}
-                      {!! Form::close() !!}
-                      
-                  @endforeach
+                <div class="editmedia" id="myForm">
+                  <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center; background: #fff"> 
+                    Delete Media 
+                  <a onclick="closeForm()" style="float:right; font-size: 13px; "><i class="fa fa-close"></i></a>
                   </div>
-          </div>
+					
+						      @foreach($postmedia as $media)
+						
+						        @if($media->filetype == 'image')
+							        <img src ="{{asset('post_media/'.$media->filename)}}">
+
+						        @elseif($media->filetype == 'video')
+                      <video width="100%" height="300px" controls>
+                        <source src="{{URL::asset('post_media/'.$media->filename)}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+						        @endif
+
+						        {{-- add delete button --}}
+						        {{-- <a href="{{ action('App\Http\Controllers\PostMediaController@destroy' , $media->id)}}"><button class="btn btn-danger" style="float:left; margin-right: 5px; "> Delete </button></a> --}}
+						        {!! Form::open(['action' => ['App\Http\Controllers\PostMediaController@destroy',$media->id], 'method' => 'DELETE']) !!}
+							          {{Form::submit('Delete',['class'=>'btn btn-danger', 'style' => 'margin-left: 25%;'])  }}
+						        {!! Form::close() !!}
+                    <br>
+						      @endforeach
+                </div>
 
             </div>
         </div>

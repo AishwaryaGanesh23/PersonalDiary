@@ -33,7 +33,12 @@ function ShowHideDiv(checkfullday) {
         var date = document.getElementById("lab_startdate");
         date.innerHTML = checkfullday.checked ? "Event date" : "Start Date";
         
-    }
+    } checkmedia
+
+    function ShowHideMedia(checkmedia) {
+      var showmedia = document.getElementById("media");
+      showmedia.style.display = checkmedia.checked ? "block" : "none";
+  }
 
 //task start end date restriction
 var startdate = document.getElementById('startdate');

@@ -1,4 +1,7 @@
 @section('OnGoing')
+@php
+    $flag = 1;
+@endphp
 @if(count($events)>0)
     @foreach( $events as $event)
         @if(
@@ -6,7 +9,7 @@
         ($event['start']['date']!= null && $event['start']['date'] > date('Y-m-d') && $event['end']['date'] < date('Y-m-d')) 
         )
             @php
-                $flag =1;
+                $flag = 1;
             @endphp
             <div class = "card-body">
                 <h3 class="card-title">

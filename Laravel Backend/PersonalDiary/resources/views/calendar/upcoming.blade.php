@@ -1,4 +1,7 @@
 @section('Upcoming')
+@php
+    $flag = 1;
+@endphp
 @if(count($events)>0)
     @foreach( $events as $event)
         @if(($event['start']['dateTime']!= null && $event['start']['dateTime'] > date(DATE_ATOM)) || ($event['start']['date']!= null && $event['start']['date'] > date('Y-m-d')) )

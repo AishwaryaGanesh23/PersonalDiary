@@ -33,7 +33,13 @@
 						{{Form::label('body', 'Diary Entry')}}
 						{{Form::textarea('body', '', ['class' => 'form-control' , 'placeholder' => 'Type in your thoughts here'])}}
 					</div>
-					<div class="form-group"> 
+
+					<div class="form-group">
+						<input  type="checkbox" id="checkmedia"  onclick="ShowHideMedia(this)">
+						<label id="valueFromMyButton" >Add Pictures/Videos</label>
+					</div>
+
+					<div class="form-group" id="media" style="display: none"> 
 						{{Form::label('post_media_title', 'Add Images/Video')}}
 						{{ Form::hidden('MAX_FILE_SIZE', '8388608', ['id' => 'max_id']) }}
 						{{Form::file('post_media[]',['class' => 'form-control', 'id'=>'file_id', 'multiple' => 'multiple', 'accept'=>'image/*,video/*',  'onchange'=>'upload_check()'])}}

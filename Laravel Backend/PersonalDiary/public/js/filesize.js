@@ -5,7 +5,7 @@ function upload_check()
 
     if(upload.files[0].size > max)
     {
-       alert("File too big!");
+       alert("File size exceeded! Maximum file size allowed is 8mb.");
        upload.value = "";
     }
 }

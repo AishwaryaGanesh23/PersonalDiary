@@ -1,4 +1,9 @@
 @section('Completed')
+
+@php
+    $flag = 1;
+@endphp
+
 @if(count($events)>0)
     @foreach( $events as $event)
         @if(($event['start']['dateTime']!= null && $event['end']['dateTime'] < date(DATE_ATOM)) || ($event['end']['date']!= null && $event['start']['date'] < date('Y-m-d')) )
