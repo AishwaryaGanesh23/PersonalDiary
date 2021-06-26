@@ -127,6 +127,10 @@ class ProfileController extends Controller
     }
 
 
+    public function changePasswordForm()
+    {
+        return view('profile.changepassword');
+    }
     public function changePassword(Request $request)
     {
         $request->validate([

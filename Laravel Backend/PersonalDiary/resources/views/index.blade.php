@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <div class="card" style="left: -1%;">
+            <div class="card">
                 <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; " >{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
@@ -16,26 +16,37 @@
                         </div>
                     @endif
 
-                    <div id="div1" style="width: 30%; height: 250px;">
-                        <a href="{{ route('posts.index') }}">
-                            <img class="index_image" src ="{{asset('pics/posts4.png')}}"> 
-                            <br>
-                            <p > {{ __('All Posts') }}</p>
-                        </a>
-                    </div>
+                    <div class="row">
+                        <div class="col md-5">
+                            <a href="{{ route('posts.index') }}">
+                                <div class="col md-6">
+                                    <p style="font-size: 20px">{{ __('All Posts') }}</p>
+                                </div>
+                                <img  src ="{{asset('pics/post2.png')}}"> 
+                                <br>
+                                
+                            </a>
+                        </div>
 
-                   <div id="div2" style="width: 30%; height: 250px; position: absolute; left: 30%; top:10vh;">
-                        <a href="{{ route('tasks.index') }}">
-                            <img class="index_image" src ="{{asset('pics/todo1.png')}}">
-                            <p> {{ __('To Do List') }}</p>
-                        </a>
-                    </div>
+                        <div class="col md-5">
+                            <a href="{{ route('tasks.index') }}">
+                                <div class="col md-6">
+                                    <p style="font-size: 20px"> {{ __('To Do List') }}</p>
+                                </div>
+                                <img src ="{{asset('pics/todo1.png')}}">
+                                
+                            </a>
+                        </div>
 
-                    <div id="div3" style="width: 30%; height: 250px; position: absolute; left: 60%; top:10vh;">
-                        <a href="{{ route('calendar.index') }}">
-                            <img class="index_image" src ="{{asset('pics/calendar1.png')}}">
-                            <p> {{ __('Calendar') }}</p>
-                        </a>
+                        <div class="col md-5">
+                            <a href="{{ route('calendar.index') }}">
+                                <div class="col md-6">
+                                    <p style="font-size: 20px"> {{ __('Calendar') }}</p>
+                                </div>
+                                <img src ="{{asset('pics/calendar1.png')}}">
+                                
+                            </a>
+                        </div>
                     </div> 
                     
                     

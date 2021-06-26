@@ -30,7 +30,7 @@
 				<!-- <div class="col-md-12" style="background: red;"> -->
 				<!-- <div class="content w-100"> -->
 				    <div class="calendar-container">
-				        <div class="calendar"> 
+				        <div class="calendar" > 
                             <div class="year-header"> 
                                 <i class="left-button fa fa-chevron-left" id="prev"> </i> 
                                 <span class="year" id="label" style="position: relative; top: -2vh;"></span> 
@@ -73,78 +73,10 @@
                             </table>
                             </div> 
 
-				            <button class="button" id="add-button" style="width: 150px;" data-toggle="modal" data-target="#myModal">Add Event</button>
-
-                            <div class="modal fade dialog" id="myModal" role="dialog" style="height: 700px; width: 500px; top: -15vh">
-    
-                                <div class="modal-content" >
-                                    <div class="modal-header" >
-                                        <h5 class="modal-title">Add New Event</h5> {{ date("Y-m-d T") }} <br> <br>
-                                        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                                    </div>
-                                    
-                                    <div class="form-container" align="center">
-                                    {!! Form::open(['action' => 'App\Http\Controllers\gCalendarController@store', 'method' => 'POST', 'id' => 'form', 'class' => 'createform', 'style' => 'font-size: 15px'] )!!} 
-                                        
-                                        <!-- <h2 class="dialog-header"> Add New Event </h2> -->
-                                            <div class="form-group">
-                                                <label id="valueFromMyButton" for="name" >Event Name</label>
-                                                <input class="form-control" type="text" id="name" name='name' required>
-                                            </div>
-                                            
-
-                                            <div class="form-group">
-                                                <label for="startdate" id="lab_startdate">Start Date</label>
-                                                <input class="form-control" type="date" id="startdate" name='startdate' value ="{{ date('Y-m-d') }}" required>
-                                            </div>
-
-                                            <div class="form-group" id="divedate">
-                                                <label id="lab_enddate" for="enddate" >End Date</label>
-                                                <input class="form-control" type="date" id="enddate" name='enddate' min="{{ date('Y-m-d') }}">
-                                            </div>
-
-                                            <div class="form-group" style="display: block;" id="divstime">
-                                                <label id="lab_start_time" for="starttime" >Start Time</label>
-                                                <input class="form-control" type="time" id="starttime"  name='start_time' value = "{{ date('h:00') }}">
-                                            </div>
-                                            
-
-                                            <div class="form-group" style="display: block;" id="divetime">
-                                                <label id="lab_end_time" for="endtime" >End Time</label>
-                                                <input class="form-control" type="time" id="endtime"  name='end_time' min="{{ date('h:00') }}"> 
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input  type="checkbox" id="checkfullday"  name='fullday' onclick="ShowHideDiv(this)">
-                                                <label id="valueFromMyButton" for="fullday" >Full Day Event</label>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <button class="button" id="cancel-button"><a href="{{ route('calendar.index') }}" style="color:black">Cancel</a></button>
-                                                <button class="button button-white" id="ok-button" type="submit">OK</button>
-                                            </div>
-                                        
-                                    {!! Form::close() !!}
-                                    
-                                    </div>
-                                </div>
-      
-
-  
-				        </div>
-
+				            <a href="/calendar/create"><button class="button" id="add-button" style="width: 150px;">Add Event</button></a>
 
 				        </div>
 				    </div>
-
-				    <!-- <div class="events-container">
-                        
-                    </div> -->
-
-				    
-				  <!-- </div> -->
-				<!-- </div> -->
-			    <!-- </div> -->
             </div>
 
             <div class="card">

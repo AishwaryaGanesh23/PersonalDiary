@@ -37,6 +37,7 @@ Route::resource('postmedia', PostMediaController::class);
 
 Route::resource('profile', ProfileController::class);
 Route::post('change-password', [ProfileController::class, 'changePassword']);
+Route::get('changepasswordform', [ProfileController::class, 'changePasswordForm']);
 
 Route::resource('tasks', TasksController::class);
 Route::post('completeTask/{task}', [TasksController::class, 'completeTask']);
