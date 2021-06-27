@@ -4,7 +4,7 @@
     
     <a  href="{{ route('tasks.index') }}"><i class="fa fa-edit"></i>&nbsp;Tasks</a>
 
-    <a href="{{ route('calendar.index') }}" ><i class="fa fa-calendar"></i>&nbsp;Calendar</a> 
+    <a href="{{ route('calendar.index') }}" ><i class="fa fa-calendar-check-o"></i>&nbsp;Events</a> 
     <!-- <h4 id="sidedate">{{ date("Y-m-d H:i T") }} </h4> -->
 </div>
 @endsection

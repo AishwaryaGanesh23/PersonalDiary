@@ -18,71 +18,75 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; ">
-                    {{ __('Calendar') }}
-                    {{-- <a class="side_accordian" style="float:right; padding-right:10px; font-size: 15px;"><i class="fa fa-chevron-circle-down"></i>&nbsp;View</a>
-                        <div class="acc_disp" style="text-align: right; font-size: 13px;">
-                            <a href = "calendar/eventsToday">Today's Events</a> <br>
-                            <a href = "calendar/allEvents">All Events</a> 
-                        </div> --}}
+                    {{ __('Events') }}
+                    <a href="/calendar/create" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
+                    <a data-toggle="modal" data-target="#exampleModal" style="float:right; font-size: 13px; cursor: pointer; margin-right:10px;"><i class="fa fa-calendar-o"></i>&nbsp;Calendar</a>    
                 </div>
                                 
                 <!-- <div class="row" style="background: red;"> -->
 				<!-- <div class="col-md-12" style="background: red;"> -->
 				<!-- <div class="content w-100"> -->
-				    <div class="calendar-container">
-				        <div class="calendar" > 
-                            <div class="year-header"> 
-                                <i class="left-button fa fa-chevron-left" id="prev"> </i> 
-                                <span class="year" id="label" style="position: relative; top: -2vh;"></span> 
-                                <i class="right-button fa fa-chevron-right" id="next"> </i>
-                            </div> 
+                <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" style="margin: auto; font-size:30px; font-family: 'Playfair Display', serif;">Calendar</h5>
+								<a  style="float:right; font-size: 13px; " data-dismiss="modal"><i class="fa fa-close"></i></a>
+							</div>
 
-                            <table class="months-table"> 
-                            <tbody>
-                                <tr class="months-row">
-                                    <td class="month">Jan</td> 
-                                    <td class="month">Feb</td> 
-                                    <td class="month">Mar</td> 
-                                    <td class="month">Apr</td> 
-                                    <td class="month">May</td> 
-                                    <td class="month">Jun</td> 
-                                    <td class="month">Jul</td>
-                                    <td class="month">Aug</td> 
-                                    <td class="month">Sep</td> 
-                                    <td class="month">Oct</td>          
-                                    <td class="month">Nov</td>
-                                    <td class="month">Dec</td>
-                                </tr>
-                            </tbody>
-                            </table> 
-				        
-                            <table class="days-table w-100"> 
-                            <td class="day">Sun</td> 
-                            <td class="day">Mon</td> 
-                            <td class="day">Tue</td> 
-                            <td class="day">Wed</td> 
-                            <td class="day">Thu</td> 
-                            <td class="day">Fri</td> 
-                            <td class="day">Sat</td>
-                            </table> 
+                            <div class="calendar-container">
+                                <div class="calendar" > 
+                                    <div class="year-header"> 
+                                        <i class="left-button fa fa-chevron-left" id="prev"> </i> 
+                                        <span class="year" id="label" style="position: relative; top: -2vh;"></span> 
+                                        <i class="right-button fa fa-chevron-right" id="next"> </i>
+                                    </div> 
 
-                            <div class="frame"> 
-                            <table class="dates-table w-100"> 
-                                    <tbody class="tbody" style="border: 2px solid black;">             
-                                    </tbody> 
-                            </table>
-                            </div> 
+                                    <table class="months-table"> 
+                                    <tbody>
+                                        <tr class="months-row">
+                                            <td class="month">Jan</td> 
+                                            <td class="month">Feb</td> 
+                                            <td class="month">Mar</td> 
+                                            <td class="month">Apr</td> 
+                                            <td class="month">May</td> 
+                                            <td class="month">Jun</td> 
+                                            <td class="month">Jul</td>
+                                            <td class="month">Aug</td> 
+                                            <td class="month">Sep</td> 
+                                            <td class="month">Oct</td>          
+                                            <td class="month">Nov</td>
+                                            <td class="month">Dec</td>
+                                        </tr>
+                                    </tbody>
+                                    </table> 
+                                
+                                    <table class="days-table w-100"> 
+                                    <td class="day">Sun</td> 
+                                    <td class="day">Mon</td> 
+                                    <td class="day">Tue</td> 
+                                    <td class="day">Wed</td> 
+                                    <td class="day">Thu</td> 
+                                    <td class="day">Fri</td> 
+                                    <td class="day">Sat</td>
+                                    </table> 
 
-				            <a href="/calendar/create"><button class="button" id="add-button" style="width: 150px;">Add Event</button></a>
+                                    <div class="frame"> 
+                                    <table class="dates-table w-100"> 
+                                            <tbody class="tbody" style="border: 2px solid black;">             
+                                            </tbody> 
+                                    </table>
+                                    </div> 
 
-				        </div>
-				    </div>
-            </div>
+                                    <a href="/calendar/create"><button class="button" id="add-button" style="width: 150px;">Add Event</button></a>
 
-            <div class="card">
-                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; ">
-                    {{ __('Events') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+           
                     <div class="tab">
                         <button class="tablinks" onclick="openList(event, 'Completed')">Completed</button>
                         <button class="tablinks" onclick="openList(event, 'Today')" id="defaultOpen">Today</button>
@@ -109,7 +113,6 @@
 
                     
                 </div>
-            </div>  
         </div>
     </div>
 </div>

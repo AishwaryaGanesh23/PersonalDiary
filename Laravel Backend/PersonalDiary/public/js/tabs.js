@@ -33,7 +33,7 @@ function ShowHideDiv(checkfullday) {
         var date = document.getElementById("lab_startdate");
         date.innerHTML = checkfullday.checked ? "Event date" : "Start Date";
         
-    } checkmedia
+    }
 
     function ShowHideMedia(checkmedia) {
       var showmedia = document.getElementById("media");
