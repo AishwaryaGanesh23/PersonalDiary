@@ -23,7 +23,7 @@
                   @if(count($postmedia)>0)
                     <a data-toggle="modal" data-target="#modal2" style="float:right; font-size: 13px; margin-right: 10px; cursor: pointer"><i class="fa fa-edit"></i> Edit Media</a>
                   @endif
-				        </div>
+				</div>
                 
                 <!-- <div class="card-body"> --> 
 

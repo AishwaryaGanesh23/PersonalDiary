@@ -50,11 +50,11 @@
                         </div> -->
                         @if(count($postmedia)>0)
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false" style="width:100%;height:360px;">
-                        <ol class="carousel-indicators">
-                            @foreach($postmedia as $media)
-                                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>      
-                            @endforeach
-                        </ol>
+                            <ol class="carousel-indicators">
+                                @foreach($postmedia as $media)
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>      
+                                @endforeach
+                            </ol>
 
                             <center>
                                 <div class="carousel-inner" role="listbox">
@@ -76,14 +76,14 @@
                             </center> 
                             
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="height: 280px;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa fa-chevron-left" style="color: black; width: 50px;"></i></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
+                                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa fa-chevron-left" style="color: black; width: 50px;"></i></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
 
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="height: 280px">
-                            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-chevron-right" style="color: black; width: 50px; "></i></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="height: 280px">
+                                <span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-chevron-right" style="color: black; width: 50px; "></i></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
 
                         
@@ -91,7 +91,7 @@
                     </div>
 
 
-                    </div> 
+                </div> 
                     <br>
                     <!-- <a href="/posts/{{ $post->id }}/edit" style="background-color: blue; width: 100px"><button class="btn btn-primary" style="float:left; margin-right: 5px; margin-left: 5px;"> Edit </button></a>
                     {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy',$post->id], 'method' => 'DELETE', 'style' => 'float: left; width: 50px; background-color: blue;']) !!}

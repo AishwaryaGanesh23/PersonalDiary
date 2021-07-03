@@ -3,11 +3,11 @@
 @section('content')
 
 
-<div class="container">
+<div class="container cont-left">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; " >{{ __('Dashboard') }}</div>
+                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif;" >{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -22,7 +22,7 @@
                                 <div class="col md-6">
                                     <p style="font-size: 20px">{{ __('All Posts') }}</p>
                                 </div>
-                                <img  src ="{{asset('pics/post2.png')}}"> 
+                                <img class="img-fluid rounded" src ="{{asset('pics/posts1.jpg')}}"> 
                                 <br>
                                 
                             </a>
@@ -33,7 +33,7 @@
                                 <div class="col md-6">
                                     <p style="font-size: 20px"> {{ __('To Do List') }}</p>
                                 </div>
-                                <img src ="{{asset('pics/todo1.png')}}">
+                                <img class="img-fluid rounded" src="{{asset('pics/todolist1.jpg')}}">
                                 
                             </a>
                         </div>
@@ -41,9 +41,9 @@
                         <div class="col md-5">
                             <a href="{{ route('calendar.index') }}">
                                 <div class="col md-6">
-                                    <p style="font-size: 20px"> {{ __('Calendar') }}</p>
+                                    <p style="font-size: 20px"> {{ __('Calendar Events') }}</p>
                                 </div>
-                                <img src ="{{asset('pics/calendar1.png')}}">
+                                <img class="img-fluid rounded" src="{{asset('pics/cal.jpg')}}">
                                 
                             </a>
                         </div>

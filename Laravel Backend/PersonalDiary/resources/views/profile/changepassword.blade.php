@@ -5,7 +5,7 @@
 	
 @section('breadcrumb')
 	<a href="/home" class="breadcrumb-item">Home</a>
-	<a href="/posts" class="breadcrumb-item">My Profile</a>
+	<a href="{{ route('profile.index') }}" class="breadcrumb-item">My Profile</a>
 	<a class="breadcrumb-item active" aria-current="page">Change Password</a>
 @endsection
 
@@ -35,8 +35,9 @@
 							{{Form::label('password_confirmation', 'Confirm New Password')}}
 						    {{Form::password('password_confirmation',  ['class' => 'form-control' , 'placeholder' => 'Confirm your new password'])}}
 						</div>
-                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}                  
-                    {!! Form::close() !!} 
+                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}} 
+						<a class="btn btn-danger" href="{{ route('profile.index') }}" role="button">Cancel</a>
+						{!! Form::close() !!} 
 				</div> 
 			</div>
 		</div>

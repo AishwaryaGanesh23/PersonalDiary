@@ -94,6 +94,6 @@ class PostMediaController extends Controller
         $post_id = $postmedia->post_id;
         File::delete('post_media/'.$postmedia->filename);
         $postmedia->delete();
-        return redirect('posts/'.$post_id.'/edit');
+        return redirect('posts/'.$post_id);
     }
 }

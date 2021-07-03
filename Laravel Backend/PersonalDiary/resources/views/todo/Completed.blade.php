@@ -14,7 +14,7 @@
                         {{$task->title}}
                         </a>
                 </h3>
-                {!! Form::open(['action' => ['App\Http\Controllers\TasksController@completeTask',$task->id], 'method' => 'POST', 'style' => 'font-size: 15px; float: right; position: relative; top: -5vh;'] )!!}
+                {!! Form::open(['action' => ['App\Http\Controllers\TasksController@completeTask',$task->id], 'method' => 'POST', 'class' => 'task'] )!!}
                 {{Form::submit('Inomplete', ['class' => 'btn btn-warning','style' => 'width: 100px; text-align: center'])}}
                 {!! Form::close() !!}
                 

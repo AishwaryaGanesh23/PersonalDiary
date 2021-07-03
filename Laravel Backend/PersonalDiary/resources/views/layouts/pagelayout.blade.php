@@ -127,13 +127,13 @@
 
             @yield('content')
 
-            <div class="container">
+            <!-- <div class="container">
                 <div class="col justify-content-center">
                     {{-- <div class="col-md-8"> --}}
                         @include('pages.messages')
                     {{-- </div> --}}
                 </div>
-            </div>
+            </div> -->
         </div>  
     </div>
 </body>
