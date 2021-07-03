@@ -16,7 +16,7 @@
 		<div class="row justify-content-center" >
 			<div class="col-md-10">
 				<div class="card">
-					<div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
+					<div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif;">
 						{{ __('Change Password') }}
 					</div>
 					

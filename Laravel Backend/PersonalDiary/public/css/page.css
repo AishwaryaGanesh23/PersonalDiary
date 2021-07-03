@@ -178,29 +178,21 @@ li {
     overflow-wrap: break-word;
 }
 
-/* .content1 h1 {
-    font-size: 130px;
-} */
+
 .content2 {
-    position: relative;
+    background-color: thistle;
+    /* position: relative;
     top: 5vh;
     left: 25vw;
     width: 60%;
-    min-height: 200px;
+    min-height: 200px; */
     border: 2px solid black;
     color: rgb(34, 18, 33);
     overflow-wrap: break-word;
     padding: 15px 25px;
     text-align: justify;
+    
 }
-
-/* #sidedate{
-    position: absolute; 
-    bottom: 25px; 
-    color: white; 
-    font-size: 15px; 
-    text-align: center
-} */
 
 .images1 {
     width: 20%;
@@ -331,13 +323,20 @@ li {
     border: transparent;
 }
 
+#modal2{
+    top: 15vh;
+}
+
+#modal3{
+    top: 10vh;
+}
+
+.task{
+    font-size: 15px; float: right; 
+}
+
 
 @media screen and (max-width: 1024px) {
-
-    #myModal {
-        width: 60%;
-        left: 20%;
-    }
 
     .sidebar {
         width: 100%;
@@ -362,20 +361,12 @@ li {
         left: 0px;
     }
 
-    /* #sidedate{
-        top: 7vh;
-        color: black;
-        right: 5px;
-    } */
-
     .breadcrumb a{
         font-size: 22px;
     }
     
     .card {
-        /* position: relative;
-        left: 2%; */
-        top: 50px;
+        top: 5vh;
         
     } 
 
@@ -399,6 +390,17 @@ li {
         width: 50%;
         height: 450px;
     }
+
+    #modal2{
+        top: 15vh;
+    }
+
+    #modal3{
+        top: 15vh;
+    }
+
+    
+
 }
 
 @media screen and (max-width: 768px) {
@@ -419,9 +421,7 @@ li {
     }
 
     .card {
-        /* position: relative;
-        left: 2%; */
-        top: 50px;
+       top: 50px;
         
     } 
 
@@ -429,11 +429,6 @@ li {
         width: 100%;
     }
     
-    /* .change_profile {
-        top: 3px;
-        left: 42%; 
-    } */
-
     .form-popup {
         top: 30vh;
         left: 32vw;
@@ -448,16 +443,7 @@ li {
         left: 0px;
     }
 
-    /* #sidedate{
-        top: 10vh;
-    } */
-
-    #myModal {
-        left: 0;
-    }
-
     
-
     .editmedia img {
         width: 350px;
         height: 250px;
@@ -466,6 +452,7 @@ li {
 }
 
 @media screen and (max-width: 480px) {
+    
     .sidebar a {
         padding-top: 12px;
         text-align: center;
@@ -488,22 +475,12 @@ li {
         font-size: 18px;
     }
 
-    /* #sidedate{
-        top: 12.5vh;
-        color: black;
-        font-size: 13px;
-        right: 5px;
-    } */
-
     .breadcrumb a{
         font-size: 14px;
     }
 
     .card {
-        /* position: relative; */
-        top: 30px;
-        /* left: 2%; */
-        /* width: 100%; */
+        top: 3vh;
     } 
 
     .navbar-nav{
@@ -527,6 +504,15 @@ li {
     .editmedia img {
         padding-left: none;
     }
+
+    #modal2 {
+        top: 12vh;
+    }
+
+    #modal3{
+        top: 17vh;
+    }
+
 }
 
 @media screen and (max-width: 280px){
@@ -542,6 +528,11 @@ li {
     input[class~="form-control"] {
         min-width: 200px;
     }
+
+    .modal {
+        top: 15vh;
+    }
+
 
 }
 
@@ -567,8 +558,13 @@ li {
     }
 
     .card{
-        top: 40px;
+        top: 3vh;
     }
+
+    .modal {
+        top: 12vh;
+    }
+
 }
 
 @media screen and (min-width: 1025px){

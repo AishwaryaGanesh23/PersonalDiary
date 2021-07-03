@@ -2,7 +2,7 @@
 @section('content')
 
         <div id="container">
-        <img src="{{ URL::to('/pics/index1.png') }}" style="width: 100%; position: absolute; top: -6vh;">
+        <img class="bg-image" src="{{ URL::to('/pics/index3.png') }}" style="height: 80vh; width: 100%">
 	
         </div>
 @endsection

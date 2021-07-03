@@ -20,13 +20,10 @@
                 <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; ">
                     {{ __('Events') }}
                     <a href="/calendar/create" style="float:right; font-size: 13px;"><i class="fa fa-plus"></i></a>
-                    <a data-toggle="modal" data-target="#exampleModal" style="float:right; font-size: 13px; cursor: pointer; margin-right:10px;"><i class="fa fa-calendar-o"></i>&nbsp;Calendar</a>    
+                    <a data-toggle="modal" data-target="#modal3" style="float:right; font-size: 13px; cursor: pointer; margin-right:10px;"><i class="fa fa-calendar-o"></i>&nbsp;Calendar</a>    
                 </div>
                                 
-                <!-- <div class="row" style="background: red;"> -->
-				<!-- <div class="col-md-12" style="background: red;"> -->
-				<!-- <div class="content w-100"> -->
-                <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modal3" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -112,7 +109,7 @@
                     </div>
 
                     
-                </div>
+            </div>
         </div>
     </div>
 </div>

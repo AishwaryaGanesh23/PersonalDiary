@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="{{ asset('css/tabs.css') }}">
 </head>
 
-<body>
+<body class="bg-image">
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm"> 
     <div class="container">
                 @guest

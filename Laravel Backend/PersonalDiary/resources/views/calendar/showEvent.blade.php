@@ -104,65 +104,6 @@
                     </table>
                     
                     <hr>
-                    <!-- <ol>
-                        @if($event['start']['dateTime']!= null)
-                            <li>Start Date: {{ substr($event['start']['dateTime'],0,10) }}
-                            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            Time: {{substr($event['start']['dateTime'],11,5)}} 
-                            </li>
-                            <li>End Date: {{ substr($event['end']['dateTime'],0,10) }}
-                            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            Time at: {{substr($event['end']['dateTime'],11,5)}}
-                            </li>   
-                            
-                        @else
-                            <li>Date: {{ $event['start']['date'] }}</li>
-                        @endif
-                    </ol>
-                    <ol>
-                        @if($event->hangoutLink!=null)
-                            <li>Hangout link: <a href="{{ $event->hangoutLink }}">{{ $event->hangoutLink }}</a></li>
-                        @endif
-                        @if($event->location!=null)
-                            <li>Location:{{ $event->location }}</li>
-                        @endif
-                    </ol>
-                    
-                    <ol>Organiser
-                        @if($event['creator']['displayName']!=null)
-                            <li>Display Name: {{ $event['creator']['displayName'] }}</li>
-                        @endif
-                        @if($event['creator']['email']!=null)
-                            <li>Email: {{ $event['creator']['email']}}</li>
-                        @endif
-                    </ol>
-
-                    <ol>Creator
-                        @if($event['organizer']['displayName']!=null)
-                            <li>Display Name: {{ $event['organizer']['displayName'] }}</li>
-                        @endif
-                        @if($event['organizer']['email']!=null)
-                            <li>Email: {{ $event['organizer']['email']}}</li>
-                        @endif
-                    </ol>
-                    @if($event['attendees']!=null)
-                    <ol>Attendees
-                        
-                        @foreach ($event['attendees'] as  $attendee)
-                        @if($attendee['displayName']!=null)
-                            <li>Display Name: {{ $attendee['displayName'] }}</li>
-                        @endif
-                        @if($attendee['email']!=null)
-                            <li>Email: {{ $attendee['email']}}</li>
-                        @endif
-                        @if($attendee['responseStatus']!=null)
-                            <li>Response Status: {{ $attendee['responseStatus']}}</li>
-                        @endif
-                        <br>
-                        @endforeach
-                    </ol>
-                    @endif
-                     -->
 
                     {{-- <a href="/calendar/{{$event->id}}/edit"><button class="btn btn-primary" style="float:left; margin-right: 5px; "> Edit </button></a> --}}
                     {!! Form::open(['action' => ['App\Http\Controllers\gCalendarController@destroy',$event->id], 'method' => 'DELETE', 'style' => 'float: left']) !!}

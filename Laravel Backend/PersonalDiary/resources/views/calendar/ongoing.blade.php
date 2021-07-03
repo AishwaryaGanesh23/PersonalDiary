@@ -28,8 +28,9 @@
                 @else
                     <small class="card-text">Date: {{ $event['start']['date'] }}</small>
                 @endif
-                <hr>
+                
             </div>
+            <hr>
         @endif
     @endforeach    
 @endif    

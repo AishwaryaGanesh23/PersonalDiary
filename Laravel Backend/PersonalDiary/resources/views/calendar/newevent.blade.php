@@ -16,11 +16,11 @@
         <div class="row justify-content-center" >
                 <div class="col-md-10">
                         <div class="card">
-                                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif; text-align: center;">
+                                <div class="card-header" style="font-size: 30px; font-family: 'Playfair Display', serif;">
                                         {{ __('Add New Event') }}
                                 </div>
                                 
-                                {!! Form::open(['action' => 'App\Http\Controllers\gCalendarController@store', 'method' => 'POST', 'id' => 'form', 'class' => 'createform', 'style' => 'font-size: 15px'] )!!} 
+                                {!! Form::open(['action' => 'App\Http\Controllers\gCalendarController@store', 'method' => 'POST', 'class' => 'createform', 'style' => 'font-size: 15px'] )!!} 
                                         
                                         <!-- <h2 class="dialog-header"> Add New Event </h2> -->
                                             <div class="form-group">

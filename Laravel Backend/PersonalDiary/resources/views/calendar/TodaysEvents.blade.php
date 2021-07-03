@@ -33,8 +33,8 @@
                 @else
                 <small class="card-text">Full Day</small>
             @endif
-            <hr>
             </div>
+            <hr>
             @php
                 $flag = 1;
             @endphp

@@ -15,10 +15,10 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif; text-align: center;">
+                <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif;">
                     {{-- {{ __('Your Post') }} --}}
                     {{$post->title}} 
-                    <a class="side_accordian" style="float:right; font-size: 18px; width: 50px"><i class="fa fa-ellipsis-v"></i></a>
+                    <a class="side_accordian" style="float:right; font-size: 18px; width: 20px; text-align: right"><i class="fa fa-ellipsis-v"></i></a>
                         <div class="acc_disp" style="text-align: right; font-size: 13px;">
                             <a href = "/posts/{{ $post->id }}/edit" style=" margin-right: 10px;">Edit</a> <br>
                             <!-- <a href = "/postssortbyCreated" style=" margin-right: 10px;">Delete</a> <br> -->
@@ -49,7 +49,7 @@
                             @endforeach
                         </div> -->
                         @if(count($postmedia)>0)
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false" style="width:100%;height:360px;">
                         <ol class="carousel-indicators">
                             @foreach($postmedia as $media)
                                 <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>      
@@ -65,7 +65,7 @@
                                         
                                             
                                         @elseif($media->filetype == 'video')
-                                            <video width="100%" height="300px" controls>
+                                            <video width="100%" height="350" controls>
                                                 <source  src="{{URL::asset('post_media/'.$media->filename)}}" type="video/mp4" >
                                             Your browser does not support the video tag.
                                         </video>
@@ -75,12 +75,12 @@
                                 </div>
                             </center> 
                             
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="height: 280px;">
                             <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa fa-chevron-left" style="color: black; width: 50px;"></i></span>
                             <span class="sr-only">Previous</span>
                         </a>
 
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" >
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="height: 280px">
                             <span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-chevron-right" style="color: black; width: 50px; "></i></span>
                             <span class="sr-only">Next</span>
                         </a>

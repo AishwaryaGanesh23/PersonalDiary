@@ -21,6 +21,7 @@
                     <small class="card-text">Date: {{ $event['start']['date'] }}</small>
                 @endif
             </div>
+            <hr>
         @endif
     @endforeach    
 @endif    

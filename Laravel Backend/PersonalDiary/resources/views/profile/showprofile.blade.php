@@ -14,7 +14,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif; text-align: center; ">
+                <div class="card-header" style="font-size:30px; font-family: 'Playfair Display', serif;">
                     {{ __('Profile') }}
                     
                 </div>
@@ -28,7 +28,7 @@
                     @endif
 
 
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -66,7 +66,7 @@
                     
                     <p class="profile">{{ Auth::user()->name }}</p>
                     <center>
-                        <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Update Profile</button> 
+                        <button class="btn btn-info" data-toggle="modal" data-target="#modal1">Update Profile</button> 
                         <a class="btn btn-info" href="/oauth" role="button">OAuth</a>
                     </center>
                 </div>
