@@ -77,17 +77,15 @@ function days_in_month(month, year) {
 
 // Event handler for when a date is clicked
 function date_click(event) {
-    $(".events-container").show(250);
-    $("#dialog").hide(250);
+    // $(".events-container").show(250);
+    // $("#dialog").hide(250);
     $(".active-date2").removeClass("active-date2");
     $(this).addClass("active-date2");
-    show_events(event.data.events, event.data.month, event.data.day);
+    // show_events(event.data.events, event.data.month, event.data.day);
 };
 
 // Event handler for when a month is clicked
 function month_click(event) {
-    $(".events-container").show(250);
-    $("#dialog").hide(250);
     var date = event.data.date;
     $(".active-month").removeClass("active-month");
     $(this).addClass("active-month");
@@ -121,16 +119,13 @@ function new_event(event) {
     // if a date isn't selected then do nothing
     if($(".active-date").length===0)
         return;
-    
-    $(".fade").show(250);
-    $("#container").show();
 }
 
 
 function show_events(events, month, day) {
     // Clear the dates container
-    $(".events-container").empty();
-    $(".events-container").show(250);
+    // $(".events-container").empty();
+    // $(".events-container").show(250);
     console.log(event_data["events"]);
     // If there are no events for this date, notify the user
     if(events.length===0) {
