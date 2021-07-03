@@ -11,14 +11,11 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/sidebar.js') }}" defer></script>
+    <script src="{{ asset('js/accordian.js') }}" defer></script>
     <script src="{{ asset('js/filesize.js') }}" defer></script>
-    {{-- <!-- <script src="{{ asset('js/calendar.js') }}" defer></script> --> --}}
-    <script src="{{ asset('js/popup.js') }}" defer></script>
-    <script src="{{ asset('js/jquery.min.js') }} defer"></script>
-    <script src="{{ asset('js/popper.js') }}" defer></script>
     <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
-    <script src="{{ asset('js/main.js') }}" defer></script>
+    <script src="{{ asset('js/calendar.js') }}" defer></script>
+    <script src="{{ asset('js/checkbox.js') }}" defer></script>
     <script src="{{ asset('js/tabs.js') }}" defer></script>
   
     <!-- Fonts -->

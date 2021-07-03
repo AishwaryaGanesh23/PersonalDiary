@@ -94,73 +94,6 @@ button:focus {
     background: rgb(95, 93, 93);
 }
 
-/*  Events display */
-.events-container {
-    overflow-y: scroll;
-    height: 100%;
-    width: 50%;
-    float: right;
-    margin: 0px auto;
-    display: inline-block;
-    padding: 0px;
-    border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px;
-    padding: 0;
-}
-@media (max-width: 767.98px) {
-    .events-container {
-        width: 100%;
-        height: auto;
-    }
-}
-
-.events-container:after {
-    clear: both;
-}
-
-.event-card {
-    padding: 20px 0;
-    max-width: 100%;
-    display: block;
-    background: #fff;
-    border: none !important;
-    margin: 20px;
-    margin-left: 12px;
-}
-@media (max-width: 991.98px) {
-    .event-card {
-        margin: 10px;
-    }
-}
-@media (max-width: 767.98px) {
-    .event-card {
-        margin: 0;
-        background: #e6e6e6;
-    }
-}
-
-.event-count,
-.event-name,
-.event-cancelled {
-    display: inline;
-    padding: 0 10px;
-    font-size: 18px;
-}
-
-.event-count {
-    color: #7e0cf5;
-    text-align: right;
-}
-
-.event-name {
-    padding-right: 0;
-    text-align: left;
-}
-
-.event-cancelled {
-    color: #cd4dcc;
-    text-align: right;
-}
 
 /*  Calendar wrapper */
 .calendar-container {
@@ -317,7 +250,7 @@ button:focus {
 
 .day {
     height: 26px;
-    width: 50px;
+    width: 20%;
     padding: 0 10px;
     line-height: 26px;
     border: 2px solid transparent;
@@ -348,7 +281,8 @@ button:focus {
 }
 @media (max-width: 767.98px) {
     .month {
-        font-size: 10.5px;
+        font-size: 9px;
+        width: 10%;
     }
 }
 
