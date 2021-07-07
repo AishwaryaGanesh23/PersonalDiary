@@ -61,7 +61,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header" style="background-color: whitesmoke">
-                                <h5 class="modal-title" style="margin: auto; font-size:20px; font-family: 'Playfair Display', serif;">Update Profile</h5>
+                                <h5 class="modal-title" style="margin: auto; font-size:30px; font-family: 'Playfair Display', serif;">Update Profile</h5>
 								<a  style="float:right; font-size: 13px; " data-dismiss="modal"><i class="fa fa-close"></i></a>
 							</div>
 					

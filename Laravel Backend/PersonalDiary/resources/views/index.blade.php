@@ -20,7 +20,7 @@
                         <div class="col md-5">
                             <a href="{{ route('posts.index') }}">
                                 <div class="col md-6">
-                                    <p style="font-size: 20px">{{ __('All Posts') }}</p>
+                                    <p style="font-size: 20px">{{ __('Posts') }}</p>
                                 </div>
                                 <img class="img-fluid rounded" src ="{{asset('pics/posts1.jpg')}}"> 
                                 <br>
@@ -31,7 +31,7 @@
                         <div class="col md-5">
                             <a href="{{ route('tasks.index') }}">
                                 <div class="col md-6">
-                                    <p style="font-size: 20px"> {{ __('To Do List') }}</p>
+                                    <p style="font-size: 20px"> {{ __('Tasks') }}</p>
                                 </div>
                                 <img class="img-fluid rounded" src="{{asset('pics/todolist1.jpg')}}">
                                 
@@ -41,7 +41,7 @@
                         <div class="col md-5">
                             <a href="{{ route('calendar.index') }}">
                                 <div class="col md-6">
-                                    <p style="font-size: 20px"> {{ __('Calendar Events') }}</p>
+                                    <p style="font-size: 20px"> {{ __('Events') }}</p>
                                 </div>
                                 <img class="img-fluid rounded" src="{{asset('pics/cal.jpg')}}">
                                 
